@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
 
 int menu();
 void criar();
@@ -8,6 +9,7 @@ void ler();
 
 int main()
 {
+    setlocale(LC_ALL,"portuguese");
     int opt;
     do{
         opt = menu();
@@ -50,7 +52,7 @@ void criar()
     printf("\nNome do ficheiro: ");
     scanf("%s",filename);
     strcat(filename,".txt");
-    printf("Conteudo: ");
+    printf("Conteúdo: ");
     scanf("%s",conteudo);
     fp = fopen(filename,"w");
     fprintf(fp,"%s\n",conteudo);
@@ -65,7 +67,7 @@ void acrescentar()
     printf("\nNome do ficheiro: ");
     scanf("%s",filename);
     strcat(filename,".txt");
-    printf("Conteudo: ");
+    printf("Conteúdo: ");
     scanf("%s",conteudo);
     fp = fopen(filename,"a");
     fprintf(fp,"%s\n",conteudo);
