@@ -41,4 +41,4 @@ f) Numa lista circular, o último elemento é o que tem como seu sucessor o head
         printf("\nv2 = %d",p->v2);
     }
     return 0;
-}
+}`
