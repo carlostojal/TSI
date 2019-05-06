@@ -24,21 +24,34 @@ f) Numa lista circular, o último elemento é o que tem como seu sucessor o head
 
 ### 3. Considerando a estrutura seguinte:
 `typedef struct Mod6s
+
 {
+
     struct Mod6s *next;
+
     int v1,v2;
+
 }Mod6;
 `
 
 #### a) Implemente uma função que permita mostrar uma listagem da estrutura Mod6s, respeitando o seguinte protótipo.
 `int mostra_lista(Mod6 *ptr);`
 `int mostra_lista(Mod6 *ptr)
+
 {
+
     Mod6 *p;
+
     for(p=ptr->next;p!=NULL;p=p->next)
+
     {
+
         printf("\nv1 = %d",p->v1);
+
         printf("\nv2 = %d",p->v2);
+
     }
+
     return 0;
+    
 }`
