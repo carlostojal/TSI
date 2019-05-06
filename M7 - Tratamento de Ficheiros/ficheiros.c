@@ -52,7 +52,7 @@ void criar()
     printf("\nNome do ficheiro: ");
     scanf("%s",filename);
     strcat(filename,".txt");
-    printf("Conteúdo: ");
+    printf("ConteÃºdo: ");
     scanf("%s",conteudo);
     fp = fopen(filename,"w");
     fprintf(fp,"%s\n",conteudo);
@@ -67,7 +67,7 @@ void acrescentar()
     printf("\nNome do ficheiro: ");
     scanf("%s",filename);
     strcat(filename,".txt");
-    printf("Conteúdo: ");
+    printf("ConteÃºdo: ");
     scanf("%s",conteudo);
     fp = fopen(filename,"a");
     fprintf(fp,"%s\n",conteudo);
