@@ -30,7 +30,7 @@ void InsertContact(Contact *list,Contact *new)
 
     if(list->next == NULL)
     {
-        //printf("primeiro elemento\n");
+        printf("primeiro elemento\n");
         new->prev = list;
         list->next = new;
     }
@@ -43,7 +43,7 @@ void InsertContact(Contact *list,Contact *new)
         }
         if(p==NULL) //se deve ser inserido à cauda
         {
-            //printf("a cauda\n");
+            printf("a cauda\n");
             for(last=list->next;last->next!=NULL;last=last->next){}
             p=last;
             new->prev = p;
@@ -52,7 +52,7 @@ void InsertContact(Contact *list,Contact *new)
         }
         else if(p==list->next)
         {
-            //printf("a cabeca\n");
+            printf("a cabeca\n");
             list->next->prev = new;
             new->next = list->next;
             list->next = new;
@@ -138,20 +138,22 @@ void GetContacts(Contact *list)
                 {
                     for(i=0;temp[i]!='\n';i++)
                         new->name[i] = temp[i];
-                    //printf("name:%s\n",new->name);
+                    printf("name:%s\n",new->name);
                 }
                 if(state==2)
                 {
                     for(i=0;temp[i]!='\n';i++)
                         new->email[i] = temp[i];
+                    printf("email: %s\n",new->email);
                 }
                 if(state==3)
                 {
                     for(i=0;temp[i]!='\n';i++)
                         new->phone[i] = temp[i];
+                    printf("phone: %s\n",new->phone);
                 }
                 state++;
-                //printf("%s",temp);
+                printf("temp: %s\n",temp);
                 strcpy(temp,"");
             }
             //ListContact(new);
