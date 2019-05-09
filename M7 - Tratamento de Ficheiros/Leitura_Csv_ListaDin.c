@@ -72,7 +72,7 @@ void ler_dados(linha *novo)
 void escrever_ficheiro(linha *novo)
 {
     FILE *fp;
-    fp = fopen("dados2.csv","a");
+    fp = fopen("dados.csv","a");
     fprintf(fp,"%s %d %d %s\n",novo->nome,novo->altura,novo->kg,novo->telef);
     fclose(fp);
 }
