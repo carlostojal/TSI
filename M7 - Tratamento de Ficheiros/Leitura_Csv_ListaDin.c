@@ -110,7 +110,16 @@ void carregar_dados(linha *lista)
 
 void listar(linha *lista)
 {
+    int total_altura=0,total_peso=0;
+    int n=0;
     linha *p = (linha*) malloc(sizeof(linha));
     for(p=lista->prox;p!=NULL;p=p->prox)
+    {
         printf("\nNome: %s\nAltura: %d\nPeso: %d\nTelefone: %s\n\n",p->nome,p->altura,p->kg,p->telef);
+        total_altura+=p->altura;
+        total_peso+=p->kg;
+        n++;
+    }
+    printf("\nMedia de alturas: %.2f",(float)total_altura/n);
+    printf("\nMedia de pesos: %.2f\n",(float)total_peso/n);
 }
