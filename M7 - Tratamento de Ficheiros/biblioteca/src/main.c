@@ -21,6 +21,8 @@ int main()
     alunos->ant = NULL;
     manuais->prox = NULL;
     manuais->ant = NULL;
+    emprestimos->prox = NULL;
+    emprestimos->ant = NULL;
     int opt;
     do{
         opt = menu();
