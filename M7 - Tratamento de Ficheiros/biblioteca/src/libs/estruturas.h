@@ -1,6 +1,8 @@
 //Carlos Tojal, nº5, 1ºTSI
 //libs/estruturas.h
 
+//Contém as estruturas de dados do programa
+
 #include <stdio.h>
 
 typedef struct Datas {
