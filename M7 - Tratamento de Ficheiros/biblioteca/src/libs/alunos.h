@@ -51,7 +51,6 @@ void carregar_alunos(Aluno *lista)
             novo->ant = p;
             p->prox = novo;
         }
-        //free(novo);
     }
     fclose(fp);
     free(p);
