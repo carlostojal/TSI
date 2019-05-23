@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+//#include <conio.h>
 
 void adicionar_aluno()
 {
@@ -29,15 +29,17 @@ void adicionar_aluno()
 
 void carregar_alunos(Aluno *lista)
 {
-    Aluno *p = malloc(sizeof(Aluno));
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    Aluno *novo = (Aluno*) malloc(sizeof(Aluno));
     FILE *fp = fopen("alunos.dat","r");
+    int num;
     while(!feof(fp))
     {
-        Aluno *novo = malloc(sizeof(Aluno));
         novo->prox = NULL;
         novo->ant = NULL;
         fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
-        printf("LIdo: %s",novo->nome);getch();
+        printf("Lido: %s",novo->nome);
+        scanf("%d",&num);
         if(lista->prox == NULL)
         {
             novo->ant = lista;
