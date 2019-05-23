@@ -10,7 +10,7 @@ void adicionar_emprestimo()
 {
     FILE *fp;
     Emprestimo *novo = malloc(sizeof(Manual));
-    printf("\n** Adicionar Manual**\n\n");
+    printf("\n** Adicionar Emprestimo**\n\n");
     if(!novo)
         printf("Ocorreu um erro de memoria.\n");
     else
