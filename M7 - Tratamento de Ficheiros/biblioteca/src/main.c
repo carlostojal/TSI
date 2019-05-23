@@ -14,8 +14,9 @@
 
 int main()
 {
-    Aluno *alunos = malloc(sizeof(Aluno));
-    Manual *manuais = malloc(sizeof(Manual));
+    Aluno *alunos = (Aluno*) malloc(sizeof(Aluno));
+    Manual *manuais = (Manual*) malloc(sizeof(Manual));
+    Emprestimo *emprestimos = (Emprestimo*) malloc(sizeof(Emprestimo));
     alunos->prox = NULL;
     alunos->ant = NULL;
     manuais->prox = NULL;
@@ -38,6 +39,13 @@ int main()
             case 4:
                 carregar_manuais(manuais);
                 listar_manuais(manuais);
+                break;
+            case 5:
+                adicionar_emprestimo();
+                break;
+            case 6:
+                carregar_emprestimos(emprestimos);
+                listar_emprestimos(emprestimos);
                 break;
         }
     }while(opt);
