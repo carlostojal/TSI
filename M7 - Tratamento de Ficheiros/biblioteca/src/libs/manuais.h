@@ -58,7 +58,7 @@ void listar_manuais(Manual *lista)
     if(lista->prox == NULL)
     {
         printf("\a");
-        printf("Nao ha alunos para listar!\n");
+        printf("Nao ha manuais para listar!\n");
     }
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
