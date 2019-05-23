@@ -4,9 +4,12 @@
 //Contém o código principal
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "libs/estruturas.h"
 #include "libs/menus.h"
 #include "libs/alunos.h"
+#include "libs/manuais.h"
+#include "libs/emprestimos.h"
 
 
 int main()
