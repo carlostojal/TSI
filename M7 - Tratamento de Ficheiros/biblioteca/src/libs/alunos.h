@@ -21,7 +21,7 @@ void adicionar_aluno()
     scanf("%s",novo->turma);
     printf("Telemovel: ");
     scanf("%s",novo->telemovel);
-    fp = fopen("alunos.dat","ab");
+    fp = fopen("alunos.dat","a");
     fprintf(fp,"%d %s %d %s %s\n",novo->num_proc,novo->nome,novo->ano,novo->turma,novo->telemovel);
     fclose(fp);
 }
@@ -29,13 +29,14 @@ void adicionar_aluno()
 void carregar_alunos(Aluno *lista)
 {
     Aluno *p = malloc(sizeof(Aluno));
-    Aluno *novo = malloc(sizeof(Aluno));
-    novo->prox = NULL;
-    novo->ant = NULL;
-    FILE *fp = fopen("alunos.dat","rb");
+    FILE *fp = fopen("alunos.dat","r");
     while(!feof(fp))
     {
+        Aluno *novo = malloc(sizeof(Aluno));
+        novo->prox = NULL;
+        novo->ant = NULL;
         fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
+        printf("LIdo: %s",novo->nome);getch();
         if(lista->prox == NULL)
         {
             novo->ant = lista;
@@ -43,13 +44,15 @@ void carregar_alunos(Aluno *lista)
         }
         else
         {
-            for(p=lista;p->prox!=NULL;p=p->prox) {}
+            p=lista;
+            while(p->prox!=NULL)
+                p=p->prox;
             novo->ant = p;
             p->prox = novo;
         }
+        //free(novo);
     }
     fclose(fp);
-    free(novo);
     free(p);
 }
 
@@ -64,6 +67,7 @@ void listar_alunos(Aluno *lista)
     }
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
+        printf("Numero de processo: %d\n",p->num_proc);
         printf("Nome: %s\n",p->nome);
         printf("Ano: %d\n",p->ano);
         printf("Turma: %s\n",p->turma);
