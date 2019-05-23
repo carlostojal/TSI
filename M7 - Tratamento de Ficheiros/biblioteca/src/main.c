@@ -53,5 +53,6 @@ int main()
     }while(opt);
     free(alunos);
     free(manuais);
+    free(emprestimos);
     return 0;
 }
