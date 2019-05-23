@@ -17,12 +17,16 @@ typedef struct Alunos {
     int ano;
     char turma[20];
     char telemovel[20];
+    struct Alunos *prox;
+    struct Alunos *ant;
 } Aluno;
 
 typedef struct Manuais {
     char isbn[20];
     char titulo[20];
     char disciplina[20];
+    struct Manuais *prox;
+    struct Manuais *ant;
 } Manual;
 
 typedef struct Emprestimos {
@@ -31,4 +35,6 @@ typedef struct Emprestimos {
     char id_manual[20];
     Data data_levantamento;
     float valor;
+    struct Emprestimos *prox;
+    struct Emprestimos *ant;
 } Emprestimo;

@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "libs/estruturas.h"
 #include "libs/menus.h"
+#include "libs/alunos.h"
 
 
 int main()
@@ -13,6 +14,12 @@ int main()
     int opt;
     do{
         opt = menu();
+        switch(opt)
+        {
+            case 1:
+                adicionar_aluno();
+                break;
+        }
     }while(opt);
     return 0;
 }
