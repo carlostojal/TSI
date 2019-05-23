@@ -1,5 +1,6 @@
 //Carlos Tojal, nº5, 1ºTSI
-//main.c
+//https://www.github.com/carlostojal/TSI/tree/master/M7 - Tratamento de Ficheiros/biblioteca/src/main.c
+
 
 //Contém o código principal
 
