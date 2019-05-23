@@ -11,6 +11,9 @@
 
 int main()
 {
+    Aluno *lista = malloc(sizeof(Aluno));
+    lista->prox = NULL;
+    lista->ant = NULL;
     int opt;
     do{
         opt = menu();
@@ -19,7 +22,12 @@ int main()
             case 1:
                 adicionar_aluno();
                 break;
+            case 2:
+                carregar_alunos(lista);
+                listar_alunos(lista);
+                break;
         }
     }while(opt);
+    free(lista);
     return 0;
 }
