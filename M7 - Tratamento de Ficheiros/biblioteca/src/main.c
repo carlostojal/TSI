@@ -11,5 +11,9 @@
 
 int main()
 {
+    int opt;
+    do{
+        opt = menu();
+    }while(opt);
     return 0;
 }
