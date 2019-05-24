@@ -10,15 +10,58 @@ int menu()
     int opt;
     do{
         printf("\n** Biblioteca **\n\n");
-        printf("1. Inserir aluno\n");
-        printf("2. Listar alunos\n");
-        printf("3. Adicionar manual\n");
-        printf("4. Listar manuais\n");
-        printf("5. Adicionar empréstimo\n");
-        printf("6. Listar empréstimos\n");
+        printf("1. Alunos\n");
+        printf("2. Manuais\n");
+        printf("3. Emprestimos\n");
+        printf("4. Listagens\n");
         printf("0. Sair\n\n");
         printf("Opcao: ");
         scanf("%d",&opt);
-    }while(opt<0||opt>6);
+    }while(opt<0||opt>4);
+    return opt;
+}
+
+int menu_alunos()
+{
+    int opt;
+    do{
+        printf("\n** Alunos **\n\n");
+        printf("1. Adicionar\n");
+        printf("2. Listar\n");
+        printf("3. Pesquisar\n");
+        printf("0. Sair\n\n");
+        printf("Opcao: ");
+        scanf("%d",&opt);
+    }while(opt<0||opt>3);
+    return opt;
+}
+
+int menu_manuais()
+{
+    int opt;
+    do{
+        printf("\n** Manuais **\n\n");
+        printf("1. Adicionar\n");
+        printf("2. Listar\n");
+        printf("3. Pesquisar\n");
+        printf("0. Sair\n\n");
+        printf("Opcao: ");
+        scanf("%d",&opt);
+    }while(opt<0||opt>3);
+    return opt;
+}
+
+int menu_emprestimos()
+{
+    int opt;
+    do{
+        printf("\n** Emprestimos **\n\n");
+        printf("1. Adicionar\n");
+        printf("2. Listar\n");
+        printf("3. Pesquisar\n");
+        printf("0. Sair\n\n");
+        printf("Opcao: ");
+        scanf("%d",&opt);
+    }while(opt<0||opt>3);
     return opt;
 }

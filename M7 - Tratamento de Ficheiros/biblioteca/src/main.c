@@ -23,31 +23,49 @@ int main()
     manuais->ant = NULL;
     emprestimos->prox = NULL;
     emprestimos->ant = NULL;
-    int opt;
+    int opt,sub_opt;
     do{
         opt = menu();
         switch(opt)
         {
             case 1:
-                adicionar_aluno();
+                sub_opt = menu_alunos();
+                switch(sub_opt)
+                {
+                    case 1:
+                        adicionar_aluno();
+                        break;
+                    case 2:
+                        carregar_alunos(alunos);
+                        listar_alunos(alunos);
+                        break;
+                }
                 break;
             case 2:
-                carregar_alunos(alunos);
-                listar_alunos(alunos);
+                sub_opt = menu_manuais();
+                switch(sub_opt)
+                {
+                    case 1:
+                        adicionar_manual();
+                        break;
+                    case 2:
+                        carregar_manuais(manuais);
+                        listar_manuais(manuais);
+                        break;
+                }
                 break;
             case 3:
-                adicionar_manual();
-                break;
-            case 4:
-                carregar_manuais(manuais);
-                listar_manuais(manuais);
-                break;
-            case 5:
-                adicionar_emprestimo();
-                break;
-            case 6:
-                carregar_emprestimos(emprestimos);
-                listar_emprestimos(emprestimos);
+                sub_opt = menu_emprestimos();
+                switch(sub_opt)
+                {
+                    case 1:
+                        adicionar_emprestimo();
+                        break;
+                    case 2:
+                        carregar_emprestimos(emprestimos);
+                        listar_emprestimos(emprestimos);
+                        break;
+                }
                 break;
         }
     }while(opt);
