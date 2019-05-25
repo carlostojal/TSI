@@ -111,3 +111,24 @@ void pesquisar_emprestimo_id(Emprestimo *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_emprestimo_id_aluno(Emprestimo *lista)
+{
+    int id_aluno;
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    printf("\n** Pesquisar Emprestimo por ID do Aluno **\n\n");
+    printf("ID do Aluno: ");
+    scanf("%d",&id_aluno);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->id_aluno==id_aluno)
+        {
+            encontrou=1;
+            listar_emprestimo(p);
+            break;
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}

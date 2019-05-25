@@ -139,6 +139,10 @@ int main()
                                 carregar_emprestimos(emprestimos);
                                 pesquisar_emprestimo_id(emprestimos);
                                 break;
+                            case 2: //Opção 2 (ID do Aluno)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                pesquisar_emprestimo_id_aluno(emprestimos);
                         }
                 }
                 break;
