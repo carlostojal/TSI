@@ -50,18 +50,23 @@ int main()
                         switch(sub_sub_opt)
                         {
                             case 1:
+                                carregar_alunos(alunos);
                                 pesquisar_aluno_numproc(alunos);
                                 break;
                             case 2:
+                                carregar_alunos(alunos);
                                 pesquisar_aluno_nome(alunos);
                                 break;
                             case 3:
+                                carregar_alunos(alunos);
                                 pesquisar_alunos_ano(alunos);
                                 break;
                             case 4:
+                                carregar_alunos(alunos);
                                 pesquisar_alunos_turma(alunos);
                                 break;
                             case 5:
+                                carregar_alunos(alunos);
                                 pesquisar_alunos_telemovel(alunos);
                                 break;
                         }
