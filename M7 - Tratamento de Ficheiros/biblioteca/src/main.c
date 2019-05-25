@@ -102,6 +102,11 @@ int main()
                                 carregar_manuais(manuais);
                                 pesquisar_manual_isbn(manuais);
                                 break;
+                            case 2: //Opção 2 (Título)
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_manual_titulo(manuais);
+                                break;
                         }
                 }
                 break;

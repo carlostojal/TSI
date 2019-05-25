@@ -91,3 +91,23 @@ void pesquisar_manual_isbn(Manual *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_manual_titulo(Manual *lista)
+{
+    char titulo[20];
+    int encontrou=0;
+    Manual *p = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Manual por Titulo **\n\n");
+    printf("Titulo: ");
+    scanf("%s",titulo);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->titulo,titulo)==0)
+        {
+            encontrou=1;
+            listar_manual(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
