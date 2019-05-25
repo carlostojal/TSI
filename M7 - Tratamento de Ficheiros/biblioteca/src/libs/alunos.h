@@ -85,10 +85,14 @@ void limpar_alunos(Aluno *lista)
     for(p=lista->prox->prox;p!=NULL;p=p->prox)
     {
         if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+        {
             free(p);
+            break;
+        }
         else//senão, liberta o seu antecessor
             free(p->ant);
     }
+    lista->prox = NULL;
 }
 
 void pesquisar_aluno_numproc(Aluno *lista)

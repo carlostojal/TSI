@@ -65,10 +65,14 @@ void limpar_manuais(Manual *lista)
     for(p=lista->prox->prox;p!=NULL;p=p->prox)
     {
         if(p->prox == NULL) //se é o último da lista, liberta-se a si mesmo
+        {
             free(p);
+            break;
+        }
         else //senão, liberta o seu antecessor
             free(p->ant);
     }
+    lista->prox = NULL;
 }
 
 void pesquisar_manual_isbn(Manual *lista)

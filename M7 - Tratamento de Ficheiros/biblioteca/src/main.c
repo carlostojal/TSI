@@ -119,13 +119,27 @@ int main()
                 sub_opt = submenu("Emprestimos");
                 switch(sub_opt)
                 {
-                    case 1: //Opção 1 (Adicionar empréstimo)
+                    case 1: //Opção 1 (Adicionar)
                         adicionar_emprestimo();
                         break;
-                    case 2: //Opção 2 (Listar Empréstimos)
+                    case 2: //Opção 2 (Listar)
+                        limpar_emprestimos(emprestimos);
                         carregar_emprestimos(emprestimos);
-                        listar_emprestimos(emprestimos);
+                        Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+                        for(p=emprestimos->prox;p!=NULL;p=p->prox)
+                            listar_emprestimo(p);
+                        free(p);
                         break;
+                    case 3: //Opção 3 (Pesquisar)
+                        sub_sub_opt = menu_pesquisas(3);
+                        switch(sub_sub_opt)
+                        {
+                            case 1: //Opção 1 (ID do Empréstimo)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                pesquisar_emprestimo_id(emprestimos);
+                                break;
+                        }
                 }
                 break;
         }

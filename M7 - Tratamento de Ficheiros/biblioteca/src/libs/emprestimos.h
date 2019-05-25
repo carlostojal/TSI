@@ -66,26 +66,48 @@ void carregar_emprestimos(Emprestimo *lista)
     free(p);
 }
 
-void listar_emprestimos(Emprestimo *lista)
+void listar_emprestimo(Emprestimo *emprestimo)
 {
-    Emprestimo *p = malloc(sizeof(Manual));
-    printf("\n** Listar Emprestimos **\n\n");
-    if(!p)
-        printf("Ocorreu um erro de memoria.\n");
-    else
+    printf("\nID: %d\n",emprestimo->id);
+    printf("ID do Aluno: %d\n",emprestimo->id_aluno);
+    printf("ID do Manual: %s\n",emprestimo->id_manual);
+    printf("Data de Levantamento: %d-%d-%d\n",emprestimo->data_levantamento.dia,emprestimo->data_levantamento.mes,emprestimo->data_levantamento.ano);
+    printf("Valor: %.2f\n\n",emprestimo->valor);
+}
+
+void limpar_emprestimos(Emprestimo *lista)
+{
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    for(p=lista->prox->prox;p!=NULL;p=p->prox)
     {
-        if(lista->prox == NULL)
+        if(p->prox==NULL) //se o elemento é o último da lista, liberta-se a si próprio
         {
-            printf("\a");
-            printf("Nao ha emprestimos para listar!\n");
+            free(p);
+            break;
         }
-        for(p=lista->prox;p!=NULL;p=p->prox)
+        else //senão, liberta o seu antecessor
+            free(p->ant);
+    }
+    lista->prox = NULL;
+}
+
+void pesquisar_emprestimo_id(Emprestimo *lista)
+{
+    int id;
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    printf("\n** Pesquisar Emprestimo por ID **\n\n");
+    printf("ID: ");
+    scanf("%d",&id);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->id==id)
         {
-            printf("ID: %d\n",p->id);
-            printf("ID do Aluno: %d\n",p->id_aluno);
-            printf("ID do Manual: %s\n",p->id_manual);
-            printf("Data de Levantamento: %d-%d-%d\n",p->data_levantamento.dia,p->data_levantamento.mes,p->data_levantamento.ano);
-            printf("Valor: %.2f\n\n",p->valor);
+            encontrou=1;
+            listar_emprestimo(p);
+            break;
         }
     }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
 }
