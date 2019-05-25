@@ -43,6 +43,7 @@ int main()
                         Aluno *p = (Aluno*) malloc(sizeof(Aluno));
                         for(p=alunos->prox;p!=NULL;p=p->prox)
                             listar_aluno(p);
+                        free(p);
                         break;
                     case 3: //Opção 3 (Pesquisar)
                         sub_sub_opt = menu_pesquisas(1); //O 1 significa que se refere ao tipo 1 (alunos)
