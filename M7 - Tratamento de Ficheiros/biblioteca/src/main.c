@@ -58,6 +58,9 @@ int main()
                             case 3:
                                 pesquisar_alunos_ano(alunos);
                                 break;
+                            case 4:
+                                pesquisar_alunos_turma(aluno);
+                                break;
                         }
                 }
                 break;

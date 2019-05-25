@@ -139,3 +139,23 @@ void pesquisar_alunos_ano(Aluno *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_alunos_turma(Aluno *lista)
+{
+    char turma[20];
+    int encontrou;
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    printf("\n** Pesquisar Alunos por Turma **\n\n");
+    printf("Turma: ");
+    scanf("%s",turma);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->turma,turma)==0)
+        {
+            encontrou=1;
+            listar_aluno(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
