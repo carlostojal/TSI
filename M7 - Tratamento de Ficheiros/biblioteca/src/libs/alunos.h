@@ -79,6 +79,18 @@ void listar_aluno(Aluno *aluno)
     printf("Telemovel: %s\n\n",aluno->telemovel);
 }
 
+void limpar_alunos(Aluno *lista)
+{
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+            free(p);
+        else //senão, liberta o seu anterior
+            free(p->ant);
+    }
+}
+
 void pesquisar_aluno_numproc(Aluno *lista)
 {
     int num_proc;
