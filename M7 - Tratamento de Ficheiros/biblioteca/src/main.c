@@ -154,6 +154,11 @@ int main()
                                 carregar_emprestimos(emprestimos);
                                 pesquisar_emprestimo_data_levantamento(emprestimos);
                                 break;
+                            case 5: //Opção 5 (Valor)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                pesquisar_emprestimo_valor(emprestimos);
+                                break;
                         }
                 }
                 break;

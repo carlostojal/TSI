@@ -174,3 +174,23 @@ void pesquisar_emprestimo_data_levantamento(Emprestimo *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_emprestimo_valor(Emprestimo *lista)
+{
+    float valor;
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    printf("\n** Pesquisar Emprestimo por Valor **\n\n");
+    printf("Valor: ");
+    scanf("%f",&valor);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->valor==valor)
+        {
+            encontrou=1;
+            listar_emprestimo(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
