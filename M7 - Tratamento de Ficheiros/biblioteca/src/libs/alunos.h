@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 //#include <conio.h>
 
 void adicionar_aluno()
@@ -92,5 +93,19 @@ void pesquisar_aluno_numproc(Aluno *lista)
             listar_aluno(p);
             break;
         }
+    }
+}
+
+void pesquisar_aluno_nome(Aluno *lista)
+{
+    char nome[30];
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    printf("\n** Pesquisar Aluno por Nome **\n\n");
+    printf("Nome: ");
+    scanf("%s",nome);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->nome,nome)==0)
+            listar_aluno(p);
     }
 }

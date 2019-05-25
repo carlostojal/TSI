@@ -52,6 +52,9 @@ int main()
                             case 1:
                                 pesquisar_aluno_numproc(alunos);
                                 break;
+                            case 2:
+                                pesquisar_aluno_nome(alunos);
+                                break;
                         }
                 }
                 break;
