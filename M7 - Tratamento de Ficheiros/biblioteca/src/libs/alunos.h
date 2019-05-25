@@ -143,7 +143,7 @@ void pesquisar_alunos_ano(Aluno *lista)
 void pesquisar_alunos_turma(Aluno *lista)
 {
     char turma[20];
-    int encontrou;
+    int encontrou=0;
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     printf("\n** Pesquisar Alunos por Turma **\n\n");
     printf("Turma: ");

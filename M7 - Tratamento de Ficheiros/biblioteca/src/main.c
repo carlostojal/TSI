@@ -59,7 +59,7 @@ int main()
                                 pesquisar_alunos_ano(alunos);
                                 break;
                             case 4:
-                                pesquisar_alunos_turma(aluno);
+                                pesquisar_alunos_turma(alunos);
                                 break;
                         }
                 }
