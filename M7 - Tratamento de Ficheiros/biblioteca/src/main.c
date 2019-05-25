@@ -39,6 +39,7 @@ int main()
                         adicionar_aluno();
                         break;
                     case 2: //Opção 2 (Listar Alunos)
+                        limpar_alunos(alunos);
                         carregar_alunos(alunos);
                         Aluno *p = (Aluno*) malloc(sizeof(Aluno));
                         for(p=alunos->prox;p!=NULL;p=p->prox)
