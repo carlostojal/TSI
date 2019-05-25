@@ -15,7 +15,7 @@ int menu()
         printf("1. Alunos\n");
         printf("2. Manuais\n");
         printf("3. Emprestimos\n");
-        printf("4. Listagens\n");
+        printf("4. Pesquisas\n");
         printf("0. Sair\n\n");
         printf("Opcao: ");
         scanf("%d",&opt);
@@ -39,9 +39,48 @@ int submenu(char *tipo)
     return opt;
 }
 
-//Menu das listagens (opção 4 do menu principal)
-int menu_listagens()
+int menu_pesquisas(int tipo)
 {
     int opt;
-
+    if(tipo==1)
+    {
+        do{
+            printf("\n** Pesquisar Alunos**\n\n");
+            printf("1. Numero processo\n");
+            printf("2. Nome\n");
+            printf("3. Ano\n");
+            printf("4. Turma\n");
+            printf("5. Telemovel\n");
+            printf("0. Voltar ao inicio\n\n");
+            printf("Opcao: ");
+            scanf("%d",&opt);
+        }while(opt<0||opt>5);
+    }
+    else if(tipo==2)
+    {
+        do{
+            printf("\n** Pesquisar Manuais**\n\n");
+            printf("1. ISBN\n");
+            printf("2. Titulo\n");
+            printf("3. Disciplina\n");
+            printf("0. Voltar ao inicio\n\n");
+            printf("Opcao: ");
+            scanf("%d",&opt);
+        }while(opt<0||opt>3);
+    }
+    else
+    {
+        do{
+            printf("\n** Emprestimos **\n\n");
+            printf("1. ID do Emprestimo\n");
+            printf("2. ID do Aluno\n");
+            printf("3. ID do Manual\n");
+            printf("4. Data de Levantamento\n");
+            printf("5. Valor\n");
+            printf("0. Voltar ao inicio\n\n");
+            printf("Opcao: ");
+            scanf("%d",&opt);
+        }while(opt<0||opt>5);
+    }
+    return opt;
 }
