@@ -50,30 +50,30 @@ int main()
                         sub_sub_opt = menu_pesquisas(1); //O 1 significa que se refere ao tipo 1 (alunos)
                         switch(sub_sub_opt)
                         {
-                            case 1:
-                                limpar_alunos(alunos);
-                                carregar_alunos(alunos);
-                                pesquisar_aluno_numproc(alunos);
+                            case 1: //Opção 1 (Número de processo)
+                                limpar_alunos(alunos); //Limpa quaisquer elementos existentes
+                                carregar_alunos(alunos); //Carrega os elementos da lista para a RAM
+                                pesquisar_aluno_numproc(alunos); //Procura
                                 break;
-                            case 2:
-                                limpar_alunos(alunos);
-                                carregar_alunos(alunos);
-                                pesquisar_aluno_nome(alunos);
+                            case 2: //Opção 2 (Nome)
+                                limpar_alunos(alunos); //Limpa quaisquer elementos existentes
+                                carregar_alunos(alunos); //Carrega os elementos da lista para a RAM
+                                pesquisar_aluno_nome(alunos); //Procura
                                 break;
-                            case 3:
-                                limpar_alunos(alunos);
-                                carregar_alunos(alunos);
-                                pesquisar_alunos_ano(alunos);
+                            case 3: //Opção 3 (Ano)
+                                limpar_alunos(alunos); //Limpa quaisquer elementos existentes
+                                carregar_alunos(alunos); //Carrega os elementos da lista para a RAM
+                                pesquisar_alunos_ano(alunos); //Procura
                                 break;
-                            case 4:
-                                limpar_alunos(alunos);
-                                carregar_alunos(alunos);
-                                pesquisar_alunos_turma(alunos);
+                            case 4: //Opção 4 (Turma)
+                                limpar_alunos(alunos); //Limpa quaisquer elementos existentes
+                                carregar_alunos(alunos); //Carrega os elementos da lista para a RAM
+                                pesquisar_alunos_turma(alunos); //Procura
                                 break;
-                            case 5:
-                                limpar_alunos(alunos);
-                                carregar_alunos(alunos);
-                                pesquisar_alunos_telemovel(alunos);
+                            case 5: //Opção 5 (Telemóvel)
+                                limpar_alunos(alunos); //Limpa quaisquer elementos existentes
+                                carregar_alunos(alunos); //Carrega os elementos da lista para a RAM
+                                pesquisar_alunos_telemovel(alunos); //Procura
                                 break;
                         }
                 }

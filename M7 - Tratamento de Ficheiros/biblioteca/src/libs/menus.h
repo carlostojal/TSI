@@ -46,7 +46,7 @@ int menu_pesquisas(int tipo)
     {
         do{
             printf("\n** Pesquisar Alunos**\n\n");
-            printf("1. Numero processo\n");
+            printf("1. Numero de processo\n");
             printf("2. Nome\n");
             printf("3. Ano\n");
             printf("4. Turma\n");
