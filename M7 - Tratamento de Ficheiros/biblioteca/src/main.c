@@ -86,8 +86,12 @@ int main()
                         adicionar_manual();
                         break;
                     case 2: //Opção 2 (Listar Manuais)
+                        limpar_manuais(manuais);
                         carregar_manuais(manuais);
-                        listar_manuais(manuais);
+                        Manual *p = (Manual*) malloc(sizeof(Manual));
+                        for(p=manuais->prox;p!=NULL;p=p->prox)
+                            listar_manual(p);
+                        free(p);
                         break;
                 }
                 break;
@@ -106,7 +110,7 @@ int main()
                 break;
         }
     }while(opt); //repete enquanto o operador do menu principal for diferente de 0
-    //Libertação dos headers no fim da execução
+    //Libertação dos headers das listas no fim da execução
     free(alunos);
     free(manuais);
     free(emprestimos);

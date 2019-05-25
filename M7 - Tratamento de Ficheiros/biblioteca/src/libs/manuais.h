@@ -52,22 +52,21 @@ void carregar_manuais(Manual *lista)
     free(p);
 }
 
-void listar_manuais(Manual *lista)
+void listar_manual(Manual *manual)
 {
-    Manual *p = malloc(sizeof(Manual));
-    printf("\n** Listar Manuais **\n\n");
-    if(lista->prox == NULL) //se a lista estiver vazia
+    printf("\nISBN: %s\n",manual->isbn);
+    printf("Titulo: %s\n",manual->titulo);
+    printf("Disciplina: %s\n\n",manual->disciplina);
+}
+
+void limpar_manuais(Manual *lista)
+{
+    Manual *p = (Manual*) malloc(sizeof(Manual));
+    for(p=lista->prox;p!=NULL;p=p->prox)
     {
-        printf("\a");
-        printf("Nao ha manuais para listar!\n");
-    }
-    else
-    {
-        for(p=lista->prox;p!=NULL;p=p->prox)
-        {
-            printf("ISBN: %s\n",p->isbn);
-            printf("Titulo: %s\n",p->titulo);
-            printf("Disciplina: %s\n\n",p->disciplina);
-        }
+        if(p->prox == NULL)
+            free(p);
+        else
+            free(p->ant);
     }
 }
