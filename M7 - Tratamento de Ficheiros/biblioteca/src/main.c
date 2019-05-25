@@ -105,7 +105,12 @@ int main()
                             case 2: //Opção 2 (Título)
                                 limpar_manuais(manuais);
                                 carregar_manuais(manuais);
-                                pesquisar_manual_titulo(manuais);
+                                pesquisar_manuais_titulo(manuais);
+                                break;
+                            case 3: //Opção 3 (Disciplina)
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_manuais_disciplina(manuais);
                                 break;
                         }
                 }

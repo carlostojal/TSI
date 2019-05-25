@@ -82,11 +82,11 @@ void listar_aluno(Aluno *aluno)
 void limpar_alunos(Aluno *lista)
 {
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=lista->prox->prox;p!=NULL;p=p->prox)
     {
         if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
             free(p);
-        else //senão, liberta o seu anterior
+        else//senão, liberta o seu antecessor
             free(p->ant);
     }
 }

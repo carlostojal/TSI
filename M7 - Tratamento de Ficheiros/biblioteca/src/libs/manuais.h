@@ -62,11 +62,11 @@ void listar_manual(Manual *manual)
 void limpar_manuais(Manual *lista)
 {
     Manual *p = (Manual*) malloc(sizeof(Manual));
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=lista->prox->prox;p!=NULL;p=p->prox)
     {
-        if(p->prox == NULL)
+        if(p->prox == NULL) //se é o último da lista, liberta-se a si mesmo
             free(p);
-        else
+        else //senão, liberta o seu antecessor
             free(p->ant);
     }
 }
@@ -92,17 +92,37 @@ void pesquisar_manual_isbn(Manual *lista)
         printf("\nNao foram encontrados resultados.\n");
 }
 
-void pesquisar_manual_titulo(Manual *lista)
+void pesquisar_manuais_titulo(Manual *lista)
 {
     char titulo[20];
     int encontrou=0;
     Manual *p = (Manual*) malloc(sizeof(Manual));
-    printf("\n** Pesquisar Manual por Titulo **\n\n");
+    printf("\n** Pesquisar Manuais por Titulo **\n\n");
     printf("Titulo: ");
     scanf("%s",titulo);
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(strcmp(p->titulo,titulo)==0)
+        {
+            encontrou=1;
+            listar_manual(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
+
+void pesquisar_manuais_disciplina(Manual *lista)
+{
+    char disciplina[20];
+    int encontrou=0;
+    Manual *p = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Manuais por Disciplina **\n\n");
+    printf("Disciplina: ");
+    scanf("%s",disciplina);
+    for(p=lista->prox;lista!=NULL;p=p->prox)
+    {
+        if(strcmp(p->disciplina,disciplina)==0)
         {
             encontrou=1;
             listar_manual(p);
