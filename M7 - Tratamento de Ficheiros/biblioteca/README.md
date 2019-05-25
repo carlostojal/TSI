@@ -11,4 +11,4 @@ Base de dados de banco de manuais local.
     * src/libs: bibliotecas de funções utilizadas na manipulação das listas e dos menus.
 
 ## Instruções de compilação ##
-No diretório src: `gcc -o biblioteca main.c`
+No diretório src: correr o ficheiro build.sh
