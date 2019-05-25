@@ -9,3 +9,6 @@ Base de dados de banco de manuais local.
 * sample-data: dados de amostra para demonstrar os ficheiros manipulados pelo programa
 * src: código fonte
     * src/libs: bibliotecas de funções
+
+## Instruções de compilação ##
+No diretório src: `gcc -o biblioteca main.c`
