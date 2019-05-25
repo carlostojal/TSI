@@ -70,3 +70,24 @@ void limpar_manuais(Manual *lista)
             free(p->ant);
     }
 }
+
+void pesquisar_manual_isbn(Manual *lista)
+{
+    char isbn[20];
+    int encontrou=0;
+    Manual *p = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Manual por ISBN **\n\n");
+    printf("ISBN: ");
+    scanf("%s",isbn);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->isbn,isbn)==0)
+        {
+            encontrou=1;
+            listar_manual(p);
+            break;
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}

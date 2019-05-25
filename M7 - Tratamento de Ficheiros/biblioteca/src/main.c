@@ -35,10 +35,10 @@ int main()
                 sub_opt = submenu("Alunos");
                 switch(sub_opt)
                 {
-                    case 1: //Opção 1 (Adicionar Aluno)
+                    case 1: //Opção 1 (Adicionar)
                         adicionar_aluno();
                         break;
-                    case 2: //Opção 2 (Listar Alunos)
+                    case 2: //Opção 2 (Listar)
                         limpar_alunos(alunos);
                         carregar_alunos(alunos);
                         Aluno *p = (Aluno*) malloc(sizeof(Aluno));
@@ -82,10 +82,10 @@ int main()
                 sub_opt = submenu("Manuais");
                 switch(sub_opt)
                 {
-                    case 1: //Opção 1 (Adicionar Manual)
+                    case 1: //Opção 1 (Adicionar)
                         adicionar_manual();
                         break;
-                    case 2: //Opção 2 (Listar Manuais)
+                    case 2: //Opção 2 (Listar)
                         limpar_manuais(manuais);
                         carregar_manuais(manuais);
                         Manual *p = (Manual*) malloc(sizeof(Manual));
@@ -93,6 +93,16 @@ int main()
                             listar_manual(p);
                         free(p);
                         break;
+                    case 3: //Opção 3 (Pesquisar)
+                        sub_sub_opt = menu_pesquisas(2);
+                        switch(sub_sub_opt)
+                        {
+                            case 1: //Opção 1 (ISBN)
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_manual_isbn(manuais);
+                                break;
+                        }
                 }
                 break;
             case 3: //Opção 3 (Empréstimos)
