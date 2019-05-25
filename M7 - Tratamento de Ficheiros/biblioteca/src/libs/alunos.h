@@ -109,3 +109,17 @@ void pesquisar_aluno_nome(Aluno *lista)
             listar_aluno(p);
     }
 }
+
+void pesquisar_alunos_ano(Aluno *lista)
+{
+    int ano;
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    printf("\n** Pesquisar Alunos por Ano **\n\n");
+    printf("Ano: ");
+    scanf("%d",&ano);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->ano==ano)
+            listar_aluno(p);
+    }
+}
