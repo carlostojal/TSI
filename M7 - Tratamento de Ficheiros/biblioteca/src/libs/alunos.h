@@ -82,6 +82,7 @@ void listar_aluno(Aluno *aluno)
 void pesquisar_aluno_numproc(Aluno *lista)
 {
     int num_proc;
+    int encontrou=0;
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     printf("\n** Pesquisar Aluno por Num Processo **\n\n");
     printf("Numero de processo: ");
@@ -90,15 +91,19 @@ void pesquisar_aluno_numproc(Aluno *lista)
     {
         if(p->num_proc==num_proc)
         {
+            encontrou=1;
             listar_aluno(p);
             break;
         }
     }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
 }
 
 void pesquisar_aluno_nome(Aluno *lista)
 {
     char nome[30];
+    int encontrou=0;
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     printf("\n** Pesquisar Aluno por Nome **\n\n");
     printf("Nome: ");
@@ -106,13 +111,19 @@ void pesquisar_aluno_nome(Aluno *lista)
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(strcmp(p->nome,nome)==0)
+        {
+            encontrou=1;
             listar_aluno(p);
+        }
     }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
 }
 
 void pesquisar_alunos_ano(Aluno *lista)
 {
     int ano;
+    int encontrou=0;
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     printf("\n** Pesquisar Alunos por Ano **\n\n");
     printf("Ano: ");
@@ -120,6 +131,11 @@ void pesquisar_alunos_ano(Aluno *lista)
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(p->ano==ano)
+        {
+            encontrou=1;
             listar_aluno(p);
+        }
     }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
 }
