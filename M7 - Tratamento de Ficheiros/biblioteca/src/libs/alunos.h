@@ -159,3 +159,23 @@ void pesquisar_alunos_turma(Aluno *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_alunos_telemovel(Aluno *lista)
+{
+    char telemovel[20];
+    int encontrou=0;
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    printf("\n** Pesquisar Alunos por Telemovel **\n\n");
+    printf("Telemovel: ");
+    scanf("%s",telemovel);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->telemovel,telemovel)==0)
+        {
+            encontrou=1;
+            listar_aluno(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}

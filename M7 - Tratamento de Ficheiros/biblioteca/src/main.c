@@ -61,6 +61,9 @@ int main()
                             case 4:
                                 pesquisar_alunos_turma(alunos);
                                 break;
+                            case 5:
+                                pesquisar_alunos_telemovel(alunos);
+                                break;
                         }
                 }
                 break;
