@@ -69,26 +69,28 @@ void carregar_alunos(Aluno *lista)
     free(p);
 }
 
-void listar_alunos(Aluno *lista)
+void listar_aluno(Aluno *aluno)
 {
-    Aluno *p = malloc(sizeof(Aluno));
-    printf("\n** Listar Alunos **\n\n");
-    if(!p)
-        printf("Ocorreu um erro de memória.\n");
-    else
+    printf("\nNumero de processo: %d\n",aluno->num_proc);
+    printf("Nome: %s\n",aluno->nome);
+    printf("Ano: %d\n",aluno->ano);
+    printf("Turma: %s\n",aluno->turma);
+    printf("Telemovel: %s\n\n",aluno->telemovel);
+}
+
+void pesquisar_aluno_numproc(Aluno *lista)
+{
+    int num_proc;
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    printf("\n** Pesquisar Aluno por Num Processo **\n\n");
+    printf("Numero de processo: ");
+    scanf("%d",&num_proc);
+    for(p=lista->prox;p!=NULL;p=p->prox)
     {
-        if(lista->prox == NULL)
+        if(p->num_proc==num_proc)
         {
-            printf("\a");
-            printf("Nao ha alunos para listar!\n");
-        }
-        for(p=lista->prox;p!=NULL;p=p->prox)
-        {
-            printf("Numero de processo: %d\n",p->num_proc);
-            printf("Nome: %s\n",p->nome);
-            printf("Ano: %d\n",p->ano);
-            printf("Turma: %s\n",p->turma);
-            printf("Telemovel: %s\n\n",p->telemovel);
+            listar_aluno(p);
+            break;
         }
     }
 }

@@ -26,7 +26,7 @@ int main()
     manuais->ant = NULL;
     emprestimos->prox = NULL;
     emprestimos->ant = NULL;
-    int opt,sub_opt;
+    int opt,sub_opt,sub_sub_opt;
     do{
         opt = menu();
         switch(opt)
@@ -40,8 +40,18 @@ int main()
                         break;
                     case 2: //Opção 2 (Listar Alunos)
                         carregar_alunos(alunos);
-                        listar_alunos(alunos);
+                        Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+                        for(p=alunos->prox;p!=NULL;p=p->prox)
+                            listar_aluno(p);
                         break;
+                    case 3: //Opção 3 (Pesquisar)
+                        sub_sub_opt = menu_pesquisas(1); //O 1 significa que se refere ao tipo 1 (alunos)
+                        switch(sub_sub_opt)
+                        {
+                            case 1:
+                                pesquisar_aluno_numproc(alunos);
+                                break;
+                        }
                 }
                 break;
             case 2: //Opção 2 (Manuais)
