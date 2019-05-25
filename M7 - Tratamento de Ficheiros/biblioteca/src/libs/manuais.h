@@ -1,5 +1,6 @@
 //Carlos Tojal, nº5, 1ºTSI
 //https://www.github.com/carlostojal/TSI/tree/master/M7 - Tratamento de Ficheiros/biblioteca/src/libs/manuais.h
+//biblioteca/src/libs/manuais.h
 
 //Contém as funções de gestão dos manuais
 
@@ -33,12 +34,12 @@ void carregar_manuais(Manual *lista)
         novo->prox = NULL;
         novo->ant = NULL;
         fscanf(fp,"%s %s %s",novo->isbn,novo->titulo,novo->disciplina);
-        if(lista->prox == NULL)
+        if(lista->prox == NULL) //se a lista estiver vazia
         {
             novo->ant = lista;
             lista->prox = novo;
         }
-        else
+        else //se a lista já tiver elementos
         {
             p=lista;
             while(p->prox!=NULL)
@@ -55,15 +56,18 @@ void listar_manuais(Manual *lista)
 {
     Manual *p = malloc(sizeof(Manual));
     printf("\n** Listar Manuais **\n\n");
-    if(lista->prox == NULL)
+    if(lista->prox == NULL) //se a lista estiver vazia
     {
         printf("\a");
         printf("Nao ha manuais para listar!\n");
     }
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    else
     {
-        printf("ISBN: %s\n",p->isbn);
-        printf("Titulo: %s\n",p->titulo);
-        printf("Disciplina: %s\n\n",p->disciplina);
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            printf("ISBN: %s\n",p->isbn);
+            printf("Titulo: %s\n",p->titulo);
+            printf("Disciplina: %s\n\n",p->disciplina);
+        }
     }
 }

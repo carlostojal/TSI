@@ -1,5 +1,6 @@
 //Carlos Tojal, nº5, 1ºTSI
 //https://www.github.com/carlostojal/TSI/tree/master/M7 - Tratamento de Ficheiros/biblioteca/src/libs/estruturas.h
+//biblioteca/src/libs/estruturas.h
 
 //Contém as estruturas de dados do programa
 

@@ -1,5 +1,6 @@
 //Carlos Tojal, nº5, 1ºTSI
 //https://www.github.com/carlostojal/TSI/tree/master/M7 - Tratamento de Ficheiros/biblioteca/src/main.c
+//biblioteca/src/main.c
 
 //Contém o código principal
 
@@ -14,9 +15,11 @@
 
 int main()
 {
+    //Declaração dos headers das listas
     Aluno *alunos = (Aluno*) malloc(sizeof(Aluno));
     Manual *manuais = (Manual*) malloc(sizeof(Manual));
     Emprestimo *emprestimos = (Emprestimo*) malloc(sizeof(Emprestimo));
+    //Inicialização dos headers das listas
     alunos->prox = NULL;
     alunos->ant = NULL;
     manuais->prox = NULL;
@@ -28,47 +31,48 @@ int main()
         opt = menu();
         switch(opt)
         {
-            case 1:
-                sub_opt = menu_alunos();
+            case 1: //Opção 1 (Alunos)
+                sub_opt = submenu("Alunos");
                 switch(sub_opt)
                 {
-                    case 1:
+                    case 1: //Opção 1 (Adicionar Aluno)
                         adicionar_aluno();
                         break;
-                    case 2:
+                    case 2: //Opção 2 (Listar Alunos)
                         carregar_alunos(alunos);
                         listar_alunos(alunos);
                         break;
                 }
                 break;
-            case 2:
-                sub_opt = menu_manuais();
+            case 2: //Opção 2 (Manuais)
+                sub_opt = submenu("Manuais");
                 switch(sub_opt)
                 {
-                    case 1:
+                    case 1: //Opção 1 (Adicionar Manual)
                         adicionar_manual();
                         break;
-                    case 2:
+                    case 2: //Opção 2 (Listar Manuais)
                         carregar_manuais(manuais);
                         listar_manuais(manuais);
                         break;
                 }
                 break;
-            case 3:
-                sub_opt = menu_emprestimos();
+            case 3: //Opção 3 (Empréstimos)
+                sub_opt = submenu("Emprestimos");
                 switch(sub_opt)
                 {
-                    case 1:
+                    case 1: //Opção 1 (Adicionar empréstimo)
                         adicionar_emprestimo();
                         break;
-                    case 2:
+                    case 2: //Opção 2 (Listar Empréstimos)
                         carregar_emprestimos(emprestimos);
                         listar_emprestimos(emprestimos);
                         break;
                 }
                 break;
         }
-    }while(opt);
+    }while(opt); //repete enquanto o operador do menu principal for diferente de 0
+    //Libertação dos headers no fim da execução
     free(alunos);
     free(manuais);
     free(emprestimos);
