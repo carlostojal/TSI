@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void adicionar_emprestimo()
 {
@@ -123,6 +124,27 @@ void pesquisar_emprestimo_id_aluno(Emprestimo *lista)
     for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(p->id_aluno==id_aluno)
+        {
+            encontrou=1;
+            listar_emprestimo(p);
+            break;
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
+
+void pesquisar_emprestimo_id_manual(Emprestimo *lista)
+{
+    char id_manual[20];
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    printf("\n** Pesquisar Emprestimo por ID do Manual **\n\n");
+    printf("ID do Manual: ");
+    scanf("%s",id_manual);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->id_manual,id_manual)==0)
         {
             encontrou=1;
             listar_emprestimo(p);
