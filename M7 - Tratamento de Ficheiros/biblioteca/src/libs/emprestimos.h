@@ -154,3 +154,23 @@ void pesquisar_emprestimo_id_manual(Emprestimo *lista)
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
+
+void pesquisar_emprestimo_data_levantamento(Emprestimo *lista)
+{
+    Data data_levantamento;
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    printf("\n** Pesquisar Emprestimo por Data de Levantamento **\n\n");
+    printf("Data de levantamento (dd-mm-aaaa): ");
+    scanf("%d-%d-%d",&data_levantamento.dia,&data_levantamento.mes,&data_levantamento.ano);
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->data_levantamento.dia==data_levantamento.dia&&p->data_levantamento.mes==data_levantamento.mes&&p->data_levantamento.ano==data_levantamento.ano)
+        {
+            encontrou=1;
+            listar_emprestimo(p);
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
