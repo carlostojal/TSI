@@ -44,27 +44,32 @@ void carregar_alunos(Aluno *lista)
         printf("Ocorreu um erro de memória.\n");
     else
     {
-        while(!feof(fp))
+        if(fp) //se o ficheiro existe
         {
-            novo->prox = NULL;
-            novo->ant = NULL;
-            fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
-            printf("Lido: %s",novo->nome);
-            scanf("%d",&num);
-            if(lista->prox == NULL)
+            while(!feof(fp))
             {
-                novo->ant = lista;
-                lista->prox = novo;
-            }
-            else
-            {
-                p=lista;
-                while(p->prox!=NULL)
-                    p=p->prox;
-                novo->ant = p;
-                p->prox = novo;
+                novo->prox = NULL;
+                novo->ant = NULL;
+                fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
+                printf("Lido: %s",novo->nome);
+                scanf("%d",&num);
+                if(lista->prox == NULL)
+                {
+                    novo->ant = lista;
+                    lista->prox = novo;
+                }
+                else
+                {
+                    p=lista;
+                    while(p->prox!=NULL)
+                        p=p->prox;
+                    novo->ant = p;
+                    p->prox = novo;
+                }
             }
         }
+        else //se o ficheiro não existe (nunca foram registados alunos)
+            printf("\nNunca foram registados alunos.\n");
     }
     fclose(fp);
     free(p);
