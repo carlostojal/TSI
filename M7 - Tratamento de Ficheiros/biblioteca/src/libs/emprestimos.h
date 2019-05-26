@@ -37,7 +37,7 @@ void adicionar_emprestimo()
 void carregar_emprestimos(Emprestimo *lista)
 {
     Emprestimo *p = malloc(sizeof(Emprestimo));
-    FILE *fp = fopen("manuais.dat","r");
+    FILE *fp = fopen("emprestimos.dat","r");
     if(!p)
         printf("Ocorreu um erro de memoria.\n");
     else
