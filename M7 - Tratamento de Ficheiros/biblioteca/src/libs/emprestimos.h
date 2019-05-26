@@ -42,26 +42,31 @@ void carregar_emprestimos(Emprestimo *lista)
         printf("Ocorreu um erro de memoria.\n");
     else
     {
-        while(!feof(fp))
+        if(fp) //se o ficheiro existe
         {
-            Emprestimo *novo = malloc(sizeof(Manual));
-            novo->prox = NULL;
-            novo->ant = NULL;
-            fscanf(fp,"%d %d %s %d-%d-%d %f",&novo->id,&novo->id_aluno,novo->id_manual,&novo->data_levantamento.dia,&novo->data_levantamento.mes,&novo->data_levantamento.ano,&novo->valor);
-            if(lista->prox == NULL)
+            while(!feof(fp))
             {
-                novo->ant = lista;
-                lista->prox = novo;
-            }
-            else
-            {
-                p=lista;
-                while(p->prox!=NULL)
-                    p=p->prox;
-                novo->ant = p;
-                p->prox = novo;
+                Emprestimo *novo = malloc(sizeof(Manual));
+                novo->prox = NULL;
+                novo->ant = NULL;
+                fscanf(fp,"%d %d %s %d-%d-%d %f",&novo->id,&novo->id_aluno,novo->id_manual,&novo->data_levantamento.dia,&novo->data_levantamento.mes,&novo->data_levantamento.ano,&novo->valor);
+                if(lista->prox == NULL)
+                {
+                    novo->ant = lista;
+                    lista->prox = novo;
+                }
+                else
+                {
+                    p=lista;
+                    while(p->prox!=NULL)
+                        p=p->prox;
+                    novo->ant = p;
+                    p->prox = novo;
+                }
             }
         }
+        else //se o ficheiro não existe (nunca foram registados empréstimos)
+            printf("\nNunca foram registados empréstimos.\n");
     }
     fclose(fp);
     free(p);
