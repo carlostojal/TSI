@@ -73,17 +73,25 @@ void listar_manual(Manual *manual)
 void limpar_manuais(Manual *lista)
 {
     Manual *p = (Manual*) malloc(sizeof(Manual));
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    if(!p)
+        printf("\nOcorreu um erro de memoria.\n");
+    else
     {
-        if(p->prox == NULL) //se é o último da lista, liberta-se a si mesmo
+        if(lista->prox!=NULL)
         {
-            free(p);
-            break;
+            for(p=lista->prox;p!=NULL;p=p->prox)
+            {
+                if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+                {
+                    free(p);
+                    break;
+                }
+                else if(p->ant!=lista) //senão, liberta o seu antecessor
+                    free(p->ant);
+            }
+            lista->prox = NULL;
         }
-        else if(p->ant!=lista) //senão, liberta o seu antecessor
-            free(p->ant);
     }
-    lista->prox = NULL;
 }
 
 void pesquisar_manual_isbn(Manual *lista)

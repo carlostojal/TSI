@@ -42,8 +42,11 @@ int main()
                         limpar_alunos(alunos);
                         carregar_alunos(alunos);
                         Aluno *p = (Aluno*) malloc(sizeof(Aluno));
-                        for(p=alunos->prox;p!=NULL;p=p->prox)
-                            listar_aluno(p);
+                        if(alunos->prox!=NULL)
+                        {
+                            for(p=alunos->prox;p!=NULL;p=p->prox)
+                                listar_aluno(p);
+                        }
                         free(p);
                         break;
                     case 3: //Opção 3 (Pesquisar)
@@ -89,8 +92,13 @@ int main()
                         limpar_manuais(manuais);
                         carregar_manuais(manuais);
                         Manual *p = (Manual*) malloc(sizeof(Manual));
-                        for(p=manuais->prox;p!=NULL;p=p->prox)
-                            listar_manual(p);
+                        if(manuais->prox==NULL)
+                            printf("\nNunca foram adicionados manuais.\n");
+                        else
+                        {
+                            for(p=manuais->prox;p!=NULL;p=p->prox)
+                                listar_manual(p);
+                        }
                         free(p);
                         break;
                     case 3: //Opção 3 (Pesquisar)

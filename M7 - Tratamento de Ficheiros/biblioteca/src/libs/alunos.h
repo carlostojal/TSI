@@ -97,17 +97,20 @@ void limpar_alunos(Aluno *lista)
         printf("\nOcorreu um erro de memoria.\n");
     else
     {
-        for(p=lista->prox;p!=NULL;p=p->prox)
+        if(lista->prox!=NULL)
         {
-            if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+            for(p=lista->prox;p!=NULL;p=p->prox)
             {
-                free(p);
-                break;
+                if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+                {
+                    free(p);
+                    break;
+                }
+                else if(p->ant!=lista) //senão, liberta o seu antecessor
+                    free(p->ant);
             }
-            else if(p->ant!=lista) //senão, liberta o seu antecessor
-                free(p->ant);
+            lista->prox = NULL;
         }
-        lista->prox = NULL;
     }
 }
 
