@@ -165,8 +165,11 @@ int main()
         }
     }while(opt); //repete enquanto o operador do menu principal for diferente de 0
     //Libertação dos headers das listas no fim da execução
+    limpar_alunos(alunos);
     free(alunos);
+    limpar_manuais(manuais);
     free(manuais);
+    limpar_emprestimos(emprestimos);
     free(emprestimos);
     return 0;
 }
