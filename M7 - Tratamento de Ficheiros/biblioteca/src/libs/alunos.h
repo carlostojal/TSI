@@ -37,34 +37,39 @@ void adicionar_aluno()
 void carregar_alunos(Aluno *lista)
 {
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
-    Aluno *novo = (Aluno*) malloc(sizeof(Aluno));
     FILE *fp = fopen("alunos.dat","r");
     int num;
-    if(!p||!novo)
-        printf("Ocorreu um erro de memória.\n");
+    if(!p)
+        printf("Ocorreu um erro de memoria.\n");
     else
     {
         if(fp) //se o ficheiro existe
         {
             while(!feof(fp))
             {
-                novo->prox = NULL;
-                novo->ant = NULL;
-                fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
-                printf("Lido: %s",novo->nome);
-                scanf("%d",&num);
-                if(lista->prox == NULL)
-                {
-                    novo->ant = lista;
-                    lista->prox = novo;
-                }
+                Aluno *novo = (Aluno*) malloc(sizeof(Aluno));
+                if(!novo)
+                    printf("\nOcorreu um erro de memoria.\n");
                 else
                 {
-                    p=lista;
-                    while(p->prox!=NULL)
-                        p=p->prox;
-                    novo->ant = p;
-                    p->prox = novo;
+                    novo->prox = NULL;
+                    novo->ant = NULL;
+                    fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
+                    printf("Lido: %s",novo->nome);
+                    scanf("%d",&num);
+                    if(lista->prox == NULL)
+                    {
+                        novo->ant = lista;
+                        lista->prox = novo;
+                    }
+                    else
+                    {
+                        p=lista;
+                        while(p->prox!=NULL)
+                            p=p->prox;
+                        novo->ant = p;
+                        p->prox = novo;
+                    }
                 }
             }
         }
@@ -87,17 +92,22 @@ void listar_aluno(Aluno *aluno)
 void limpar_alunos(Aluno *lista)
 {
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
-    for(p=lista->prox->prox;p!=NULL;p=p->prox)
+    if(!p)
+        printf("\nOcorreu um erro de memoria.\n");
+    else
     {
-        if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+        for(p=lista->prox;p!=NULL;p=p->prox)
         {
-            free(p);
-            break;
+            if(p->prox == NULL) //se é o último elemento da lista, liberta-se a si próprio
+            {
+                free(p);
+                break;
+            }
+            else if(p->ant!=lista) //senão, liberta o seu antecessor
+                free(p->ant);
         }
-        else//senão, liberta o seu antecessor
-            free(p->ant);
+        lista->prox = NULL;
     }
-    lista->prox = NULL;
 }
 
 void pesquisar_aluno_numproc(Aluno *lista)
