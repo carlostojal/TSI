@@ -73,14 +73,14 @@ void listar_manual(Manual *manual)
 void limpar_manuais(Manual *lista)
 {
     Manual *p = (Manual*) malloc(sizeof(Manual));
-    for(p=lista->prox->prox;p!=NULL;p=p->prox)
+    for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(p->prox == NULL) //se é o último da lista, liberta-se a si mesmo
         {
             free(p);
             break;
         }
-        else //senão, liberta o seu antecessor
+        else if(p->ant!=lista) //senão, liberta o seu antecessor
             free(p->ant);
     }
     lista->prox = NULL;

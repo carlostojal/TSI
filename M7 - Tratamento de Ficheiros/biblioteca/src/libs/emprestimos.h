@@ -84,14 +84,14 @@ void listar_emprestimo(Emprestimo *emprestimo)
 void limpar_emprestimos(Emprestimo *lista)
 {
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
-    for(p=lista->prox->prox;p!=NULL;p=p->prox)
+    for(p=lista->prox;p!=NULL;p=p->prox)
     {
         if(p->prox==NULL) //se o elemento é o último da lista, liberta-se a si próprio
         {
             free(p);
             break;
         }
-        else //senão, liberta o seu antecessor
+        else if(p->ant!=lista) //senão, liberta o seu antecessor
             free(p->ant);
     }
     lista->prox = NULL;
