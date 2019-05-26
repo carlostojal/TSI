@@ -8,7 +8,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-void adicionar_emprestimo()
+int adquirir_id(Emprestimo *lista)
+{
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    for(p=lista;p!=NULL;p=p->prox)
+        fscanf("%d %d %s %d-%d-%d",&p->id,&p->id_aluno,p->id_manual,&p->data_levantamento.dia,&p->data_levantamento.mes,&p->data_levantamento.ano);
+    return p->id+1;
+}
+
+void adicionar_emprestimo(Emprestimo *lista)
 {
     FILE *fp;
     Emprestimo *novo = malloc(sizeof(Manual));
@@ -17,8 +25,7 @@ void adicionar_emprestimo()
         printf("Ocorreu um erro de memoria.\n");
     else
     {
-        printf("ID: ");
-        scanf("%d",&novo->id);
+        novo->id = adquirir_id(lista);
         printf("ID do Aluno: ");
         scanf("%d",&novo->id_aluno);
         printf("ID do Manual: ");
