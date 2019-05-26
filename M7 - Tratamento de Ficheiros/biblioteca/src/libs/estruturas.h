@@ -13,7 +13,7 @@ typedef struct Datas {
 } Data;
 
 typedef struct Alunos {
-    int num_proc;
+    int num_proc; //chave primária
     char nome[30];
     int ano;
     char turma[20];
@@ -23,7 +23,7 @@ typedef struct Alunos {
 } Aluno;
 
 typedef struct Manuais {
-    char isbn[20];
+    char isbn[20]; //chave primária
     char titulo[20];
     char disciplina[20];
     struct Manuais *prox;
@@ -31,9 +31,9 @@ typedef struct Manuais {
 } Manual;
 
 typedef struct Emprestimos {
-    int id;
-    int id_aluno;
-    char id_manual[20];
+    int id; //este
+    int id_aluno; //+ este
+    char id_manual[20]; //+ este = chave primária
     Data data_levantamento;
     float valor;
     struct Emprestimos *prox;

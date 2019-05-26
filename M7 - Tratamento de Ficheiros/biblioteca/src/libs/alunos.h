@@ -9,13 +9,13 @@
 #include <string.h>
 //#include <conio.h>
 
-int verificar_aluno(int num_proc,Aluno *lista)
+int verificar_aluno(Aluno novo,Aluno *lista)
 {
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     int existe=0;
     for(p=lista;p!=NULL;p=p->prox)
     {
-        if(p->num_proc==num_proc)
+        if(p->num_proc==novo->num_proc)
             existe=1;
     }
     return existe;
@@ -41,7 +41,7 @@ void adicionar_aluno(Aluno *lista)
         scanf("%s",novo->turma);
         printf("Telemovel: ");
         scanf("%s",novo->telemovel);
-        existe=verificar_aluno(novo->num_proc,lista);
+        existe=verificar_aluno(novo,lista);
         if(!existe)
         {
             fp = fopen("alunos.dat","a");
