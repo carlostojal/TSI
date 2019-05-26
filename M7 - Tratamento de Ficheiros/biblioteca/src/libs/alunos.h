@@ -9,7 +9,7 @@
 #include <string.h>
 //#include <conio.h>
 
-int verificar_aluno(Aluno novo,Aluno *lista)
+int verificar_aluno(Aluno *novo,Aluno *lista)
 {
     Aluno *p = (Aluno*) malloc(sizeof(Aluno));
     int existe=0;
@@ -51,6 +51,7 @@ void adicionar_aluno(Aluno *lista)
         else
             printf("\nJa foi registado um aluno com o numero de processo %d.\n",novo->num_proc);
     }
+    free(novo);
 }
 
 void carregar_alunos(Aluno *lista)

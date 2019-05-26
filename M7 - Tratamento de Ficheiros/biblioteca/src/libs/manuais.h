@@ -8,10 +8,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-void adicionar_manual()
+int verificar_manual(Manual *novo,Manual *lista)
+{
+    Manual *p = (Manual*) malloc(sizeof(Manual));
+    int existe=0;
+    for(p=lista;p!=NULL;p=p->prox)
+    {
+        if(strcmp(p->isbn,novo->isbn)==0)
+        {
+            existe=1;
+            break;
+        }
+    }
+    return existe;
+}
+
+void adicionar_manual(Manual *lista)
 {
     FILE *fp;
     Manual *novo = malloc(sizeof(Manual));
+    int existe;
     printf("\n** Adicionar Manual**\n\n");
     printf("ISBN: ");
     scanf("%s",novo->isbn);
@@ -19,9 +35,15 @@ void adicionar_manual()
     scanf("%s",novo->titulo);
     printf("Disciplina: ");
     scanf("%s",novo->disciplina);
-    fp = fopen("manuais.dat","a");
-    fprintf(fp,"%s %s %s\n",novo->isbn,novo->titulo,novo->disciplina);
-    fclose(fp);
+    existe=verificar_manual(novo,lista);
+    if(!existe)
+    {
+        fp = fopen("manuais.dat","a");
+        fprintf(fp,"%s %s %s\n",novo->isbn,novo->titulo,novo->disciplina);
+        fclose(fp);
+    }
+    else
+        printf("\nJa foi registado um manual com o ISBN %s.\n",novo->isbn);
     free(novo);
 }
 

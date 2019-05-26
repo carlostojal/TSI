@@ -88,7 +88,9 @@ int main()
                 switch(sub_opt)
                 {
                     case 1: //Opção 1 (Adicionar)
-                        adicionar_manual();
+                        limpar_manuais(manuais);
+                        carregar_manuais(manuais);
+                        adicionar_manual(manuais);
                         break;
                     case 2: //Opção 2 (Listar)
                         limpar_manuais(manuais);
