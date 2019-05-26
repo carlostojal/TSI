@@ -27,27 +27,37 @@ void adicionar_manual()
 
 void carregar_manuais(Manual *lista)
 {
-    Manual *p = malloc(sizeof(Manual));
+    Manual *p = (Manual*) malloc(sizeof(Manual));
     FILE *fp = fopen("manuais.dat","r");
-    while(!feof(fp))
+    if(!p)
+        printf("\nOcorreu um erro de memoria.\n");
+    else
     {
-        Manual *novo = malloc(sizeof(Manual));
-        novo->prox = NULL;
-        novo->ant = NULL;
-        fscanf(fp,"%s %s %s",novo->isbn,novo->titulo,novo->disciplina);
-        if(lista->prox == NULL) //se a lista estiver vazia
+        if(fp) //se o ficheiro existe
         {
-            novo->ant = lista;
-            lista->prox = novo;
+            while(!feof(fp))
+            {
+                Manual *novo = malloc(sizeof(Manual));
+                novo->prox = NULL;
+                novo->ant = NULL;
+                fscanf(fp,"%s %s %s",novo->isbn,novo->titulo,novo->disciplina);
+                if(lista->prox == NULL) //se a lista estiver vazia
+                {
+                    novo->ant = lista;
+                    lista->prox = novo;
+                }
+                else //se a lista já tiver elementos
+                {
+                    p=lista;
+                    while(p->prox!=NULL)
+                        p=p->prox;
+                    novo->ant = p;
+                    p->prox = novo;
+                }
+            }
         }
-        else //se a lista já tiver elementos
-        {
-            p=lista;
-            while(p->prox!=NULL)
-                p=p->prox;
-            novo->ant = p;
-            p->prox = novo;
-        }
+        else //se o ficheiro existe (nunca foram registados manuais)
+            printf("\nNunca foram registados manuais.\n");
     }
     fclose(fp);
     free(p);
