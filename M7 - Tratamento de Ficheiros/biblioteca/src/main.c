@@ -36,7 +36,9 @@ int main()
                 switch(sub_opt)
                 {
                     case 1: //Opção 1 (Adicionar)
-                        adicionar_aluno();
+                        limpar_alunos(alunos);
+                        carregar_alunos(alunos);
+                        adicionar_aluno(alunos);
                         break;
                     case 2: //Opção 2 (Listar)
                         limpar_alunos(alunos);

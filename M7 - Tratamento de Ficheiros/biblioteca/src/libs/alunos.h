@@ -9,10 +9,23 @@
 #include <string.h>
 //#include <conio.h>
 
-void adicionar_aluno()
+int verificar_aluno(int num_proc,Aluno *lista)
+{
+    Aluno *p = (Aluno*) malloc(sizeof(Aluno));
+    int existe=0;
+    for(p=lista;p!=NULL;p=p->prox)
+    {
+        if(p->num_proc==num_proc)
+            existe=1;
+    }
+    return existe;
+}
+
+void adicionar_aluno(Aluno *lista)
 {
     FILE *fp;
     Aluno *novo = malloc(sizeof(Aluno));
+    int existe;
     printf("\n** Adicionar Aluno **\n\n");
     if(!novo)
         printf("Ocorreu um erro de memória.\n");
@@ -28,9 +41,15 @@ void adicionar_aluno()
         scanf("%s",novo->turma);
         printf("Telemovel: ");
         scanf("%s",novo->telemovel);
-        fp = fopen("alunos.dat","a");
-        fprintf(fp,"%d %s %d %s %s\n",novo->num_proc,novo->nome,novo->ano,novo->turma,novo->telemovel);
-        fclose(fp);
+        existe=verificar_aluno(novo->num_proc,lista);
+        if(!existe)
+        {
+            fp = fopen("alunos.dat","a");
+            fprintf(fp,"%d %s %d %s %s\n",novo->num_proc,novo->nome,novo->ano,novo->turma,novo->telemovel);
+            fclose(fp);
+        }
+        else
+            printf("\nJa foi registado um aluno com o numero de processo %d.\n",novo->num_proc);
     }
 }
 
