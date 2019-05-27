@@ -1,0 +1,114 @@
+//Carlos Tojal, nº5, 1ºTSI
+
+//Bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Estruturas de Dados
+typedef struct Tlm {
+    int Numero;
+    char Marca[20];
+    char Modelo[20];
+    char SO[20];
+    char Tamanho[20];
+    int Bateria;
+}Tlm;
+
+int menu();
+void new_tlm(Tlm *novo);
+void show_tlm(Tlm tlm);
+
+int main()
+{
+    Tlm stock[1000];
+    Tlm pesquisa;
+    int opt;
+    int x=0;
+    int i;
+
+    FILE *fp = fopen("stock.csv","r");
+    while(!feof(fp)&&x<1000)
+    {
+        fscanf(fp,"%d %s %s %s %s %d",&stock[x].Numero,stock[x].Marca,stock[x].Modelo,stock[x].SO,stock[x].Tamanho,&stock[x].Bateria);
+        x++;
+    }
+    fclose(fp);
+
+    do{
+        opt=menu();
+        switch(opt)
+        {
+            case 1:
+                new_tlm(&stock[x-1]);
+                fp = fopen("stock.csv","w");
+                for(i=0;i<x;i++)
+                    fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
+                fclose(fp);
+                x++;
+                break;
+            case 2:
+                printf("\n** Listar Telemoveis por Marca **\n\n");
+                printf("Marca: ");
+                scanf("%s",pesquisa.Marca);
+                for(i=0;i<x;i++)
+                {
+                    if(strcmp(stock[i].Marca,pesquisa.Marca)==0)
+                        show_tlm(stock[i]);
+                }
+                break;
+            case 4:
+                printf("\n** Listar Telemoveis com Bateria Superior a... **\n\n");
+                printf("Bateria: ");
+                scanf("%d",&pesquisa.Bateria);
+                for(i=0;i<x;i++)
+                {
+                    if(stock[i].Bateria>pesquisa.Bateria)
+                        show_tlm(stock[i]);
+                }
+                break;
+        }
+    }while(opt);
+    return 0;
+}
+
+int menu()
+{
+    int opt;
+    do{
+        printf("\n** Telemoveis **\n\n");
+        printf("1. Adicionar Telemovel\n");
+        printf("2. Listar Telemoveis por Marca\n");
+        printf("4. Listar Telemoveis com Bateria Superior a...\n");
+        printf("0. Terminar o programa\n\n");
+        printf("Opcao: ");
+        scanf("%d",&opt);
+    }while(opt<0||opt>4);
+    return opt;
+}
+
+void new_tlm(Tlm *novo)
+{
+    printf("\n** Adicionar Telemovel **\n\n");
+    printf("Numero: ");
+    scanf("%d",&novo->Numero);
+    printf("Marca: ");
+    scanf("%s",novo->Marca);
+    printf("Modelo: ");
+    scanf("%s",novo->Modelo);
+    printf("SO: ");
+    scanf("%s",novo->SO);
+    printf("Tamanho: ");
+    scanf("%s",novo->Tamanho);
+    printf("Bateria: ");
+    scanf("%d",&novo->Bateria);
+}
+
+void show_tlm(Tlm tlm)
+{
+    printf("\nNumero: %d\n",tlm.Numero);
+    printf("Marca: %s\n",tlm.Marca);
+    printf("Modelo: %s\n",tlm.Modelo);
+    printf("SO: %s\n",tlm.SO);
+    printf("Bateria: %d mAh\n",tlm.Bateria);
+}
