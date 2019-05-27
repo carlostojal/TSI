@@ -21,14 +21,14 @@ void show_tlm(Tlm tlm);
 
 int main()
 {
-    Tlm stock[1000];
-    Tlm pesquisa;
-    int opt;
-    int x=0;
-    int i;
+    Tlm stock[1000]; //Vetor de stock
+    Tlm pesquisa; //Elemento utilizado nas pesquisas
+    int opt; //opção do menu
+    int x=0; //guarda o número total de registos
+    int i; //variável para controlar os ciclos de repetição
 
     FILE *fp = fopen("stock.csv","r");
-    while(!feof(fp)&&x<1000)
+    while(!feof(fp)&&x<1000) //guarda os dados do ficheiro no vetor, além de assim obter o número total de resultados
     {
         fscanf(fp,"%d %s %s %s %s %d",&stock[x].Numero,stock[x].Marca,stock[x].Modelo,stock[x].SO,stock[x].Tamanho,&stock[x].Bateria);
         x++;
@@ -42,29 +42,29 @@ int main()
             case 1:
                 new_tlm(&stock[x-1]);
                 fp = fopen("stock.csv","w");
-                for(i=0;i<x;i++)
+                for(i=0;i<x;i++) //rescreve o ficheiro com os novos dados
                     fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
                 fclose(fp);
-                x++;
+                x++; //adiciona mais um ao número total de telemóveis
                 break;
             case 2:
                 printf("\n** Listar Telemoveis por Marca **\n\n");
                 printf("Marca: ");
                 scanf("%s",pesquisa.Marca);
-                for(i=0;i<x;i++)
+                for(i=0;i<x;i++) //percorre toda a lista
                 {
-                    if(strcmp(stock[i].Marca,pesquisa.Marca)==0)
-                        show_tlm(stock[i]);
+                    if(strcmp(stock[i].Marca,pesquisa.Marca)==0) //se a marca for igual à procurada...
+                        show_tlm(stock[i]); //mostra o telemóvel
                 }
                 break;
             case 4:
                 printf("\n** Listar Telemoveis com Bateria Superior a... **\n\n");
                 printf("Bateria: ");
                 scanf("%d",&pesquisa.Bateria);
-                for(i=0;i<x;i++)
+                for(i=0;i<x;i++) //percorre toda a lista
                 {
-                    if(stock[i].Bateria>pesquisa.Bateria)
-                        show_tlm(stock[i]);
+                    if(stock[i].Bateria>pesquisa.Bateria) //se a bateria for superior à procurada...
+                        show_tlm(stock[i]); //mostra o telemóvel
                 }
                 break;
         }
