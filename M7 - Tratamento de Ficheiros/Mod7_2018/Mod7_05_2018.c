@@ -110,5 +110,6 @@ void show_tlm(Tlm tlm)
     printf("Marca: %s\n",tlm.Marca);
     printf("Modelo: %s\n",tlm.Modelo);
     printf("SO: %s\n",tlm.SO);
+    printf("Dimensoes: %s\n",tlm.Tamanho);
     printf("Bateria: %d mAh\n",tlm.Bateria);
 }
