@@ -19,6 +19,8 @@ typedef struct Tlm {
 int menu();
 void new_tlm(Tlm *novo);
 void show_tlm(Tlm tlm);
+void del_tlm(Tlm stock[1000],Tlm tlm,int tam);
+
 
 //Função main
 int main()
@@ -59,6 +61,17 @@ int main()
                         show_tlm(stock[i]); //mostra o telemóvel
                 }
                 break;
+            case 3:
+                printf("\n** Eliminar Telemovel **\n\n");
+                printf("Numero: ");
+                scanf("%d",&pesquisa.Numero);
+                del_tlm(stock,pesquisa,x);
+                fp = fopen("stock.csv","w");
+                x--;
+                for(i=0;i<x;i++) //rescreve o ficheiro com os novos dados
+                    fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
+                fclose(fp);
+                break;
             case 4:
                 printf("\n** Listar Telemoveis com Bateria Superior a... **\n\n");
                 printf("Bateria: ");
@@ -83,6 +96,7 @@ int menu()
         printf("\n** Telemoveis **\n\n");
         printf("1. Adicionar Telemovel\n");
         printf("2. Listar Telemoveis por Marca\n");
+        printf("3. Eliminar Telemovel\n");
         printf("4. Listar Telemoveis com Bateria Superior a...\n");
         printf("0. Terminar o programa\n\n");
         printf("Opcao: ");
@@ -118,4 +132,19 @@ void show_tlm(Tlm tlm)
     printf("SO: %s\n",tlm.SO);
     printf("Dimensoes: %s\n",tlm.Tamanho);
     printf("Bateria: %d mAh\n",tlm.Bateria);
+}
+
+//Elimina um registo
+void del_tlm(Tlm stock[1000],Tlm tlm,int tam)
+{
+    int i,j;
+    for(i=0;i<tam;i++)
+    {
+        if(stock[i].Numero==tlm.Numero)
+        {
+            for(j=i;j<tam;j++)
+                stock[j]=stock[j+1];
+            break;
+        }
+    }
 }
