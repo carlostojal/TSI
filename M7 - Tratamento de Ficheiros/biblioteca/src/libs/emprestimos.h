@@ -11,8 +11,10 @@
 int adquirir_id(Emprestimo *lista)
 {
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    FILE *fp = fopen("emprestimos.dat","r");
     for(p=lista;p!=NULL;p=p->prox)
-        fscanf("%d %d %s %d-%d-%d",&p->id,&p->id_aluno,p->id_manual,&p->data_levantamento.dia,&p->data_levantamento.mes,&p->data_levantamento.ano);
+        fscanf(fp,"%d %d %s %d-%d-%d",&p->id,&p->id_aluno,p->id_manual,&p->data_levantamento.dia,&p->data_levantamento.mes,&p->data_levantamento.ano);
+    fclose(fp);
     return p->id+1;
 }
 
