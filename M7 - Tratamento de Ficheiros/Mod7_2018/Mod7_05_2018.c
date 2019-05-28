@@ -45,10 +45,6 @@ int main()
         {
             case 1:
                 new_tlm(&stock[x-1]);
-                fp = fopen("stock.csv","w");
-                for(i=0;i<x;i++) //rescreve o ficheiro com os novos dados
-                    fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
-                fclose(fp);
                 x++; //adiciona mais um ao número total de telemóveis
                 break;
             case 2:
@@ -66,11 +62,7 @@ int main()
                 printf("Numero: ");
                 scanf("%d",&pesquisa.Numero);
                 del_tlm(stock,pesquisa,x);
-                fp = fopen("stock.csv","w");
                 x--;
-                for(i=0;i<x;i++) //rescreve o ficheiro com os novos dados
-                    fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
-                fclose(fp);
                 break;
             case 4:
                 printf("\n** Listar Telemoveis com Bateria Superior a... **\n\n");
@@ -84,6 +76,13 @@ int main()
                 break;
         }
     }while(opt);
+    fp = fopen("stock.csv","w");
+    fprintf(fp,"");
+    fclose(fp);
+    fp = fopen("stock.csv","a");
+    for(i=0;i<x;i++) //rescreve o ficheiro com os novos dados
+        fprintf(fp,"%d %s %s %s %s %d\n",stock[i].Numero,stock[i].Marca,stock[i].Modelo,stock[i].SO,stock[i].Tamanho,stock[i].Bateria);
+    fclose(fp);
     return 0;
 }
 
