@@ -74,10 +74,9 @@ void carregar_alunos(Aluno *lista)
                 {
                     novo->prox = NULL;
                     novo->ant = NULL;
-                    fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
-                    /*
+                    fscanf(fp,"%d %s %d %s %s",&novo->num_proc,&novo->nome,&novo->ano,&novo->turma,&novo->telemovel);
                     printf("Lido: %s",novo->nome);
-                    scanf("%d",&num);*/
+                    scanf("%d",&num);
                     if(lista->prox == NULL)
                     {
                         novo->ant = lista;
@@ -90,6 +89,7 @@ void carregar_alunos(Aluno *lista)
                             p=p->prox;
                         novo->ant = p;
                         p->prox = novo;
+                        printf("\nant: %s\n",(novo->ant)->nome);
                     }
                 }
             }

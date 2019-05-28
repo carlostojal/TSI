@@ -47,7 +47,10 @@ int main()
                         if(alunos->prox!=NULL)
                         {
                             for(p=alunos->prox;p!=NULL;p=p->prox)
+                            {
                                 listar_aluno(p);
+                                //printf("\n%s",p->nome);
+                            }
                         }
                         free(p);
                         break;
