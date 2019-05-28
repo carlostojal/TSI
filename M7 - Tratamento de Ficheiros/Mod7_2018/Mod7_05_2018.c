@@ -15,10 +15,12 @@ typedef struct Tlm {
     int Bateria;
 }Tlm;
 
+//Protótipos
 int menu();
 void new_tlm(Tlm *novo);
 void show_tlm(Tlm tlm);
 
+//Função main
 int main()
 {
     Tlm stock[1000]; //Vetor de stock
@@ -72,6 +74,8 @@ int main()
     return 0;
 }
 
+//Funções
+//Menu (retorna a oppção selecionada)
 int menu()
 {
     int opt;
@@ -87,6 +91,7 @@ int menu()
     return opt;
 }
 
+//Lê os dados para um novo registo
 void new_tlm(Tlm *novo)
 {
     printf("\n** Adicionar Telemovel **\n\n");
@@ -104,6 +109,7 @@ void new_tlm(Tlm *novo)
     scanf("%d",&novo->Bateria);
 }
 
+//Mostra os dados de um telemóvel recebido
 void show_tlm(Tlm tlm)
 {
     printf("\nNumero: %d\n",tlm.Numero);
