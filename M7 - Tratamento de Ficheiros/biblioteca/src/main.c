@@ -132,7 +132,7 @@ int main()
                 switch(sub_opt)
                 {
                     case 1: //Opção 1 (Adicionar)
-                        adicionar_emprestimo();
+                        adicionar_emprestimo(emprestimos);
                         break;
                     case 2: //Opção 2 (Listar)
                         limpar_emprestimos(emprestimos);
