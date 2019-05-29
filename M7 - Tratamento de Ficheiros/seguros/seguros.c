@@ -132,11 +132,10 @@ int menu()
         printf("\n** Seguros **\n\n");
         printf("1. Clientes\n");
         printf("2. Apolices\n");
-        printf("3. Simulacoes\n");
         printf("0. Sair\n\n");
         printf("Opcao: ");
         scanf("%d",&opt);
-    }while(opt<0||opt>3);
+    }while(opt<0||opt>2);
     return opt;
 }
 
