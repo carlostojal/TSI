@@ -25,12 +25,12 @@ int submenu(char *tipo);
 void adicionar_cliente(Cliente *novo,int id);
 void listar_cliente(Cliente cliente);
 void adicionar_apolice(Apolice *novo,int id);
-void listar_apolice(Apolice apolice);
+void listar_apolice(Apolice apolice,Cliente cliente);
 
 //Main
 int main()
 {
-    int i;
+    int i,j;
     int opt,subopt;
     int tam_clientes=0,tam_apolices=0;
     Cliente pesquisa;
@@ -92,7 +92,16 @@ int main()
                     case 2:
                         printf("\n** Listar Apolices **\n\n");
                         for(i=0;i<tam_apolices-1;i++)
-                            listar_apolice(apolices[i]);
+                        {
+                            for(j=0;j<tam_clientes-1;j++)
+                            {
+                                if(clientes[j].id==apolices[i].id_cliente)
+                                {
+                                    listar_apolice(apolices[i],clientes[j]);
+                                    break;
+                                }
+                            }
+                        }
                         break;
                     case 3:
                         printf("\n** Pesquisar Apolices **\n\n");
@@ -103,7 +112,16 @@ int main()
                         for(i=0;i<tam_apolices-1;i++)
                         {
                             if(strcmp(apolices[i].veiculo,pesquisa_apolice.veiculo)==0||apolices[i].id==pesquisa_apolice.id||apolices[i].id_cliente==pesquisa_apolice.id_cliente)
-                                listar_apolice(apolices[i]);
+                            {
+                                for(j=0;j<tam_clientes-1;j++)
+                                {
+                                    if(clientes[j].id==apolices[i].id_cliente)
+                                    {
+                                        listar_apolice(apolices[i],clientes[j]);
+                                        break;
+                                    }
+                                }
+                            }
                         }
                 }
                 break;
@@ -183,10 +201,12 @@ void adicionar_apolice(Apolice *novo,int id)
     scanf("%f",&novo->valor);
 }
 
-void listar_apolice(Apolice apolice)
+void listar_apolice(Apolice apolice,Cliente cliente)
 {
     printf("\nID: %d\n",apolice.id);
     printf("ID do Cliente: %d\n",apolice.id_cliente);
+    printf("Nome do Cliente: %s\n",cliente.nome);
+    printf("Telemovel do Cliente: %s\n",cliente.telemovel);
     printf("Veiculo: %s\n",apolice.veiculo);
     printf("Valor: %.2f€\n",apolice.valor);
 }
