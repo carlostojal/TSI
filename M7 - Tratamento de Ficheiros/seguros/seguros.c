@@ -27,7 +27,7 @@ int main()
     FILE *fp = fopen("clientes.csv","r");
     while(!feof(fp))
     {
-        fscanf(fp,"%d %s",&clientes[tam].id,clientes[tam].nome);
+        fscanf(fp,"%d %s %s",&clientes[tam].id,clientes[tam].nome,clientes[tam].telemovel);
         tam++;
     }
     fclose(fp);
@@ -40,20 +40,23 @@ int main()
                 switch(subopt)
                 {
                     case 1:
-                        adicionar_cliente(&clientes[tam],tam+1);
+                        printf("\nid: %d\n",tam);
+                        adicionar_cliente(&clientes[tam-1],tam);
+                        tam++;
                         break;
                     case 2:
-                        for(i=0;i<tam;i++)
+                        for(i=0;i<tam-1;i++)
                             listar_cliente(clientes[i]);
                         break;
                 }
                 break;
         }
     }while(opt);
-    fflush(fp);
+    fp = fopen("clientes.csv","w");
+    fclose(fp);
     fp = fopen("clientes.csv","a");
-    for(i=0;i<tam;i++)
-        fprintf(fp,"%d %s\n",clientes[i].id,clientes[i].nome);
+    for(i=0;i<tam-1;i++)
+        fprintf(fp,"%d %s %s\n",clientes[i].id,clientes[i].nome,clientes[i].telemovel);
     fclose(fp);
     return 0;
 }
