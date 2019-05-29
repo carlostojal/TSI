@@ -3,6 +3,7 @@
 //Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //Estruturas de Dados
 typedef struct Clientes {
@@ -23,6 +24,7 @@ int main()
     int i;
     int opt,subopt;
     int tam=0;
+    Cliente pesquisa;
     Cliente clientes[1000];
     FILE *fp = fopen("clientes.csv","r");
     while(!feof(fp))
@@ -45,9 +47,19 @@ int main()
                         tam++;
                         break;
                     case 2:
+                        printf("\n** Listar Clientes **\n");
                         for(i=0;i<tam-1;i++)
                             listar_cliente(clientes[i]);
                         break;
+                    case 3:
+                        printf("\n** Pesquisar Clientes **\n\n");
+                        printf("Nome: ");
+                        scanf("%s",pesquisa.nome);
+                        for(i=0;i<tam-1;i++)
+                        {
+                            if(strcmp(clientes[i].nome,pesquisa.nome)==0)
+                                listar_cliente(clientes[i]);
+                        }
                 }
                 break;
         }
