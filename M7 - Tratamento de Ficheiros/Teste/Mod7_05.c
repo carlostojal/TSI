@@ -39,7 +39,7 @@ int main()
                     printf("\nErro: Nao foi possivel abrir o ficheiro. Talvez nao exista.\n");
                 else
                 {
-                    while(!feof(fp)&&tam<111) //guarda o conteúdo do ficheiro no vetor
+                    while(!feof(fp)&&tam<=111) //guarda o conteúdo do ficheiro no vetor
                     {
                         fscanf(fp,"%s %s %d %d %f %f",alunos[tam].Turma,alunos[tam].Nome,&alunos[tam].Numero,&alunos[tam].Idade,&alunos[tam].Altura,&alunos[tam].Peso);
                         tam++;
@@ -50,7 +50,7 @@ int main()
                 break;
             case 2:
                 if(tam>111)
-                    printf("\nAviso: Excedeu o numero permitido de registos.\n");
+                    printf("\nAviso: Nao foi possivel executar o seu pedido. Atingiu o numero maximo de registos.\n");
                 else
                 {
                     ler_aluno(&alunos[tam-1]); //recebe os dados de um novo aluno, para a posição a seguir à do último valor introduzido
