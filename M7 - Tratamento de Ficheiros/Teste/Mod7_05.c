@@ -39,7 +39,7 @@ int main()
                     printf("\nErro: Nao foi possivel abrir o ficheiro. Talvez nao exista.\n");
                 else
                 {
-                    while(!feof(fp)) //guarda o conteúdo do ficheiro no vetor
+                    while(!feof(fp)&&tam<111) //guarda o conteúdo do ficheiro no vetor
                     {
                         fscanf(fp,"%s %s %d %d %f %f",alunos[tam].Turma,alunos[tam].Nome,&alunos[tam].Numero,&alunos[tam].Idade,&alunos[tam].Altura,&alunos[tam].Peso);
                         tam++;
@@ -49,9 +49,13 @@ int main()
                 printf("\nDados carregados com sucesso. %d registos.\n",tam-1);
                 break;
             case 2:
-                printf("tam: %d\n",tam);
-                ler_aluno(&alunos[tam-1]); //recebe os dados de um novo aluno, para a posição a seguir à do último valor introduzido
-                tam++; //aumenta o tamanho
+                if(tam>111)
+                    printf("\nAviso: Excedeu o numero permitido de registos.\n");
+                else
+                {
+                    ler_aluno(&alunos[tam-1]); //recebe os dados de um novo aluno, para a posição a seguir à do último valor introduzido
+                    tam++; //aumenta o tamanho
+                }
                 break;
             case 3:
                 if(tam-1<=0) //se nunca foram carregados dados
