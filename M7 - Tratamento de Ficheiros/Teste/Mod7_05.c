@@ -39,7 +39,7 @@ int main()
                     printf("\nErro: Nao foi possivel abrir o ficheiro. Talvez nao exista.\n");
                 else
                 {
-                    while(!feof(fp)&&tam<=111) //guarda o conteúdo do ficheiro no vetor
+                    while(!feof(fp)&&tam<=111) //guarda o conteúdo do ficheiro no vetor enquanto o numero de registos estiver dentro do permitido
                     {
                         fscanf(fp,"%s %s %d %d %f %f",alunos[tam].Turma,alunos[tam].Nome,&alunos[tam].Numero,&alunos[tam].Idade,&alunos[tam].Altura,&alunos[tam].Peso);
                         tam++;
