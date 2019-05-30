@@ -1,4 +1,7 @@
 //Carlos Tojal, nº5, 1ºTSI
+//30-05-2019 12:15
+
+//Mod7_05.c
 
 //Bibliotecas
 #include <stdio.h>
