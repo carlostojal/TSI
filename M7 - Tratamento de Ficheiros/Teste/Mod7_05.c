@@ -20,6 +20,7 @@ int menu();
 void ler_aluno(Aluno *novo);
 void listar_aluno(Aluno aluno);
 
+//Código principal
 int main()
 {
     int opt;
@@ -49,27 +50,37 @@ int main()
                 break;
             case 2:
                 printf("tam: %d\n",tam);
-                ler_aluno(&alunos[tam-1]);
-                tam++;
+                ler_aluno(&alunos[tam-1]); //recebe os dados de um novo aluno, para a posição a seguir à do último valor introduzido
+                tam++; //aumenta o tamanho
                 break;
             case 3:
-                printf("\n** Listar alunos por Turma **\n\n");
-                printf("Turma: ");
-                scanf("%s",pesquisa.Turma);
-                for(x=0;x<tam-1;x++)
+                if(tam-1<=0) //se nunca foram carregados dados
+                    printf("\nAviso: Ainda nao carregou a lista ou a mesma esta vazia. Adicione alguns dados primeiro.\n");
+                else
                 {
-                    if(strcmp(alunos[x].Turma,pesquisa.Turma)==0)
-                        listar_aluno(alunos[x]);
+                    printf("\n** Listar alunos por Turma **\n\n");
+                    printf("Turma: ");
+                    scanf("%s",pesquisa.Turma);
+                    for(x=0;x<tam-1;x++)
+                    {
+                        if(strcmp(alunos[x].Turma,pesquisa.Turma)==0)
+                            listar_aluno(alunos[x]);
+                    }
                 }
                 break;
             case 4:
-                printf("\n** Listar alunos por Idade **\n\n");
-                printf("Idade: ");
-                scanf("%d",&pesquisa.Idade);
-                for(x=0;x<tam-1;x++)
+                if(tam-1<=0) //se nunca foram carregados dados
+                    printf("\nAviso: Ainda nao carregou a lista ou a mesma esta vazia. Adicione alguns dados primeiro.\n");
+                else
                 {
-                    if(alunos[x].Idade==pesquisa.Idade)
-                        listar_aluno(alunos[x]);
+                    printf("\n** Listar alunos por Idade **\n\n");
+                    printf("Idade: ");
+                    scanf("%d",&pesquisa.Idade);
+                    for(x=0;x<tam-1;x++)
+                    {
+                        if(alunos[x].Idade==pesquisa.Idade)
+                            listar_aluno(alunos[x]);
+                    }
                 }
                 break;
         }
@@ -78,12 +89,13 @@ int main()
     fprintf(fp,""); //limpa o conteúdo existente
     fclose(fp);
     fp = fopen("alunos05.csv","a");
-    for(x=0;x<tam-1;x++)
+    for(x=0;x<tam-1;x++) //descarrega o vetor no ficheiro
         fprintf(fp,"%s %s %d %d %f %f\n",alunos[x].Turma,alunos[x].Nome,alunos[x].Numero,alunos[x].Idade,alunos[x].Altura,alunos[x].Peso);
     fclose(fp);
     return 0;
 }
 
+//Funções
 int menu()
 {
     int opt;
@@ -96,7 +108,7 @@ int menu()
         printf("0. Terminar o programa\n\n");
         printf("Opcao: ");
         scanf("%d",&opt);
-    }while(opt<0||opt>4);
+    }while(opt<0||opt>4); //repete enquanto a opção for inválida
     return opt;
 }
 
