@@ -213,6 +213,15 @@ int main()
                                 carregar_manuais(manuais);
                                 pesquisar_emprestimo_valor(emprestimos,alunos,manuais);
                                 break;
+                            case 6: //Opção 6 (Nome do Aluno)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_emprestimos_nome_aluno(emprestimos,alunos,manuais);
+                                break;
                         }
                 }
                 break;

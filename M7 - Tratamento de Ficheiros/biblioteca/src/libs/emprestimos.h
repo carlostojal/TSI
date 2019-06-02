@@ -132,7 +132,7 @@ void pesquisar_emprestimo_id(Emprestimo *emprestimos,Aluno *alunos,Manual *manua
         {
             for(r=manuais->prox;r!=NULL;r=r->prox)
             {
-                if(p->id==id/*&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0*/)
+                if(p->id==id&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
                 {
                     encontrou=1;
                     listar_emprestimo(p,q,r);
@@ -254,4 +254,30 @@ void pesquisar_emprestimo_valor(Emprestimo *emprestimos,Aluno *alunos,Manual *ma
     }
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
+}
+
+void pesquisar_emprestimos_nome_aluno(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
+{
+    char nome[30];
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Emprestimos por nome do Aluno **\n\n");
+    printf("Nome: ");
+    scanf("%s",nome);
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc)
+                {
+                    if(strcmp(q->nome,nome)==0)
+                        listar_emprestimo(p,q,r);
+                }
+            }
+        }
+    }
 }
