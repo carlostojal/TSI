@@ -171,26 +171,46 @@ int main()
                             case 1: //Opção 1 (ID do Empréstimo)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
                                 pesquisar_emprestimo_id(emprestimos,alunos,manuais);
                                 break;
                             case 2: //Opção 2 (ID do Aluno)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
                                 pesquisar_emprestimo_id_aluno(emprestimos,alunos,manuais);
                                 break;
                             case 3: //Opção 3 (ID do Manual)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
                                 pesquisar_emprestimo_id_manual(emprestimos,alunos,manuais);
                                 break;
                             case 4: //Opção 4 (Data de Levantamento)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
                                 pesquisar_emprestimo_data_levantamento(emprestimos,alunos,manuais);
                                 break;
                             case 5: //Opção 5 (Valor)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
                                 pesquisar_emprestimo_valor(emprestimos,alunos,manuais);
                                 break;
                         }
