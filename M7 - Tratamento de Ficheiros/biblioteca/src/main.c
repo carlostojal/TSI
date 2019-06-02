@@ -49,7 +49,6 @@ int main()
                             for(p=alunos->prox;p!=NULL;p=p->prox)
                             {
                                 listar_aluno(p);
-                                //printf("\n%s",p->nome);
                             }
                         }
                         free(p);
@@ -221,6 +220,24 @@ int main()
                                 limpar_manuais(manuais);
                                 carregar_manuais(manuais);
                                 pesquisar_emprestimos_nome_aluno(emprestimos,alunos,manuais);
+                                break;
+                            case 7: //Opção 7 (Titulo do Manual)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_emprestimos_titulo_manual(emprestimos,alunos,manuais);
+                                break;
+                            case 8: //Opção 8 (Disciplina do Manual)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_emprestimos_disciplina_manual(emprestimos,alunos,manuais);
                                 break;
                         }
                 }

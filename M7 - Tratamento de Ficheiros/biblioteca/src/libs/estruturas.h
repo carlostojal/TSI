@@ -24,7 +24,7 @@ typedef struct Alunos {
 
 typedef struct Manuais {
     char isbn[20]; //chave primária
-    char titulo[20];
+    char titulo[30];
     char disciplina[20];
     struct Manuais *prox;
     struct Manuais *ant;

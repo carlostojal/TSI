@@ -15,11 +15,10 @@ int menu()
         printf("1. Alunos\n");
         printf("2. Manuais\n");
         printf("3. Emprestimos\n");
-        printf("4. Pesquisas\n");
         printf("0. Sair\n\n");
         printf("Opcao: ");
         scanf("%d",&opt);
-    }while(opt<0||opt>4); //repete enquanto a opção selecionada for inválida
+    }while(opt<0||opt>3); //repete enquanto a opção selecionada for inválida
     return opt;
 }
 
@@ -71,17 +70,19 @@ int menu_pesquisas(int tipo)
     else
     {
         do{
-            printf("\n** Emprestimos **\n\n");
+            printf("\n** Pesquisar Emprestimos **\n\n");
             printf("1. ID do Emprestimo\n");
             printf("2. ID do Aluno\n");
             printf("3. ID do Manual\n");
             printf("4. Data de Levantamento\n");
             printf("5. Valor\n");
             printf("6. Nome do Aluno\n");
+            printf("7. Titulo do Manual\n");
+            printf("8. Disciplina do Manual\n");
             printf("0. Voltar ao inicio\n\n");
             printf("Opcao: ");
             scanf("%d",&opt);
-        }while(opt<0||opt>6);
+        }while(opt<0||opt>8);
     }
     return opt;
 }
