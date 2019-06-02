@@ -11,9 +11,10 @@
 int adquirir_id(Emprestimo *lista)
 {
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
-    //for(p=lista->prox;p!=NULL;p=p->prox) {}
-    printf("p->id: %d\n",p->id);
-    return p->id+1;
+    if(lista->prox==NULL)
+        return 1;
+    for(p=lista;p->prox!=NULL;p=p->prox) {}
+    return (p->id)+1;
 }
 
 void adicionar_emprestimo(Emprestimo *lista)
