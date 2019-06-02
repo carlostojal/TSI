@@ -74,7 +74,7 @@ void carregar_alunos(Aluno *lista)
                 {
                     novo->prox = NULL;
                     novo->ant = NULL;
-                    fscanf(fp,"%d %s %d %s %s",&novo->num_proc,&novo->nome,&novo->ano,&novo->turma,&novo->telemovel);
+                    fscanf(fp,"%d %s %d %s %s",&novo->num_proc,novo->nome,&novo->ano,novo->turma,novo->telemovel);
                     //printf("Lido: %s",novo->nome);
                     //scanf("%d",&num);
                     if(lista->prox == NULL)
@@ -98,7 +98,6 @@ void carregar_alunos(Aluno *lista)
             printf("\nNunca foram registados alunos.\n");
     }
     fclose(fp);
-    free(p);
 }
 
 void listar_aluno(Aluno *aluno)
