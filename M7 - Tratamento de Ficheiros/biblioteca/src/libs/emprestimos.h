@@ -2,7 +2,7 @@
 //https://www.github.com/carlostojal/TSI/tree/master/M7 - Tratamento de Ficheiros/biblioteca/src/libs/emprestimos.h
 //biblioteca/src/libs/emprestimos.h
 
-//Contém as funções de gestão dos emprestimos
+//Contém as funções de gestão dos empréstimos
 
 #include <stdio.h>
 #include <stdlib.h>
