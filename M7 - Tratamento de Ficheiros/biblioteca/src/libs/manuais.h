@@ -82,7 +82,6 @@ void carregar_manuais(Manual *lista)
             printf("\nNunca foram registados manuais.\n");
     }
     fclose(fp);
-    free(p);
 }
 
 void listar_manual(Manual *manual)

@@ -11,17 +11,15 @@
 int adquirir_id(Emprestimo *lista)
 {
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
-    FILE *fp = fopen("emprestimos.dat","r");
-    for(p=lista;p!=NULL;p=p->prox)
-        fscanf(fp,"%d %d %s %d-%d-%d",&p->id,&p->id_aluno,p->id_manual,&p->data_levantamento.dia,&p->data_levantamento.mes,&p->data_levantamento.ano);
-    fclose(fp);
+    //for(p=lista->prox;p!=NULL;p=p->prox) {}
+    printf("p->id: %d\n",p->id);
     return p->id+1;
 }
 
 void adicionar_emprestimo(Emprestimo *lista)
 {
     FILE *fp;
-    Emprestimo *novo = malloc(sizeof(Manual));
+    Emprestimo *novo = malloc(sizeof(Emprestimo));
     printf("\n** Adicionar Emprestimo**\n\n");
     if(!novo)
         printf("Ocorreu um erro de memoria.\n");
@@ -78,14 +76,18 @@ void carregar_emprestimos(Emprestimo *lista)
             printf("\nNunca foram registados empréstimos.\n");
     }
     fclose(fp);
-    free(p);
 }
 
-void listar_emprestimo(Emprestimo *emprestimo)
+void listar_emprestimo(Emprestimo *emprestimo,Aluno *aluno,Manual *manual)
 {
-    printf("\nID: %d\n",emprestimo->id);
+    printf("\nID do Emprestimo: %d\n",emprestimo->id);
     printf("ID do Aluno: %d\n",emprestimo->id_aluno);
+    printf("Nome do Aluno: %s\n",aluno->nome);
+    printf("Ano: %d\n",aluno->ano);
+    printf("Turma: %s\n",aluno->turma);
     printf("ID do Manual: %s\n",emprestimo->id_manual);
+    printf("Titulo do Manual: %s\n",manual->titulo);
+    printf("Disciplina: %s\n",manual->disciplina);
     printf("Data de Levantamento: %d-%d-%d\n",emprestimo->data_levantamento.dia,emprestimo->data_levantamento.mes,emprestimo->data_levantamento.ano);
     printf("Valor: %.2f\n\n",emprestimo->valor);
 }
@@ -114,103 +116,140 @@ void limpar_emprestimos(Emprestimo *lista)
     }
 }
 
-void pesquisar_emprestimo_id(Emprestimo *lista)
+void pesquisar_emprestimo_id(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     int id;
     int encontrou=0;
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
     printf("\n** Pesquisar Emprestimo por ID **\n\n");
     printf("ID: ");
     scanf("%d",&id);
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
-        if(p->id==id)
+        for(q=alunos->prox;q!=NULL;q=q->prox)
         {
-            encontrou=1;
-            listar_emprestimo(p);
-            break;
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id==id/*&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0*/)
+                {
+                    encontrou=1;
+                    listar_emprestimo(p,q,r);
+                }
+            }
         }
     }
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
 
-void pesquisar_emprestimo_id_aluno(Emprestimo *lista)
+void pesquisar_emprestimo_id_aluno(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     int id_aluno;
     int encontrou=0;
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
     printf("\n** Pesquisar Emprestimo por ID do Aluno **\n\n");
     printf("ID do Aluno: ");
     scanf("%d",&id_aluno);
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
-        if(p->id_aluno==id_aluno)
+        for(q=alunos->prox;q!=NULL;q=q->prox)
         {
-            encontrou=1;
-            listar_emprestimo(p);
-            break;
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==id_aluno&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    encontrou=1;
+                    listar_emprestimo(p,q,r);
+                }
+            }
         }
     }
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
 
-void pesquisar_emprestimo_id_manual(Emprestimo *lista)
+void pesquisar_emprestimo_id_manual(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     char id_manual[20];
     int encontrou=0;
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
     printf("\n** Pesquisar Emprestimo por ID do Manual **\n\n");
     printf("ID do Manual: ");
     scanf("%s",id_manual);
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
-        if(strcmp(p->id_manual,id_manual)==0)
+        for(q=alunos->prox;q!=NULL;q=q->prox)
         {
-            encontrou=1;
-            listar_emprestimo(p);
-            break;
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(strcmp(p->id_manual,id_manual)==0&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    encontrou=1;
+                    listar_emprestimo(p,q,r);
+                }
+            }
         }
     }
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
 
-void pesquisar_emprestimo_data_levantamento(Emprestimo *lista)
+void pesquisar_emprestimo_data_levantamento(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     Data data_levantamento;
     int encontrou=0;
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
     printf("\n** Pesquisar Emprestimo por Data de Levantamento **\n\n");
     printf("Data de levantamento (dd-mm-aaaa): ");
     scanf("%d-%d-%d",&data_levantamento.dia,&data_levantamento.mes,&data_levantamento.ano);
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
-        if(p->data_levantamento.dia==data_levantamento.dia&&p->data_levantamento.mes==data_levantamento.mes&&p->data_levantamento.ano==data_levantamento.ano)
+        for(q=alunos->prox;q!=NULL;q=q->prox)
         {
-            encontrou=1;
-            listar_emprestimo(p);
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->data_levantamento.dia==data_levantamento.dia&&p->data_levantamento.mes==data_levantamento.mes&&p->data_levantamento.ano==data_levantamento.ano&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    encontrou=1;
+                    listar_emprestimo(p,q,r);
+                }
+            }
         }
     }
     if(!encontrou)
         printf("\nNao foram encontrados resultados.\n");
 }
 
-void pesquisar_emprestimo_valor(Emprestimo *lista)
+void pesquisar_emprestimo_valor(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     float valor;
     int encontrou=0;
     Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
     printf("\n** Pesquisar Emprestimo por Valor **\n\n");
     printf("Valor: ");
     scanf("%f",&valor);
-    for(p=lista->prox;p!=NULL;p=p->prox)
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
-        if(p->valor==valor)
+        for(q=alunos->prox;q!=NULL;q=q->prox)
         {
-            encontrou=1;
-            listar_emprestimo(p);
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->valor==valor&&p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    encontrou=1;
+                    listar_emprestimo(p,q,r);
+                }
+            }
         }
     }
     if(!encontrou)
