@@ -319,6 +319,68 @@ void pesquisar_emprestimos_ano_aluno(Emprestimo *emprestimos,Aluno *alunos,Manua
         printf("\nNao foram encontrados resultados.\n");
 }
 
+void pesquisar_emprestimos_turma_aluno(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
+{
+    char turma[20];
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Emprestimos por Turma do Aluno **\n\n");
+    printf("Turma: ");
+    scanf("%s",turma);
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    if(strcmp(q->turma,turma)==0)
+                    {
+                        encontrou=1;
+                        listar_emprestimo(p,q,r);
+                    }
+                }
+            }
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
+
+void pesquisar_emprestimos_telemovel_aluno(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
+{
+    char telemovel[20];
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Emprestimos por Telemovel do Aluno **\n\n");
+    printf("Telemovel: ");
+    scanf("%s",telemovel);
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    if(strcmp(q->telemovel,telemovel)==0)
+                    {
+                        encontrou=1;
+                        listar_emprestimo(p,q,r);
+                    }
+                }
+            }
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
+
 void pesquisar_emprestimos_titulo_manual(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     char titulo[30];

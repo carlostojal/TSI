@@ -230,7 +230,25 @@ int main()
                                 carregar_manuais(manuais);
                                 pesquisar_emprestimos_ano_aluno(emprestimos,alunos,manuais);
                                 break;
-                            case 8: //Opção 8 (Titulo do Manual)
+                            case 8: //Opção 8 (Turma do Aluno)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_emprestimos_turma_aluno(emprestimos,alunos,manuais);
+                                break;
+                            case 9: //Opção 9 (Telemóvel do Aluno)
+                                limpar_emprestimos(emprestimos);
+                                carregar_emprestimos(emprestimos);
+                                limpar_alunos(alunos);
+                                carregar_alunos(alunos);
+                                limpar_manuais(manuais);
+                                carregar_manuais(manuais);
+                                pesquisar_emprestimos_telemovel_aluno(emprestimos,alunos,manuais);
+                                break;
+                            case 10: //Opção 8 (Titulo do Manual)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
                                 limpar_alunos(alunos);
@@ -239,7 +257,7 @@ int main()
                                 carregar_manuais(manuais);
                                 pesquisar_emprestimos_titulo_manual(emprestimos,alunos,manuais);
                                 break;
-                            case 9: //Opção 9 (Disciplina do Manual)
+                            case 11: //Opção 9 (Disciplina do Manual)
                                 limpar_emprestimos(emprestimos);
                                 carregar_emprestimos(emprestimos);
                                 limpar_alunos(alunos);
