@@ -288,6 +288,37 @@ void pesquisar_emprestimos_nome_aluno(Emprestimo *emprestimos,Aluno *alunos,Manu
         printf("\nNao foram encontrados resultados.\n");
 }
 
+void pesquisar_emprestimos_ano_aluno(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
+{
+    int ano;
+    int encontrou=0;
+    Emprestimo *p = (Emprestimo*) malloc(sizeof(Emprestimo));
+    Aluno *q = (Aluno*) malloc(sizeof(Aluno));
+    Manual *r = (Manual*) malloc(sizeof(Manual));
+    printf("\n** Pesquisar Emprestimos por Ano do Aluno **\n\n");
+    printf("Ano: ");
+    scanf("%d",&ano);
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    if(q->ano==ano)
+                    {
+                        encontrou=1;
+                        listar_emprestimo(p,q,r);
+                    }
+                }
+            }
+        }
+    }
+    if(!encontrou)
+        printf("\nNao foram encontrados resultados.\n");
+}
+
 void pesquisar_emprestimos_titulo_manual(Emprestimo *emprestimos,Aluno *alunos,Manual *manuais)
 {
     char titulo[30];

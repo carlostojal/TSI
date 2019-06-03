@@ -77,12 +77,13 @@ int menu_pesquisas(int tipo)
             printf("4. Data de Levantamento\n");
             printf("5. Valor\n");
             printf("6. Nome do Aluno\n");
-            printf("7. Titulo do Manual\n");
-            printf("8. Disciplina do Manual\n");
+            printf("7. Ano do Aluno\n");
+            printf("8. Titulo do Manual\n");
+            printf("9. Disciplina do Manual\n");
             printf("0. Voltar ao inicio\n\n");
             printf("Opcao: ");
             scanf("%d",&opt);
-        }while(opt<0||opt>8);
+        }while(opt<0||opt>9);
     }
     return opt;
 }
