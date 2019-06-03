@@ -13,5 +13,5 @@
 
 //Anexo 2 - Funções (stdio.h)
 _CRTIMP __cdecl __MINGW_NOTHROW  int    fseek (FILE *, long x, int c); //posiciona o ponteiro x posições à frente da constante c (anexo 1)
-_CRTIMP __cdecl __MINGW_NOTHROW  long   ftell (FILE *); //retorna o número de caracteres no ficheiro
+_CRTIMP __cdecl __MINGW_NOTHROW  long   ftell (FILE *); //retorna o número de caracteres no ficheiro até à posição atual do ponteiro
 _CRTIMP __cdecl __MINGW_NOTHROW  void   rewind (FILE *); //coloca o ponteiro no início do ficheiro
