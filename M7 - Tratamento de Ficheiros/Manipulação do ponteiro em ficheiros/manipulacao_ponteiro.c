@@ -43,7 +43,7 @@ int main()
     fclose(fp);
 
     fp = fopen("demo2.txt","r"); //abre o ficheiro para leitura
-    fseek(fp,0,SEEK_END); //posiciona o cursor 0 posições depois do fim do ficheiro (SEEK_END). Pode ser substituído por 2.
+    fseek(fp,0,SEEK_END); //posiciona o ponteiros 0 posições depois do fim do ficheiro (SEEK_END). Pode ser substituído por 2.
     tam = ftell(fp); //calcula quantos caracteres/bytes tem o ficheiro até à posição atual do cursor (fim)
     printf("O ficheiro demo2.txt ocupa %d bytes\n",tam);
     rewind(fp); //coloca o ponteiro no início do ficheiro
