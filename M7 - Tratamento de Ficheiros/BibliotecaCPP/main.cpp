@@ -26,6 +26,18 @@ int main()
                         aluno.CarregarAlunos(alunos);
                         aluno.AdicionarAluno(alunos);
                         break;
+                    case 2:
+                        aluno.LimparAlunos(alunos);
+                        aluno.CarregarAlunos(alunos);
+                        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+                        if(alunos->prox==NULL)
+                            cout << "Nunca foram adicionados alunos." << endl;
+                        else
+                        {
+                            for(p=alunos->prox;p!=NULL;p=p->prox)
+                                aluno.ListarAluno(p);
+                        }
+                        break;
                 }
                 break;
         }

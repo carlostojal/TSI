@@ -1,4 +1,5 @@
 #include "Aluno.h"
+#include <iostream>
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
@@ -8,7 +9,7 @@ Aluno::Aluno()
     //ctor
 }
 
-Aluno::AdicionarAluno(Aluno::EstAluno *lista)
+void Aluno::AdicionarAluno(Aluno::EstAluno *lista)
 {
     ofstream fp;
     Aluno::EstAluno aluno;
@@ -24,12 +25,12 @@ Aluno::AdicionarAluno(Aluno::EstAluno *lista)
     cout << "Telemovel: ";
     cin >> aluno.telemovel;
 
-    fp.open("alunos.csv");
+    fp.open("alunos.csv",ios_base::app);
     fp << aluno.num_proc << " " << aluno.nome << " " << aluno.ano << " " << aluno.turma << " " << aluno.telemovel << "\n";
     fp.close();
 }
 
-Aluno::LimparAlunos(Aluno::EstAluno *lista)
+void Aluno::LimparAlunos(Aluno::EstAluno *lista)
 {
     Aluno::EstAluno *p;
     if(lista->prox!=NULL)
@@ -48,16 +49,22 @@ Aluno::LimparAlunos(Aluno::EstAluno *lista)
     }
 }
 
-Aluno::CarregarAlunos(Aluno::EstAluno *lista)
+void Aluno::CarregarAlunos(Aluno::EstAluno *lista)
 {
-    ifstream fp;
-    Aluno::EstAluno *novo = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    ifstream fp("alunos.csv");
+    Aluno::EstAluno *tmp = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
-    fp.open("alunos.csv");
-    while(fp >> novo->num_proc >> novo->nome >> novo->ano >> novo->turma >> novo->telemovel)
+    while(!fp.eof())
     {
+        Aluno::EstAluno *novo = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+        fp >> novo->num_proc >> novo->nome >> novo->ano >> novo->turma >> novo->telemovel;
+        novo->ant = NULL;
+        novo->prox = NULL;
         if(lista->prox == NULL)
+        {
+            novo->ant = lista;
             lista->prox = novo;
+        }
         else
         {
             for(p=lista;p->prox!=NULL;p=p->prox) {}
@@ -65,4 +72,14 @@ Aluno::CarregarAlunos(Aluno::EstAluno *lista)
             novo->ant = p;
         }
     }
+    fp.close();
+}
+
+void Aluno::ListarAluno(Aluno::EstAluno *aluno)
+{
+    cout << "\nNumero de processo: " << aluno->num_proc << endl;
+    cout << "Nome: " << aluno->nome << endl;
+    cout << "Ano: " << aluno->ano << endl;
+    cout << "Turma: " << aluno->turma << endl;
+    cout << "Telemovel: " << aluno->telemovel << endl;
 }

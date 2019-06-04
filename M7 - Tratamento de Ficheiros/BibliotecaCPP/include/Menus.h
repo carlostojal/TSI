@@ -8,8 +8,8 @@ class Menus
 {
     public:
         Menus();
-        Menu();
-        SubMenu(string);
+        int Menu();
+        int SubMenu(string);
 
     protected:
 

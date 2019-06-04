@@ -34,7 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Aluno.h" />
+		<Unit filename="include/Menus.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Aluno.cpp" />
+		<Unit filename="src/Menus.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
