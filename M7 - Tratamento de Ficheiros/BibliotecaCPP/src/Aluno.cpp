@@ -83,3 +83,15 @@ void Aluno::ListarAluno(Aluno::EstAluno *aluno)
     cout << "Turma: " << aluno->turma << endl;
     cout << "Telemovel: " << aluno->telemovel << endl;
 }
+
+void Aluno::PesquisarAlunoNumProc(Aluno::EstAluno *lista,int num_proc)
+{
+    if(lista->prox==NULL)
+        cout << "Nunca foram adicionados alunos." << endl;
+    Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    for(p=lista->prox;p!=NULL;p=p->prox)
+    {
+        if(p->num_proc==num_proc)
+            ListarAluno(p);
+    }
+}

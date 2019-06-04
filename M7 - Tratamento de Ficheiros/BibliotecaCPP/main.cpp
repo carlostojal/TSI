@@ -11,6 +11,8 @@ int main()
     Aluno aluno;
     int opt,subopt;
     Aluno::EstAluno *alunos = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    int num_proc;
     alunos->ant = NULL;
     alunos->prox = NULL;
     do{
@@ -29,7 +31,6 @@ int main()
                     case 2:
                         aluno.LimparAlunos(alunos);
                         aluno.CarregarAlunos(alunos);
-                        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
                         if(alunos->prox==NULL)
                             cout << "Nunca foram adicionados alunos." << endl;
                         else
@@ -37,6 +38,14 @@ int main()
                             for(p=alunos->prox;p!=NULL;p=p->prox)
                                 aluno.ListarAluno(p);
                         }
+                        break;
+                    case 3:
+                        aluno.LimparAlunos(alunos);
+                        aluno.CarregarAlunos(alunos);
+                        cout << "\n** Pesquisar Aluno por Numero de Processo **\n" << endl;
+                        cout << "Numero de processo: ";
+                        cin >> num_proc;
+                        aluno.PesquisarAlunoNumProc(alunos,num_proc);
                         break;
                 }
                 break;
