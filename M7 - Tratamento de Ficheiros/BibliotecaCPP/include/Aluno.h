@@ -7,14 +7,20 @@ using namespace std;
 class Aluno
 {
     public:
-        int num_proc;
-        string nome;
-        int ano;
-        string turma;
-        string telemovel;
+        typedef struct EstAluno {
+            int num_proc;
+            string nome;
+            int ano;
+            string turma;
+            string telemovel;
+            struct EstAluno *ant;
+            struct EstAluno *prox;
+        } EstAluno;
 
         Aluno();
-        AdicionarAluno();
+        AdicionarAluno(Aluno::EstAluno *lista);
+        LimparAlunos(Aluno::EstAluno *lista);
+        CarregarAlunos(Aluno::EstAluno *lista);
 
     protected:
 

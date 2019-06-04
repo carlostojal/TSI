@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "Menus.h"
 #include "Aluno.h"
 
@@ -9,6 +10,9 @@ int main()
     Menus menus;
     Aluno aluno;
     int opt,subopt;
+    Aluno::EstAluno *alunos = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    alunos->ant = NULL;
+    alunos->prox = NULL;
     do{
         opt = menus.Menu();
         switch(opt)
@@ -18,7 +22,9 @@ int main()
                 switch(subopt)
                 {
                     case 1:
-                        aluno.AdicionarAluno();
+                        aluno.LimparAlunos(alunos);
+                        aluno.CarregarAlunos(alunos);
+                        aluno.AdicionarAluno(alunos);
                         break;
                 }
                 break;
