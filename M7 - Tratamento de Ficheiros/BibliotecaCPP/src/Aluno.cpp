@@ -25,8 +25,8 @@ void Aluno::AdicionarAluno(Aluno::EstAluno *lista)
     cout << "Telemovel: ";
     cin >> aluno.telemovel;
 
-    fp.open("alunos.csv",ios_base::app);
-    fp << aluno.num_proc << " " << aluno.nome << " " << aluno.ano << " " << aluno.turma << " " << aluno.telemovel << "\n";
+    fp.open("alunos.tsv",ios_base::app);
+    fp << aluno.num_proc << "\t" << aluno.nome << "\t" << aluno.ano << "\t" << aluno.turma << "\t" << aluno.telemovel << "\n";
     fp.close();
 }
 
@@ -51,7 +51,7 @@ void Aluno::LimparAlunos(Aluno::EstAluno *lista)
 
 void Aluno::CarregarAlunos(Aluno::EstAluno *lista)
 {
-    ifstream fp("alunos.csv");
+    ifstream fp("alunos.tsv");
     Aluno::EstAluno *tmp = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     while(!fp.eof())
