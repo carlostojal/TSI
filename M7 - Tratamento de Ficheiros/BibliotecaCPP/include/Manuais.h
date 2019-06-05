@@ -5,8 +5,19 @@
 class Manuais
 {
     public:
-        Manuais();
+        typedef struct EstManual {
+            char isbn[20];
+            char titulo[30];
+            char disciplina[20];
+            struct EstManual *prox;
+            struct EstManual *ant;
+        } EstManual;
 
+        Manuais();
+        void AdicionarManual(Manuais::EstManual *lista);
+        void LimparManuais(Manuais::EstManual *lista);
+        void CarregarManuais(Manuais::EstManual *lista);
+        void ListarManual(Manuais::EstManual *manual);
 
     protected:
 

@@ -20,25 +20,27 @@
 	<fstream>
 	<stdlib.h>
 
-1559686618 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
+1559766741 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menus.h"
 	"Aluno.h"
+	"Manuais.h"
 
-1559681496 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Menus.h
+1559754592 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Menus.h
 	<iostream>
 
-1559686416 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Aluno.h
+1559754592 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Aluno.h
 	<iostream>
 
-1559688041 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Aluno.cpp
+1559754592 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Aluno.cpp
 	"Aluno.h"
 	<iostream>
 	<fstream>
 	<stdlib.h>
+	<string.h>
 
-1559680992 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Menus.cpp
+1559766976 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Menus.cpp
 	"Menus.h"
 
 1559736374 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\menus.cpp
@@ -62,4 +64,11 @@
 	<fstream>
 	<stdlib.h>
 	<string.h>
+
+1559767104 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Manuais.h
+
+1559766847 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Manuais.cpp
+	"Manuais.h"
+	<fstream>
+	<iostream>
 

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Menus.h"
 #include "Aluno.h"
+#include "Manuais.h"
 
 using namespace std;
 
@@ -9,9 +10,12 @@ int main()
 {
     Menus menus;
     Aluno aluno;
+    Manuais manual;
     int opt,subopt,subsubopt;
     Aluno::EstAluno *alunos = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    Manuais::EstManual *manuais = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    Manuais::EstManual *q = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
     alunos->ant = NULL;
     alunos->prox = NULL;
     do{
@@ -66,6 +70,20 @@ int main()
 
             case 2: //Manuais
                 subopt = menus.SubMenu("Manuais");
+                switch(subopt)
+                {
+                    case 1:
+                        manual.LimparManuais(manuais);
+                        manual.CarregarManuais(manuais);
+                        manual.AdicionarManual(manuais);
+                        break;
+                    case 2:
+                        manual.LimparManuais(manuais);
+                        manual.CarregarManuais(manuais);
+                        for(q=manuais->prox;q!=NULL;q=q->prox)
+                            manual.ListarManual(q);
+                        break;
+                }
                 break;
         }
     }while(opt);
