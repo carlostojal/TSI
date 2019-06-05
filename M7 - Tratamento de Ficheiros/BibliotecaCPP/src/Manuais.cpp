@@ -136,3 +136,30 @@ void Manuais::PesquisarManuaisTitulo(Manuais::EstManual *lista)
             cout << "Nao foram encontrados resultados para a pesquisa." << endl;
     }
 }
+
+void Manuais::PesquisarManuaisDisciplina(Manuais::EstManual *lista)
+{
+    Manuais::EstManual *p = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+    char disciplina[20];
+    bool encontrou=false;
+
+    cout << "\n** Pesquisar Manuais por Disciplina **\n" << endl;
+    cout << "Disciplina: ";
+    cin >> disciplina;
+
+    if(lista->prox==NULL)
+        cout << "Nunca foram adicionados manuais." << endl;
+    else
+    {
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(strcmp(p->disciplina,disciplina)==0)
+            {
+                encontrou = true;
+                ListarManual(p);
+            }
+        }
+        if(!encontrou)
+            cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+    }
+}

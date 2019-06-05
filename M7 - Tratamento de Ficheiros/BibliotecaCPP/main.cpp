@@ -97,6 +97,11 @@ int main()
                                 manual.CarregarManuais(manuais);
                                 manual.PesquisarManuaisTitulo(manuais);
                                 break;
+                            case 3:
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                manual.PesquisarManuaisDisciplina(manuais);
+                                break;
                         }
                 }
                 break;

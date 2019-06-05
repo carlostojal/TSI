@@ -20,7 +20,7 @@
 	<fstream>
 	<stdlib.h>
 
-1559768377 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
+1559769228 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menus.h"
@@ -65,7 +65,7 @@
 	<stdlib.h>
 	<string.h>
 
-1559768135 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Manuais.h
+1559768477 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Manuais.h
 
 1559768404 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Manuais.cpp
 	"Manuais.h"
