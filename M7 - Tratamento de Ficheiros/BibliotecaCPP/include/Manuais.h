@@ -19,6 +19,7 @@ class Manuais
         void CarregarManuais(Manuais::EstManual *lista);
         void ListarManual(Manuais::EstManual *manual);
         void PesquisarManualISBN(Manuais::EstManual *lista);
+        void PesquisarManuaisTitulo(Manuais::EstManual *lista);
 
     protected:
 

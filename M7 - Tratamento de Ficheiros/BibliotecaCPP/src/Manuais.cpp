@@ -109,3 +109,30 @@ void Manuais::PesquisarManualISBN(Manuais::EstManual *lista)
             cout << "Nao foram encontrados resultados para a pesquisa." << endl;
     }
 }
+
+void Manuais::PesquisarManuaisTitulo(Manuais::EstManual *lista)
+{
+    Manuais::EstManual *p = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+    char titulo[30];
+    bool encontrou=false;
+
+    cout << "\n** Pesquisar Manuais por Titulo **\n" << endl;
+    cout << "Titulo: ";
+    cin >> titulo;
+
+    if(lista->prox==NULL)
+        cout << "Nunca foram adicionados manuais.";
+    else
+    {
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(strcmp(p->titulo,titulo)==0)
+            {
+                encontrou = true;
+                ListarManual(p);
+            }
+        }
+        if(!encontrou)
+            cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+    }
+}
