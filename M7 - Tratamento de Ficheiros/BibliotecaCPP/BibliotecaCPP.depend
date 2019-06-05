@@ -47,12 +47,19 @@
 1559736169 g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\menus.h
 	<iostream>
 
-1559744201 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\main.cpp
+1559745262 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menus.h"
 	"Aluno.h"
 
-1559743922 g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\aluno.h
+1559744576 g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\aluno.h
 	<iostream>
+
+1559744980 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\aluno.cpp
+	"Aluno.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
 

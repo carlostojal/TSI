@@ -54,11 +54,18 @@ int main()
                                 aluno.PesquisarAlunoAno(alunos);
                                 break;
                             case 4:
-                                aluno.PesquisarAlunoTurma(alunos);
+                                aluno.PesquisarAlunosTurma(alunos);
+                                break;
+                            case 5:
+                                aluno.PesquisarAlunosTelemovel(alunos);
                                 break;
                         }
                         break;
                 }
+                break;
+
+            case 2: //Manuais
+                subopt = menus.SubMenu("Manuais");
                 break;
         }
     }while(opt);
