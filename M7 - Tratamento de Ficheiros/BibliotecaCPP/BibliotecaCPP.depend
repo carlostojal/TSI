@@ -67,9 +67,14 @@
 
 1559768477 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Manuais.h
 
-1559768404 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Manuais.cpp
+1559769291 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Manuais.cpp
 	"Manuais.h"
 	<fstream>
 	<iostream>
 	<string.h>
+
+1559769466 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Emprestimo.cpp
+	"Emprestimo.h"
+
+1559769705 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Emprestimo.h
 
