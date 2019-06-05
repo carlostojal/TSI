@@ -35,3 +35,23 @@ int Menus::SubMenu(string tipo)
     }while(opt<0||opt>3);
     return opt;
 }
+
+int Menus::SubSubMenu(int tipo)
+{
+    int opt;
+    if(tipo==1) //Alunos
+    {
+        do{
+            cout << "\n** Pesquisar Alunos **\n" << endl;
+            cout << "1. Numero de Processo" << endl;
+            cout << "2. Nome" << endl;
+            cout << "3. Ano" << endl;
+            cout << "4. Turma" << endl;
+            cout << "5. Telemovel" << endl;
+            cout << "0. Voltar ao inicio\n" << endl;
+            cout << "Opcao: ";
+            cin >> opt;
+        }while(opt<0||opt>5);
+        return opt;
+    }
+}

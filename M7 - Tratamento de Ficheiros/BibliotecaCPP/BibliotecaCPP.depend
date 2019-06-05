@@ -1,21 +1,22 @@
 # depslib dependency file v1.0
-1559664520 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\main.cpp
+1559736870 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\main.cpp
 	<iostream>
 	<stdlib.h>
 	"Menus.h"
 	"Aluno.h"
 
-1559660084 e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\menus.h
+1559736169 e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\menus.h
 	<iostream>
 
-1559660104 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\menus.cpp
+1559736374 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\menus.cpp
 	"Menus.h"
 
-1559664176 e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\aluno.h
+1559736652 e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\aluno.h
 	<iostream>
 
-1559664510 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\aluno.cpp
+1559736821 source:e:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\aluno.cpp
 	"Aluno.h"
+	<iostream>
 	<fstream>
 	<stdlib.h>
 

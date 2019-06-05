@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <string.h>
 using namespace std;
 
 Aluno::Aluno()
@@ -52,7 +53,6 @@ void Aluno::LimparAlunos(Aluno::EstAluno *lista)
 void Aluno::CarregarAlunos(Aluno::EstAluno *lista)
 {
     ifstream fp("alunos.tsv");
-    Aluno::EstAluno *tmp = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     while(!fp.eof())
     {
@@ -84,14 +84,40 @@ void Aluno::ListarAluno(Aluno::EstAluno *aluno)
     cout << "Telemovel: " << aluno->telemovel << endl;
 }
 
-void Aluno::PesquisarAlunoNumProc(Aluno::EstAluno *lista,int num_proc)
+void Aluno::PesquisarAlunoNumProc(Aluno::EstAluno *lista)
 {
     if(lista->prox==NULL)
-        cout << "Nunca foram adicionados alunos." << endl;
-    Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
-    for(p=lista->prox;p!=NULL;p=p->prox)
+        cout << "Nunca foram registados alunos." << endl;
+    else
     {
-        if(p->num_proc==num_proc)
-            ListarAluno(p);
+        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+        int num_proc;
+        cout << "\n** Pesquisar Aluno por Numero de Processo **\n" << endl;
+        cout << "Numero de processo: ";
+        cin >> num_proc;
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(p->num_proc==num_proc)
+                ListarAluno(p);
+        }
+    }
+}
+
+void Aluno::PesquisarAlunoNome(Aluno::EstAluno *lista)
+{
+    if(lista->prox==NULL)
+        cout << "Nunca foram registados alunos." << endl;
+    else
+    {
+        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+        char nome[30];
+        cout << "\n** Pesquisar Aluno por Nome **\n" << endl;
+        cout << "Nome: ";
+        cin >> nome;
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(strcmp(p->nome,nome)==0)
+                ListarAluno(p);
+        }
     }
 }

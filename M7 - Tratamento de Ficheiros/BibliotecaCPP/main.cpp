@@ -9,10 +9,9 @@ int main()
 {
     Menus menus;
     Aluno aluno;
-    int opt,subopt;
+    int opt,subopt,subsubopt;
     Aluno::EstAluno *alunos = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
-    int num_proc;
     alunos->ant = NULL;
     alunos->prox = NULL;
     do{
@@ -42,10 +41,16 @@ int main()
                     case 3:
                         aluno.LimparAlunos(alunos);
                         aluno.CarregarAlunos(alunos);
-                        cout << "\n** Pesquisar Aluno por Numero de Processo **\n" << endl;
-                        cout << "Numero de processo: ";
-                        cin >> num_proc;
-                        aluno.PesquisarAlunoNumProc(alunos,num_proc);
+                        subsubopt = menus.SubSubMenu(1);
+                        switch(subsubopt)
+                        {
+                            case 1:
+                                aluno.PesquisarAlunoNumProc(alunos);
+                                break;
+                            case 2:
+                                aluno.PesquisarAlunoNome(alunos);
+                                break;
+                        }
                         break;
                 }
                 break;

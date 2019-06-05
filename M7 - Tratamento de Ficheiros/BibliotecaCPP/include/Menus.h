@@ -10,6 +10,7 @@ class Menus
         Menus();
         int Menu();
         int SubMenu(string);
+        int SubSubMenu(int);
 
     protected:
 

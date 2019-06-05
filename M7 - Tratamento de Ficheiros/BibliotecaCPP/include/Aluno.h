@@ -22,7 +22,8 @@ class Aluno
         void LimparAlunos(Aluno::EstAluno *lista);
         void CarregarAlunos(Aluno::EstAluno *lista);
         void ListarAluno(Aluno::EstAluno *aluno);
-        void PesquisarAlunoNumProc(Aluno::EstAluno *lista,int num_proc);
+        void PesquisarAlunoNumProc(Aluno::EstAluno *lista);
+        void PesquisarAlunoNome(Aluno::EstAluno *lista);
 
     protected:
 
