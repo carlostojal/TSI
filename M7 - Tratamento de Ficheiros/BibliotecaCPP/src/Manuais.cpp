@@ -1,6 +1,7 @@
 #include "Manuais.h"
 #include <fstream>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 Manuais::Manuais()
@@ -80,4 +81,31 @@ void Manuais::ListarManual(Manuais::EstManual *manual)
     cout << "\nISBN: " << manual->isbn << endl;
     cout << "Titulo: " << manual->titulo << endl;
     cout << "Disciplina: " << manual->disciplina << endl;
+}
+
+void Manuais::PesquisarManualISBN(Manuais::EstManual *lista)
+{
+    Manuais::EstManual *p = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+    char isbn[20];
+    bool encontrou=false;
+
+    cout << "\n** Pesquisar Manual por ISBN **\n" << endl;
+    cout << "ISBN: ";
+    cin >> isbn;
+
+    if(lista->prox==NULL)
+        cout << "Nunca foram registados manuais." << endl;
+    else
+    {
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(strcmp(p->isbn,isbn)==0)
+            {
+                encontrou = true;
+                ListarManual(p);
+            }
+        }
+        if(!encontrou)
+            cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+    }
 }

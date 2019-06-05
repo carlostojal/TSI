@@ -83,6 +83,16 @@ int main()
                         for(q=manuais->prox;q!=NULL;q=q->prox)
                             manual.ListarManual(q);
                         break;
+                    case 3:
+                        subsubopt = menus.SubSubMenu(2);
+                        switch(subsubopt)
+                        {
+                            case 1:
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                manual.PesquisarManualISBN(manuais);
+                                break;
+                        }
                 }
                 break;
         }

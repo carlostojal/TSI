@@ -54,4 +54,18 @@ int Menus::SubSubMenu(int tipo)
         }while(opt<0||opt>5);
         return opt;
     }
+    else if(tipo==2) //Manuais
+    {
+        do{
+            cout << "\n** Pesquisar Manuais **\n" << endl;
+            cout << "1. ISBN" << endl;
+            cout << "2. Titulo" << endl;
+            cout << "3. Disciplina" << endl;
+            cout << "0. Voltar ao inicio\n" << endl;
+            cout << "Opcao: ";
+            cin >> opt;
+        }while(opt<0||opt>3);
+        return opt;
+    }
+
 }
