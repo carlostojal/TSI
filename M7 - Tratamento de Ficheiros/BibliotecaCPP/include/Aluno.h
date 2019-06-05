@@ -24,6 +24,7 @@ class Aluno
         void ListarAluno(Aluno::EstAluno *aluno);
         void PesquisarAlunoNumProc(Aluno::EstAluno *lista);
         void PesquisarAlunoNome(Aluno::EstAluno *lista);
+        void PesquisarAlunoAno(Aluno::EstAluno *lista);
 
     protected:
 

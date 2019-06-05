@@ -121,3 +121,22 @@ void Aluno::PesquisarAlunoNome(Aluno::EstAluno *lista)
         }
     }
 }
+
+void Aluno::PesquisarAlunoAno(Aluno::EstAluno *lista)
+{
+    if(lista->prox==NULL)
+        cout << "Nunca foram registados alunos." << endl;
+    else
+    {
+        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+        int ano;
+        cout << "\n** Pesquisar Aluno por Ano **\n" << endl;
+        cout << "Ano: ";
+        cin >> ano;
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(p->ano==ano)
+                ListarAluno(p);
+        }
+    }
+}
