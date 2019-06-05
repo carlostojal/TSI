@@ -140,3 +140,28 @@ void Aluno::PesquisarAlunoAno(Aluno::EstAluno *lista)
         }
     }
 }
+
+void Aluno::PesquisarAlunoTurma(Aluno::EstAluno *lista)
+{
+    bool encontrou=false;
+    if(lista->prox==NULL)
+        cout << "Nunca foram registados alunos." << endl;
+    else
+    {
+        Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+        char turma[10];
+        cout << "\n** Pesquisar Aluno por Turma **\n" << endl;
+        cout << "Turma: ";
+        cin >> turma;
+        for(p=lista->prox;p!=NULL;p=p->prox)
+        {
+            if(strcmp(p->turma,turma)==0)
+            {
+                encontrou = true;
+                ListarAluno(p);
+            }
+        }
+        if(!encontrou)
+            cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+    }
+}

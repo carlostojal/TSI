@@ -53,6 +53,9 @@ int main()
                             case 3:
                                 aluno.PesquisarAlunoAno(alunos);
                                 break;
+                            case 4:
+                                aluno.PesquisarAlunoTurma(alunos);
+                                break;
                         }
                         break;
                 }

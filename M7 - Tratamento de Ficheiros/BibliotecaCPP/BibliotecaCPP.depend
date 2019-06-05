@@ -41,3 +41,18 @@
 1559680992 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Menus.cpp
 	"Menus.h"
 
+1559736374 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\src\menus.cpp
+	"Menus.h"
+
+1559736169 g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\menus.h
+	<iostream>
+
+1559744201 source:g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Menus.h"
+	"Aluno.h"
+
+1559743922 g:\psi\tsi\m7 - tratamento de ficheiros\bibliotecacpp\include\aluno.h
+	<iostream>
+
