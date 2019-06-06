@@ -3,7 +3,7 @@
 #include "Menus.h"
 #include "Aluno.h"
 #include "Manuais.h"
-
+#include "Emprestimo.h"
 using namespace std;
 
 int main()
@@ -11,13 +11,24 @@ int main()
     Menus menus;
     Aluno aluno;
     Manuais manual;
+    Emprestimo emprestimo;
     int opt,subopt,subsubopt;
+
     Aluno::EstAluno *alunos = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Manuais::EstManual *manuais = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+    Emprestimo::EstEmprestimo *emprestimos = (Emprestimo::EstEmprestimo*) malloc(sizeof(Emprestimo::EstEmprestimo));
+
     Aluno::EstAluno *p = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
     Manuais::EstManual *q = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+    Emprestimo::EstEmprestimo *r = (Emprestimo::EstEmprestimo*) malloc(sizeof(Emprestimo::EstEmprestimo));
+
     alunos->ant = NULL;
     alunos->prox = NULL;
+    manuais->ant = NULL;
+    manuais->prox = NULL;
+    emprestimos->ant = NULL;
+    emprestimos->prox = NULL;
+
     do{
         opt = menus.Menu();
         switch(opt)
@@ -105,6 +116,16 @@ int main()
                         }
                 }
                 break;
+            case 3: //Emprstimos
+                subopt = menus.SubMenu("Emprestimos");
+                switch(subopt)
+                {
+                    case 1:
+                        emprestimo.LimparEmprestimos(emprestimos);
+                        emprestimo.CarregarEmprestimos(emprestimos);
+                        emprestimo.AdicionarEmprestimo(emprestimos);
+                        break;
+                }
         }
     }while(opt);
     return 0;

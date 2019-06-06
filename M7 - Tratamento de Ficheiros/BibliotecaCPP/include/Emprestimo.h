@@ -15,6 +15,7 @@ class Emprestimo
         } EstEmprestimo;
 
         Emprestimo();
+        int AdquirirID(Emprestimo::EstEmprestimo *lista);
         void AdicionarEmprestimo(Emprestimo::EstEmprestimo *lista);
         void LimparEmprestimos(Emprestimo::EstEmprestimo *lista);
         void CarregarEmprestimos(Emprestimo::EstEmprestimo *lista);
