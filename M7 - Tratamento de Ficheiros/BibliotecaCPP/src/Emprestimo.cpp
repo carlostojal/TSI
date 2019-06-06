@@ -385,3 +385,35 @@ void Emprestimo::PesquisarEmprestimoDisciplina(Emprestimo::EstEmprestimo *empres
     if(!encontrou)
         cout << "Nao foram encontrados resultados para a pesquisa." << endl;
 }
+
+void Emprestimo::PesquisarEmprestimoValor(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais)
+{
+    float valor;
+    bool encontrou=false;
+    Emprestimo::EstEmprestimo *p = (Emprestimo::EstEmprestimo*) malloc(sizeof(Emprestimo::EstEmprestimo));
+    Aluno::EstAluno *q = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    Manuais::EstManual *r = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+
+    cout << "\n** Pesquisar Emprestimos por Valor **\n" << endl;
+    cout << "Valor: ";
+    cin >> valor;
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    if(p->valor==valor)
+                    {
+                        encontrou = true;
+                        ListarEmprestimo(p,q,r);
+                    }
+                }
+            }
+        }
+    }
+    if(!encontrou)
+        cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+}
