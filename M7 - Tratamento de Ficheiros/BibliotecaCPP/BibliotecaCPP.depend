@@ -20,9 +20,10 @@
 	<fstream>
 	<stdlib.h>
 
-1559845817 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
+1559846675 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
 	<iostream>
 	<stdlib.h>
+	<string.h>
 	"Menus.h"
 	"Aluno.h"
 	"Manuais.h"
@@ -79,5 +80,7 @@
 	<iostream>
 	<fstream>
 
-1559844983 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Emprestimo.h
+1559846844 /home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/include/Emprestimo.h
+	"Aluno.h"
+	"Manuais.h"
 

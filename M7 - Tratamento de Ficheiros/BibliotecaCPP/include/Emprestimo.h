@@ -1,6 +1,9 @@
 #ifndef EMPRESTIMO_H
 #define EMPRESTIMO_H
 
+#include "Aluno.h"
+#include "Manuais.h"
+
 
 class Emprestimo
 {
@@ -8,7 +11,7 @@ class Emprestimo
         typedef struct EstEmprestimo {
             int id;
             int id_aluno;
-            int id_manual;
+            char id_manual[20];
             float valor;
             struct EstEmprestimo *prox;
             struct EstEmprestimo *ant;
@@ -19,7 +22,7 @@ class Emprestimo
         void AdicionarEmprestimo(Emprestimo::EstEmprestimo *lista);
         void LimparEmprestimos(Emprestimo::EstEmprestimo *lista);
         void CarregarEmprestimos(Emprestimo::EstEmprestimo *lista);
-        void ListarEmprestimo(Emprestimo::EstEmprestimo *emprestimo);
+        void ListarEmprestimo(Emprestimo::EstEmprestimo *emprestimo,Aluno::EstAluno *aluno,Manuais::EstManual *manual);
 
     protected:
 

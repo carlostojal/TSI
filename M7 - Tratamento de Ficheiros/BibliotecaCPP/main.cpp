@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <string.h>
 #include "Menus.h"
 #include "Aluno.h"
 #include "Manuais.h"
@@ -125,6 +126,20 @@ int main()
                         emprestimo.CarregarEmprestimos(emprestimos);
                         emprestimo.AdicionarEmprestimo(emprestimos);
                         break;
+                    case 2:
+                        emprestimo.LimparEmprestimos(emprestimos);
+                        emprestimo.CarregarEmprestimos(emprestimos);
+                        for(r=emprestimos->prox;r!=NULL;r=r->prox)
+                        {
+                            for(p=alunos->prox;p!=NULL;p=p->prox)
+                            {
+                                for(q=manuais->prox;q!=NULL;q=q->prox)
+                                {
+                                    if(r->id_aluno==p->num_proc&&strcmp(r->id_manual,q->isbn)==0)
+                                        emprestimo.ListarEmprestimo(r,p,q);
+                                }
+                            }
+                        }
                 }
         }
     }while(opt);

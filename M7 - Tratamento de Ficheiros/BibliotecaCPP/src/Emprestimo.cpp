@@ -83,3 +83,16 @@ void Emprestimo::CarregarEmprestimos(Emprestimo::EstEmprestimo *lista)
         }
     }
 }
+
+void Emprestimo::ListarEmprestimo(Emprestimo::EstEmprestimo *emprestimo,Aluno::EstAluno *aluno,Manuais::EstManual *manual)
+{
+    cout << "\nID: " << emprestimo->id << endl;
+    cout << "Numero de processo: " << aluno->num_proc << endl;
+    cout << "Nome: " << aluno->nome << endl;
+    cout << "Ano: " << aluno->ano << endl;
+    cout << "Turma: " << aluno->turma << endl;
+    cout << "Telemovel: " << aluno->telemovel << endl;
+    cout << "ISBN: " << manual->isbn << endl;
+    cout << "Titulo: " << manual->titulo << endl;
+    cout << "Disciplina: " << manual->disciplina << endl;
+}
