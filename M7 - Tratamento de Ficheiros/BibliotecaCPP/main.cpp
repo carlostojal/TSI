@@ -181,6 +181,15 @@ int main()
                                 emprestimo.CarregarEmprestimos(emprestimos);
                                 emprestimo.PesquisarEmprestimoAno(emprestimos,alunos,manuais);
                                 break;
+                            case 5:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoTurma(emprestimos,alunos,manuais);
+                                break;
                         }
                 }
         }
