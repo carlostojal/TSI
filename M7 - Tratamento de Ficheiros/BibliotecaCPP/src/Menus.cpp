@@ -67,5 +67,24 @@ int Menus::SubSubMenu(int tipo)
         }while(opt<0||opt>3);
         return opt;
     }
-
+    else //Empréstimos
+    {
+        do{
+            cout << "\n** Pesquisar Emprestimos **\n" << endl;
+            cout << "1. ID" << endl;
+            cout << "2. Numero de Processo do Aluno" << endl;
+            cout << "3. Nome do Aluno" << endl;
+            cout << "4. Ano do Aluno" << endl;
+            cout << "5. Turma do Aluno" << endl;
+            cout << "6. Telemovel do Aluno" << endl;
+            cout << "7. ISBN no Manual" << endl;
+            cout << "8. Titulo do Manual" << endl;
+            cout << "9. Disciplina do Manual" << endl;
+            cout << "10. Valor" << endl;
+            cout << "0. Voltar ao inicio\n" << endl;
+            cout << "Opcao: ";
+            cin >> opt;
+        }while(opt<0||opt>10);
+        return opt;
+    }
 }
