@@ -170,7 +170,7 @@ int main()
                                 manual.CarregarManuais(manuais);
                                 emprestimo.LimparEmprestimos(emprestimos);
                                 emprestimo.CarregarEmprestimos(emprestimos);
-                                emprestimo.PesquisarEmprestimoISBN(emprestimos,alunos,manuais);
+                                emprestimo.PesquisarEmprestimoNome(emprestimos,alunos,manuais);
                                 break;
                             case 4:
                                 aluno.LimparAlunos(alunos);
@@ -179,7 +179,7 @@ int main()
                                 manual.CarregarManuais(manuais);
                                 emprestimo.LimparEmprestimos(emprestimos);
                                 emprestimo.CarregarEmprestimos(emprestimos);
-                                emprestimo.PesquisarEmprestimoNome(emprestimos,alunos,manuais);
+                                emprestimo.PesquisarEmprestimoAno(emprestimos,alunos,manuais);
                                 break;
                         }
                 }
