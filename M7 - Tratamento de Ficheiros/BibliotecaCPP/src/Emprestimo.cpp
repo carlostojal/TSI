@@ -108,6 +108,7 @@ void Emprestimo::PesquisarEmprestimoID(Emprestimo::EstEmprestimo *emprestimos,Al
 
     cout << "\n** Pesquisar Emprestimo por ID **\n" << endl;
     cout << "ID: ";
+    cin >> id;
     for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
         for(q=alunos->prox;q!=NULL;q=q->prox)
@@ -139,6 +140,7 @@ void Emprestimo::PesquisarEmprestimoNumProc(Emprestimo::EstEmprestimo *emprestim
 
     cout << "\n** Pesquisar Emprestimos por Numero de Processo **\n" << endl;
     cout << "Numero de Processo: ";
+    cin >> num_proc;
     for(p=emprestimos->prox;p!=NULL;p=p->prox)
     {
         for(q=alunos->prox;q!=NULL;q=q->prox)
@@ -148,6 +150,38 @@ void Emprestimo::PesquisarEmprestimoNumProc(Emprestimo::EstEmprestimo *emprestim
                 if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
                 {
                     if(p->id_aluno==num_proc)
+                    {
+                        encontrou = true;
+                        ListarEmprestimo(p,q,r);
+                    }
+                }
+            }
+        }
+    }
+    if(!encontrou)
+        cout << "Nao foram encontrados resultados para a pesquisa." << endl;
+}
+
+void Emprestimo::PesquisarEmprestimoISBN(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais)
+{
+    char isbn[20];
+    bool encontrou=false;
+    Emprestimo::EstEmprestimo *p = (Emprestimo::EstEmprestimo*) malloc(sizeof(Emprestimo::EstEmprestimo));
+    Aluno::EstAluno *q = (Aluno::EstAluno*) malloc(sizeof(Aluno::EstAluno));
+    Manuais::EstManual *r = (Manuais::EstManual*) malloc(sizeof(Manuais::EstManual));
+
+    cout << "\n** Pesquisar Emprestimos por ISBN **\n" << endl;
+    cout << "ISBN: ";
+    cin >> isbn;
+    for(p=emprestimos->prox;p!=NULL;p=p->prox)
+    {
+        for(q=alunos->prox;q!=NULL;q=q->prox)
+        {
+            for(r=manuais->prox;r!=NULL;r=r->prox)
+            {
+                if(p->id_aluno==q->num_proc&&strcmp(p->id_manual,r->isbn)==0)
+                {
+                    if(strcmp(p->id_manual,isbn)==0)
                     {
                         encontrou = true;
                         ListarEmprestimo(p,q,r);
