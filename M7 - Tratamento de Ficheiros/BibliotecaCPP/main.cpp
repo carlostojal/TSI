@@ -163,6 +163,24 @@ int main()
                                 emprestimo.CarregarEmprestimos(emprestimos);
                                 emprestimo.PesquisarEmprestimoNumProc(emprestimos,alunos,manuais);
                                 break;
+                            case 3:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoISBN(emprestimos,alunos,manuais);
+                                break;
+                            case 4:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoNome(emprestimos,alunos,manuais);
+                                break;
                         }
                 }
         }
