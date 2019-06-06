@@ -199,6 +199,24 @@ int main()
                                 emprestimo.CarregarEmprestimos(emprestimos);
                                 emprestimo.PesquisarEmprestimoTelemovel(emprestimos,alunos,manuais);
                                 break;
+                            case 7:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoISBN(emprestimos,alunos,manuais);
+                                break;
+                            case 8:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoTitulo(emprestimos,alunos,manuais);
+                                break;
                         }
                 }
         }
