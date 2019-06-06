@@ -140,6 +140,30 @@ int main()
                                 }
                             }
                         }
+                        break;
+                    case 3:
+                        subsubopt = menus.SubSubMenu(3);
+                        switch(subsubopt)
+                        {
+                            case 1:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoID(emprestimos,alunos,manuais);
+                                break;
+                            case 2:
+                                aluno.LimparAlunos(alunos);
+                                aluno.CarregarAlunos(alunos);
+                                manual.LimparManuais(manuais);
+                                manual.CarregarManuais(manuais);
+                                emprestimo.LimparEmprestimos(emprestimos);
+                                emprestimo.CarregarEmprestimos(emprestimos);
+                                emprestimo.PesquisarEmprestimoNumProc(emprestimos,alunos,manuais);
+                                break;
+                        }
                 }
         }
     }while(opt);
