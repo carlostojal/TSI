@@ -32,6 +32,7 @@ class Emprestimo
         void PesquisarEmprestimoTelemovel(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais);
         void PesquisarEmprestimoTitulo(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais);
         void PesquisarEmprestimoDisciplina(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais);
+        void PesquisarEmprestimoValor(Emprestimo::EstEmprestimo *emprestimos,Aluno::EstAluno *alunos,Manuais::EstManual *manuais);
 
     protected:
 
