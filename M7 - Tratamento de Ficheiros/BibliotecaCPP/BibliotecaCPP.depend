@@ -20,7 +20,7 @@
 	<fstream>
 	<stdlib.h>
 
-1559855506 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
+1559856250 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/main.cpp
 	<iostream>
 	<stdlib.h>
 	<string.h>
@@ -75,7 +75,7 @@
 	<iostream>
 	<string.h>
 
-1559855485 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Emprestimo.cpp
+1559856278 source:/home/carlostojal/Documentos/TSI/M7 - Tratamento de Ficheiros/BibliotecaCPP/src/Emprestimo.cpp
 	"Emprestimo.h"
 	<iostream>
 	<fstream>

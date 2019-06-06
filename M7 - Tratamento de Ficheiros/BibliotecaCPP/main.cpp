@@ -127,6 +127,10 @@ int main()
                         emprestimo.AdicionarEmprestimo(emprestimos);
                         break;
                     case 2:
+                        aluno.LimparAlunos(alunos);
+                        aluno.CarregarAlunos(alunos);
+                        manual.LimparManuais(manuais);
+                        manual.CarregarManuais(manuais);
                         emprestimo.LimparEmprestimos(emprestimos);
                         emprestimo.CarregarEmprestimos(emprestimos);
                         for(r=emprestimos->prox;r!=NULL;r=r->prox)

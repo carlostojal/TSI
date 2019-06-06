@@ -36,7 +36,7 @@ void Emprestimo::AdicionarEmprestimo(Emprestimo::EstEmprestimo *lista)
     novo.id = AdquirirID(lista);
 
     fp.open("emprestimos.tsv",ios_base::app);
-    fp << novo.id << "\t" << novo.id_aluno << "\t" << novo.id_manual << "\t" << novo.valor;
+    fp << novo.id << "\t" << novo.id_aluno << "\t" << novo.id_manual << "\t" << novo.valor << "\n";
     fp.close();
 }
 
@@ -64,6 +64,7 @@ void Emprestimo::CarregarEmprestimos(Emprestimo::EstEmprestimo *lista)
 {
     Emprestimo::EstEmprestimo *p = (Emprestimo::EstEmprestimo*) malloc(sizeof(Emprestimo::EstEmprestimo));
     ifstream fp;
+    fp.open("emprestimos.tsv");
 
     while(!fp.eof())
     {
@@ -78,11 +79,12 @@ void Emprestimo::CarregarEmprestimos(Emprestimo::EstEmprestimo *lista)
         }
         else
         {
-            for(p=lista;p->prox!=NULL;p=p->prox) {}
+            for(p=lista->prox;p->prox!=NULL;p=p->prox) {}
             novo->ant = p;
             p->prox = novo;
         }
     }
+    fp.close();
 }
 
 void Emprestimo::ListarEmprestimo(Emprestimo::EstEmprestimo *emprestimo,Aluno::EstAluno *aluno,Manuais::EstManual *manual)
