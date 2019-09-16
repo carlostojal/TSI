@@ -1,0 +1,31 @@
+body {
+	background-color: #faf6eb;
+}
+
+.title {
+	font-family: 'Roboto';
+	font-weight: 100;
+	font-size: 40px;
+}
+
+.subtitle {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 100;
+	color: #fff5d6;
+	font-size: 30px;
+	background-color: #403f2f;
+	display: inline-block;
+	margin-top: -20px;
+	padding-left: 2px;
+	padding-right: 2px; 
+}
+
+.home-img {
+	width: 100%;
+	height: auto;
+
+	-webkit-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
+	-moz-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
+	box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
+}
