@@ -1,0 +1,3 @@
+este e um ficheiro de teste
+com tudo escrito em minusculas
+vai ser escrito em maiusculas no ficheiro maiusculas
