@@ -38,7 +38,7 @@ public class MyAPI {
     public String loadMessage(Socket socket) {
         String message = "";
         try {
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             message = in.readLine(); // leitura da linha
         } catch (IOException e) { // em caso de erro ao tentar ler (a conexão deixou de estar disponível)
             return "Erro ao aceder ao serviço.";
