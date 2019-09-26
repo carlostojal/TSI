@@ -3,13 +3,13 @@ body {
 }
 
 .title {
-	font-family: 'Roboto';
+	font-family: 'Playfair Display';
 	font-weight: 100;
 	font-size: 40px;
 }
 
 .subtitle {
-	font-family: 'Roboto';
+	font-family: 'Playfair Display';
 	font-style: italic;
 	font-weight: 100;
 	color: #fff5d6;
@@ -21,6 +21,12 @@ body {
 	padding-right: 2px; 
 }
 
+.bigtext {
+	font-family: 'Playfair Display';
+	font-weight: 100;
+	font-size: 35px;
+}
+
 .home-img {
 	width: 100%;
 	height: auto;
@@ -28,4 +34,9 @@ body {
 	-webkit-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
 	-moz-box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
 	box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.46);
+}
+
+article {
+	font-family: 'Playfair Display';
+	font-size: 20px;
 }
