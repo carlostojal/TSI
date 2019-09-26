@@ -27,5 +27,3 @@ message = ""
 while message != "exit":
 	message = input("Mensagem: ")
 	client.send((message+"\n").encode())
-
-s.close()

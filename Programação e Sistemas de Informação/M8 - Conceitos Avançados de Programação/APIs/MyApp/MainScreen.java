@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 
-// API do sistema (Abstract Windows Toolkit)
+// APIs do sistema Windows (Abstract Windows Toolkit)
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -52,7 +52,7 @@ public class MainScreen {
         
         panel.add(scroll);
         
-        frame.setTitle("MyApp");
+        frame.setTitle("Ecrã Principal - MyApp");
         frame.setSize(500, 400);
         frame.add(panel);
         
@@ -73,6 +73,7 @@ public class MainScreen {
         }
     }
     
+    // Método que continuamente tenta obter mensagens do serviço
     public void loadMessages() {
         while(!message.equals("exit")) {
             // Execução do método "loadMessage()" da minha API, que retorna a última mensagem enviada pelo serviço
