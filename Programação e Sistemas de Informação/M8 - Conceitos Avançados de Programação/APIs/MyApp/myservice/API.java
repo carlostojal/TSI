@@ -1,8 +1,8 @@
-package myapi;
+package myservice;
 
 //
 // Copyright © Carlos Tojal (carlostojal)
-// MyAPI.java
+// API.java
 // MyAPI
 // APIs
 // github.com/carlostojal/TSI
@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-public class MyAPI {
+public class API {
     private Socket socket; // objeto responsável pela comunicação em rede a baixo nível
     private BufferedReader in; // objeto que vai ler os dados enviados pelo serviço
     
