@@ -3,6 +3,7 @@ import socket
 #
 # Copyright (c) Carlos Tojal (carlostojal)
 # MyService.py
+# MyService
 # APIs
 # github.com/carlostojal/TSI
 #
@@ -11,7 +12,7 @@ print("\n** MyService **\n")
 
 s = socket.socket()
 
-host = socket.gethostbyname(socket.gethostname())
+host = "192.168.1.69" # endereço da placa de rede a utilizar
 port = 555
 
 s.bind((host, port))

@@ -13,7 +13,6 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JButton;
 import javax.swing.JScrollPane;
 
 // Package que comunica com API do sistema para criação e gestão de janelas e respetivos eventos (Abstract Windows Toolkit)
@@ -67,7 +66,7 @@ public class MainScreen {
         frame.setVisible(true);
         
         // Execução do método "connect()", pertencente à minha API (inicializa o atributo "socket")
-        socket = new API().connect("192.168.56.1", 555); // recebe o endereço IPv4 e porta na qual corre o serviço
+        socket = new API().connect("77.54.195.181", 555); // recebe o endereço IPv4 e porta na qual corre o serviço
         if(socket.isConnected()) {
             isConnected = true;
             textArea.setText(textArea.getText()+"\n[MyService API] Conectou ao serviço MyService com sucesso.");
@@ -82,11 +81,12 @@ public class MainScreen {
     
     // Método que continuamente tenta obter mensagens do serviço
     public void loadMessages() {
-        while(!message.equals("exit")) {
+        while(!message.equals("exit") && message != null) {
             // Execução do método "loadMessage()" da minha API, que retorna a última mensagem enviada pelo serviço
-            String message = new API().loadMessage(socket);
+            message = new API().loadMessage(socket);
             //Adição da última mensagem à área de texto
-            textArea.setText(textArea.getText()+"\n[MyService] "+message);
+            if(!message.equals("exit") && message != null)
+                textArea.setText(textArea.getText()+"\n[MyService] "+message);
         }
         textArea.setText(textArea.getText()+"\n[MyAPI] O serviço MyService foi encerrado.");
     }
