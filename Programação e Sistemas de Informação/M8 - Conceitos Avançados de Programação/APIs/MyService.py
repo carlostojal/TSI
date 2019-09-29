@@ -26,5 +26,5 @@ print("Cliente conectado\n")
 message = ""
 
 while message != "exit":
-	message = input("Mensagem: ")
-	client.send((message+"\n").encode())
+        message = input("Mensagem: ")
+        client.send((message+"\n").encode())

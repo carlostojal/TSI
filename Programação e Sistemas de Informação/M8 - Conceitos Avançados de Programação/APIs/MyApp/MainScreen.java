@@ -65,18 +65,18 @@ public class MainScreen {
         // o sistema através de uma API do sistema, para permitir que a janela apareça)
         frame.setVisible(true);
         
-        // Execução do método "connect()", pertencente à minha API (inicializa o atributo "socket")
-        socket = new API().connect("77.54.195.181", 555); // recebe o endereço IPv4 e porta na qual corre o serviço
-        if(socket.isConnected()) {
-            isConnected = true;
-            textArea.setText(textArea.getText()+"\n[MyService API] Conectou ao serviço MyService com sucesso.");
-        } else {
-            textArea.setText(textArea.getText()+"\n[MyService API] O serviço MyService está inacessível.");
+        while(!isConnected) {
+            // Execução do método "connect()", pertencente à minha API (inicializa o atributo "socket")
+            socket = new API().connect("77.54.195.181", 555); // recebe o endereço IPv4 e porta na qual corre o serviço
+            if(socket.isConnected()) {
+                isConnected = true;
+                textArea.setText(textArea.getText()+"\n[MyService API] Conectou ao serviço MyService com sucesso.");
+            } else {
+                textArea.setText(textArea.getText()+"\n[MyService API] O serviço MyService está inacessível.");
+            }
         }
         
-        if(isConnected) {
-            loadMessages();
-        }
+        loadMessages();
     }
     
     // Método que continuamente tenta obter mensagens do serviço

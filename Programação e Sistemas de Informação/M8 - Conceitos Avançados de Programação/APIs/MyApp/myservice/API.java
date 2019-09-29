@@ -20,7 +20,7 @@ import java.io.IOException;
 public class API {
     private Socket socket; // objeto responsável pela comunicação em rede a baixo nível
     private BufferedReader in; // objeto que vai ler os dados enviados pelo serviço
-    
+       
     // Método que faz a ligação ao endereço IPv4 e porta fornecidos como argumento
     public Socket connect(String address, int port) {
         try {
@@ -40,7 +40,7 @@ public class API {
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             message = in.readLine(); // leitura da linha
-        } catch (IOException e) { // em caso de erro ao tentar ler (a conexão deixou de estar disponível)
+        } catch (IOException e) { // em caso de erro ao tentar ler
             return "Erro ao aceder ao serviço.";
         }
         return message;
