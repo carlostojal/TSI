@@ -21,7 +21,7 @@ s.listen()
 print("Serviço iniciado em "+host+":"+str(port))
 
 client, client_addr = s.accept()
-print("Cliente conectado\n")
+print("Cliente conectado ("+str(client_addr)+")\n")
 
 message = ""
 
