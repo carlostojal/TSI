@@ -12,7 +12,7 @@ print("\n** MyService **\n")
 
 s = socket.socket()
 
-host = "192.168.1.69" # endereço da placa de rede a utilizar
+host = "10.1.25.74" # endereço da placa de rede a utilizar
 port = 555
 
 s.bind((host, port))
