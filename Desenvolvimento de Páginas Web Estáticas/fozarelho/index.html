@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 
 <!--
-    Copyright (c) Carlos Tojal
+
+    Copyright (c) Carlos Tojal (carlostojal)
     Foz do Arelho
     index.html
+
 -->
+
+<!-- Página inicial do site -->
 
 <html>
     <head>
         <meta charset="UTF-8">
         <title> Foz do Arelho </title>
+        <script type="text/javascript" src="scripts/weather.js"></script>
     </head>
     <body>
         <header>
             <h1> Foz do Arelho </h1>
+            <h3 id="forecast"></h3>
+            <!-- Gets forecast from AccuWeather API -->
+            <script type="text/javascript"> 
+                var forecast  = getForecastNextHour();
+                var forecast_text = getStatus(forecast) + "<br>" + getTemperature(forecast) + "° C<br>" + getPrecipitationProbability(forecast) + "% de probabilidade de precipitação";
+
+                document.getElementById("forecast").innerHTML = forecast_text;
+            </script>
         </header>
     </body>
 </html>
