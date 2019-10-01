@@ -8,8 +8,7 @@
 // Código responsável por obter informação meteorológica da API do serviço AccuWeather
 
 var fozlink = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&q=Foz+do+Arelho";
-var forecastlink = "http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/273911?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&language=pt-pt&metric=true";
-forecastlink = "http://dataservice.accuweather.com/currentconditions/v1/273911?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&language=pt-pt&metric=true";
+var forecastlink = "http://dataservice.accuweather.com/currentconditions/v1/273911?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&language=pt-pt&metric=true";
 
 function getStatus(forecast) {
     return forecast[0].WeatherText;
