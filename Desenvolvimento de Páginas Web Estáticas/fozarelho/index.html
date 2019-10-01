@@ -22,8 +22,8 @@
             <h3 id="forecast"></h3>
             <!-- Gets forecast from AccuWeather API -->
             <script type="text/javascript"> 
-                var forecast  = getForecastNextHour();
-                var forecast_text = getStatus(forecast) + "<br>" + getTemperature(forecast) + "° C<br>" + getPrecipitationProbability(forecast) + "% de probabilidade de precipitação";
+                var forecast  = getForecast();
+                var forecast_text = getStatus(forecast) + ", " + getTemperature(forecast) + "° C";
 
                 document.getElementById("forecast").innerHTML = forecast_text;
             </script>
