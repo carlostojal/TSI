@@ -39,32 +39,35 @@
                 var day1_max = -100, day2_max = -100, day3_max = -100, day4_max = -100, day5_max = -100;
                 var day1_min = 100, day2_min = 100, day3_min = 100, day4_min = 100, day5_min = 100;
                 var day1_day = 0, day2_day = 0, day3_day = 0, day4_day = 0, day5_day = 0;
+                var day1_details = "", day2_details = "", day3_details = "", day4_details = "", day5_details = "";
                 for(var i = 0; i < forecast.cnt; i++) {
-                    if(new Date(forecast.list[i].dt_txt).getDate() == day1) {
+                    date = new Date(forecast.list[i].dt_txt);
+                    if(date.getDate() == day1) {
                         if(forecast.list[i].main.temp_max > day1_max)
                             day1_max = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < day1_min)
                             day1_min = forecast.list[i].main.temp_min;
                         day1_day = new Date(forecast.list[i].dt_txt).getDay();
-                    } else if(new Date(forecast.list[i].dt_txt).getDate() == (day1 + 1)) {
+                        day1_details += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + "<br>";
+                    } else if(date.getDate() == (day1 + 1)) {
                         if(forecast.list[i].main.temp_max > day2_max)
                             day2_max = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < day2_min)
                             day2_min = forecast.list[i].main.temp_min;
                         day2_day = new Date(forecast.list[i].dt_txt).getDay();
-                    } else if(new Date(forecast.list[i].dt_txt).getDate() == (day1 + 2)) {
+                    } else if(date.getDate() == (day1 + 2)) {
                         if(forecast.list[i].main.temp_max > day3_max)
                             day3_max = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < day3_min)
                             day3_min = forecast.list[i].main.temp_min;
                         day3_day = new Date(forecast.list[i].dt_txt).getDay();
-                    } else if(new Date(forecast.list[i].dt_txt).getDate() == (day1 + 3)) {
+                    } else if(date.getDate() == (day1 + 3)) {
                         if(forecast.list[i].main.temp_max > day4_max)
                             day4_max = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < day4_min)
                             day4_min = forecast.list[i].main.temp_min;
                         day4_day = new Date(forecast.list[i].dt_txt).getDay();
-                    } else if(new Date(forecast.list[i].dt_txt).getDate() == (day1 + 4)) {
+                    } else {
                         if(forecast.list[i].main.temp_max > day5_max)
                             day5_max = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < day5_min)
@@ -117,7 +120,15 @@
                 else
                     day5_text = "Sábado:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
 
-                document.getElementById("day1").innerHTML = day1_text;
+                function expandDay1() {
+                    document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='unexpandDay1()'> Esconder </button><br>" + day1_details;
+                }
+
+                function unexpandDay1() {
+                    document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='expandDay1()'> Detalhes </button><br>"
+                }
+
+                document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='expandDay1()'> Detalhes </button><br>";
                 document.getElementById("day2").innerHTML = day2_text;
                 document.getElementById("day3").innerHTML = day3_text;
                 document.getElementById("day4").innerHTML = day4_text;
