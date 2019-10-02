@@ -17,6 +17,10 @@ function getTemperature(forecast) {
     return forecast.main.temp;
 }
 
+function getWind(forecast) {
+    return forecast.wind.speed;
+}
+
 function getForecast() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", forecastlink, false);

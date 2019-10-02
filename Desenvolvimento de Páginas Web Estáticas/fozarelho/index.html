@@ -23,7 +23,7 @@
             <!-- Obtém meteorogia do OpenWheatherMap API -->
             <script type="text/javascript"> 
                 var forecast  = getForecast();
-                var forecast_text = getStatus(forecast) + ", " + getTemperature(forecast) + "° C";
+                var forecast_text = getStatus(forecast) + ", " + getTemperature(forecast) + "° C, vento a " + getWind(forecast) + "km/h";
 
                 document.getElementById("forecast").innerHTML = forecast_text;
             </script>
