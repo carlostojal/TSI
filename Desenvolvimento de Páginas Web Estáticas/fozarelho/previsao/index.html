@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!--
+
+    Copyright (c) Carlos Tojal (carlostojal)
+    Foz do Arelho
+    previsao/index.html
+
+-->
+
+<!-- Previsão meteorológica -->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Previsão Meteorológica - Foz do Arelho </title>
+    </head>
+    <body>
+        <header>
+            <h1>Previsão Meteorológica</h1>
+            <script type="text/javascript" src="../scripts/forecast.js"></script>
+        </header>
+        <nav>
+            <ul>
+                <li><a href=".."> Início </a></li>
+                <li><a href="/"> Previsão Meteorológica </a></li>
+            </ul>
+        </nav>
+        <section>
+            <div id="forecast"></div>
+            <script>
+                var forecast = getForecast();
+                for(var i = 0; i < forecast.cnt; i++) {
+                    document.getElementById("forecast").innerHTML += getForecastDate(forecast.list[i]) + "<br>" + getForecastStatus(forecast.list[i]) + "<br> Temperatura máxima: " + getForecastMaxTemp(forecast.list[i]) + "° C<br> Temperatura mínimo: " + getForecastMinTemp(forecast.list[0]) + "° C<br><br>";
+                }
+            </script>
+        </section>
+    </body>
+</html>
