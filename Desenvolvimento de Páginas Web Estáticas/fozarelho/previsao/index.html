@@ -48,7 +48,7 @@
                         if(forecast.list[i].main.temp_min < day1_min)
                             day1_min = forecast.list[i].main.temp_min;
                         day1_day = new Date(forecast.list[i].dt_txt).getDay();
-                        day1_details += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + "<br>";
+                        day1_details += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 1)) {
                         if(forecast.list[i].main.temp_max > day2_max)
                             day2_max = forecast.list[i].main.temp_max;

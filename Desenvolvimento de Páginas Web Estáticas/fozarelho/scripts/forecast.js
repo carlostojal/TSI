@@ -28,6 +28,10 @@ function getForecastStatus(forecast) {
     return forecast.weather[0].description;
 }
 
+function getForecastTemp(forecast) {
+    return forecast.main.temp;
+}
+
 function getForecastMaxTemp(forecast) {
     return forecast.main.temp_max;
 }
