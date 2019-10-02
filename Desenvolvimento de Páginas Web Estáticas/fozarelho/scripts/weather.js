@@ -5,17 +5,16 @@
 // scripts/weather.js 
 // 
 
-// Código responsável por obter informação meteorológica da API do serviço AccuWeather
+// Código responsável por obter informação meteorológica da API do serviço OpenWeatherMap
 
-var fozlink = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&q=Foz+do+Arelho";
-var forecastlink = "http://dataservice.accuweather.com/currentconditions/v1/273911?apikey=Gofa7TWTOGZFhZmti07ybKlxbS9FMsIw&language=pt-pt&metric=true";
+var forecastlink = "https://api.openweathermap.org/data/2.5/weather?apikey=c9f1d2a6eaec5f917473c187547ba288&id=2267937&lang=pt&units=metric";
 
 function getStatus(forecast) {
-    return forecast[0].WeatherText;
+    return forecast.weather[0].description;
 }
 
 function getTemperature(forecast) {
-    return forecast[0].Temperature.Metric.Value;
+    return forecast.main.temp;
 }
 
 function getForecast() {
