@@ -21,19 +21,19 @@
         <header>
             <h1> Foz do Arelho </h1>
             <h3 id="forecast"></h3>
-            <!-- Obtém meteorogia do OpenWheatherMap API -->
-            <script type="text/javascript"> 
-                var weather = getWeather();
-                var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "° C, vento a " + getWind(weather) + "km/h";
-
-                document.getElementById("forecast").innerHTML = weather_text;
-            </script>
         </header>
         <nav>
             <ul>
-                <li><a href="/"> Início </a></li>
+                <li><a href="."> Início </a></li>
                 <li><a href="previsao"> Previsão Meteorológica </a></li>
             </ul>
         </nav>
     </body>
+    <!-- Obtém meteorogia do OpenWheatherMap API -->
+    <script type="text/javascript"> 
+        var weather = getWeather();
+        var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "km/h";
+
+        document.getElementById("forecast").innerHTML = weather_text;
+    </script>
 </html>

@@ -16,8 +16,12 @@ function getForecast() {
     return JSON.parse(xmlHttp.responseText);
 }
 
-function getForecastDate(forecast) {
+function getForecastStringDate(forecast) {
     return forecast.dt_txt;
+}
+
+function getForecastDate(forecast) {
+    return Date.parse(forecast.dt_txt);
 }
 
 function getForecastStatus(forecast) {
