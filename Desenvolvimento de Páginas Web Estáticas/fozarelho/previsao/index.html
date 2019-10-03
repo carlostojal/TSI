@@ -79,7 +79,7 @@
                             min_temps[3] = forecast.list[i].main.temp_min;
                         days[3] = new Date(forecast.list[i].dt_txt).getDay();
                         details[3] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
-                    } else {
+                    } else if(date.getDate() == (day1 + 4)) {
                         if(forecast.list[i].main.temp_max > max_temps[4])
                             max_temps[4] = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < min_temps[4])
@@ -90,7 +90,7 @@
                 }
                 texts[0] = "Hoje: <br>Temperatura Máxima: " + max_temps[0] + "°C" + "<br>Temperatura Mínima: " + min_temps[0] + "°C";
                 texts[1] = "Amanhã: <br>Temperatura Máxima: " + max_temps[1] + "°C" + "<br>Temperatura Mínima: " + min_temps[1] + "°C";
-                for(var i = 2; i < forecast.cnt; i++) {
+                for(var i = 2; i < 5; i++) {
                     if(days[i] == 1)
                         texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
                     else if(days[i] == 2)
