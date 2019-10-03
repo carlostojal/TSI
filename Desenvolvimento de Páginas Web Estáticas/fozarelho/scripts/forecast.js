@@ -3,6 +3,7 @@
 // Copyright (c) Carlos Tojal (carlostojal)
 // Foz do Arelho
 // scripts/forecast.js 
+// github.com/carlostojal/TSI
 // 
 
 // Código responsável por obter previsão meteorológica da API do serviço OpenWeatherMap
