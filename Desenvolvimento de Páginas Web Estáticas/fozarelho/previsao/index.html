@@ -32,16 +32,18 @@
             <div id="day3"></div><br>
             <div id="day4"></div><br>
             <div id="day5"></div><br>
+            <!-- Obtém previsão meteorológica da API OpenWeatherMap -->
             <script>
-                var forecast = getForecast();
-                var date = new Date(forecast.list[0].dt_txt);
-                day1 = date.getDate();
+                var forecast = getForecast(); // obtém a previsão
+                var date = new Date(forecast.list[0].dt_txt); // obtém a data da primeira previsão (data atual)
+                day1 = date.getDate(); //obtém o dia da data
+                // Declaração de variáveis
                 var max_temps = new Array(5);
                 var min_temps = new Array(5);
                 var days = new Array(5);
                 var details = new Array(5);
                 var texts = new Array(5);
-                // Inicializa os vetores
+                // Inicialização de variáveis
                 for(var i = 0; i < 5; i++) {
                     max_temps[i] = -100;
                     min_temps[i] = 100;
@@ -49,6 +51,7 @@
                     details[i] = "";
                     texts[i] = "";
                 }
+                // Obtenção da temperatura máxima e mínima para cada dia 
                 for(var i = 0; i < forecast.cnt; i++) {
                     date = new Date(forecast.list[i].dt_txt);
                     if(date.getDate() == day1) {
@@ -88,8 +91,10 @@
                         details[4] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     }
                 }
+                // Criação do texto para os primeiros 2 dias (hoje e amanhã, em que nunca muda a descrição do dia (hoje ou amanhã))
                 texts[0] = "Hoje: <br>Temperatura Máxima: " + max_temps[0] + "°C" + "<br>Temperatura Mínima: " + min_temps[0] + "°C";
                 texts[1] = "Amanhã: <br>Temperatura Máxima: " + max_temps[1] + "°C" + "<br>Temperatura Mínima: " + min_temps[1] + "°C";
+                // Criação do texto para cada outro dia, em função de qual o dia da semana (days[i])
                 for(var i = 2; i < 5; i++) {
                     if(days[i] == 1)
                         texts[i] = "Segunda:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
@@ -107,14 +112,17 @@
                         texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
                 }
 
+                // Função responsável por mostrar as previsões detalhadas do dia
                 function expandDay(day) {
                     document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='unexpandDay(" + (day) + ")'> Esconder </button><br>" + details[day - 1];
                 }
 
+                // Função responsável por ocultar as previsões (volta ao estado inicial)
                 function unexpandDay(day) {
                     document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='expandDay(" + (day) + ")'> Detalhes </button><br>";
                 }
 
+                // Criação inicial do conteúdo de cada dia
                 for(var i = 0 ; i < 5; i ++) {
                     document.getElementById("day" + (i + 1)).innerHTML = texts[i] + "<br><button onClick='expandDay(" + (i+1) + ")'> Detalhes </button><br>";
                 }

@@ -20,7 +20,9 @@
         <script type="text/javascript" src="scripts/forecast.js"></script>
     </head>
     <body>
+        <!-- Contém todo o cabeçalho da página -->
         <header>
+            <!-- Itens do menu -->
             <nav class="menu">
                 <a class="menu_items" href="#"> ONDE SE LOCALIZA </a>
                 <a class="menu_items" href="#"> O QUE FAZER </a>
@@ -28,15 +30,21 @@
                 <a class="menu_items" href="#"> CONTATOS </a>
                 <a class="menu_items" href="#"> EN </a>
             </nav>
+
+            <!-- Título grande -->
             <h1 class="title"> Foz do Arelho </h1>
+
+            <!-- Contém a meteorologia -->
             <div class="weather_area">
                 <h3 class="weather_label">Meteorologia atual:</h3>
                 <h3 id="weather">A obter a meteorologia. Por favor aguarde.</h3>
             </div>
         </header>
+        <!-- Secção inicial da página que contém a imagem -->
         <section>
             <img class="home_image" src="img/foz1.jpg">
         </section>
+        <!-- Conteúdo da página inicial -->
         <article>
             <div class="home_text">
                 Foz do Arelho é uma vila no concelho de Caldas da Rainha. <br>
@@ -44,7 +52,8 @@
             </div>
         </article>
     </body>
-    <!-- Obtém meteorogia do OpenWheatherMap API -->
+    
+    <!-- Obtém meteorogia da API OpenWheatherMap -->
     <script type="text/javascript"> 
         var weather = getWeather();
         var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "km/h";
