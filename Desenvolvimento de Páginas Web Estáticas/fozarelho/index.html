@@ -14,26 +14,41 @@
     <head>
         <meta charset="UTF-8">
         <title> Foz do Arelho </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
+        <link rel="stylesheet" href="styles.css">
         <script type="text/javascript" src="scripts/weather.js"></script>
         <script type="text/javascript" src="scripts/forecast.js"></script>
     </head>
     <body>
         <header>
-            <h1> Foz do Arelho </h1>
-            <h3 id="forecast">A obter a meteorologia. Por favor aguarde.</h3>
+            <nav class="menu">
+                <a class="menu_items" href="#"> ONDE SE LOCALIZA </a>
+                <a class="menu_items" href="#"> O QUE FAZER </a>
+                <a class="menu_items" href="previsao"> PREVISÃO METEOROLÓGICA </a>
+                <a class="menu_items" href="#"> CONTATOS </a>
+                <a class="menu_items" href="#"> EN </a>
+            </nav>
+            <h1 class="title"> Foz do Arelho </h1>
+            <div class="weather_area">
+                <h3 class="weather_label">Meteorologia atual:</h3>
+                <h3 id="weather">A obter a meteorologia. Por favor aguarde.</h3>
+            </div>
         </header>
-        <nav>
-            <ul>
-                <li><a href="."> Início </a></li>
-                <li><a href="previsao"> Previsão Meteorológica </a></li>
-            </ul>
-        </nav>
+        <section>
+            <img class="home_image" src="img/foz1.jpg">
+        </section>
+        <article>
+            <div class="home_text">
+                Foz do Arelho é uma vila no concelho de Caldas da Rainha. <br>
+                É conhecida como destino de férias, principalmente por possuir uma praia especialmente peculiar: uma parte da mesma é banhada pelo oceano Atlântico, enquanto que outra pela Lagoa de Óbidos.
+            </div>
+        </article>
     </body>
     <!-- Obtém meteorogia do OpenWheatherMap API -->
     <script type="text/javascript"> 
         var weather = getWeather();
         var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "km/h";
 
-        document.getElementById("forecast").innerHTML = weather_text;
+        document.getElementById("weather").innerHTML = weather_text;
     </script>
 </html>
