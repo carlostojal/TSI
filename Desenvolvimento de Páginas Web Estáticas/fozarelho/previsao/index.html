@@ -36,103 +36,88 @@
                 var forecast = getForecast();
                 var date = new Date(forecast.list[0].dt_txt);
                 day1 = date.getDate();
-                var day1_max = -100, day2_max = -100, day3_max = -100, day4_max = -100, day5_max = -100;
-                var day1_min = 100, day2_min = 100, day3_min = 100, day4_min = 100, day5_min = 100;
-                var day1_day = 0, day2_day = 0, day3_day = 0, day4_day = 0, day5_day = 0;
-                var day1_details = "", day2_details = "", day3_details = "", day4_details = "", day5_details = "";
+                var max_temps = new Array(5);
+                var min_temps = new Array(5);
+                var days = new Array(5);
+                var details = new Array(5);
+                var texts = new Array(5);
+                // Inicializa os vetores
+                for(var i = 0; i < 5; i++) {
+                    max_temps[i] = -100;
+                    min_temps[i] = 100;
+                    days[i] = 0;
+                    details[i] = "";
+                    texts[i] = "";
+                }
                 for(var i = 0; i < forecast.cnt; i++) {
                     date = new Date(forecast.list[i].dt_txt);
                     if(date.getDate() == day1) {
-                        if(forecast.list[i].main.temp_max > day1_max)
-                            day1_max = forecast.list[i].main.temp_max;
-                        if(forecast.list[i].main.temp_min < day1_min)
-                            day1_min = forecast.list[i].main.temp_min;
-                        day1_day = new Date(forecast.list[i].dt_txt).getDay();
-                        day1_details += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        if(forecast.list[i].main.temp_max > max_temps[0])
+                            max_temps[0] = forecast.list[i].main.temp_max;
+                        if(forecast.list[i].main.temp_min < min_temps[0])
+                            min_temps[0] = forecast.list[i].main.temp_min;
+                        days[0] = new Date(forecast.list[i].dt_txt).getDay();
+                        details[0] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 1)) {
-                        if(forecast.list[i].main.temp_max > day2_max)
-                            day2_max = forecast.list[i].main.temp_max;
-                        if(forecast.list[i].main.temp_min < day2_min)
-                            day2_min = forecast.list[i].main.temp_min;
-                        day2_day = new Date(forecast.list[i].dt_txt).getDay();
+                        if(forecast.list[i].main.temp_max > max_temps[1])
+                            max_temps[1] = forecast.list[i].main.temp_max;
+                        if(forecast.list[i].main.temp_min < min_temps[1])
+                            min_temps[1] = forecast.list[i].main.temp_min;
+                        days[1] = new Date(forecast.list[i].dt_txt).getDay();
+                        details[1] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 2)) {
-                        if(forecast.list[i].main.temp_max > day3_max)
-                            day3_max = forecast.list[i].main.temp_max;
-                        if(forecast.list[i].main.temp_min < day3_min)
-                            day3_min = forecast.list[i].main.temp_min;
-                        day3_day = new Date(forecast.list[i].dt_txt).getDay();
+                        if(forecast.list[i].main.temp_max > max_temps[2])
+                            max_temps[2] = forecast.list[i].main.temp_max;
+                        if(forecast.list[i].main.temp_min < min_temps[2])
+                            min_temps[2] = forecast.list[i].main.temp_min;
+                        days[2] = new Date(forecast.list[i].dt_txt).getDay();
+                        details[2] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 3)) {
-                        if(forecast.list[i].main.temp_max > day4_max)
-                            day4_max = forecast.list[i].main.temp_max;
-                        if(forecast.list[i].main.temp_min < day4_min)
-                            day4_min = forecast.list[i].main.temp_min;
-                        day4_day = new Date(forecast.list[i].dt_txt).getDay();
+                        if(forecast.list[i].main.temp_max > max_temps[3])
+                            max_temps[3] = forecast.list[i].main.temp_max;
+                        if(forecast.list[i].main.temp_min < min_temps[3])
+                            min_temps[3] = forecast.list[i].main.temp_min;
+                        days[3] = new Date(forecast.list[i].dt_txt).getDay();
+                        details[3] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else {
-                        if(forecast.list[i].main.temp_max > day5_max)
-                            day5_max = forecast.list[i].main.temp_max;
-                        if(forecast.list[i].main.temp_min < day5_min)
-                            day5_min = forecast.list[i].main.temp_min;
-                        day5_day = new Date(forecast.list[i].dt_txt).getDay();
+                        if(forecast.list[i].main.temp_max > max_temps[4])
+                            max_temps[4] = forecast.list[i].main.temp_max;
+                        if(forecast.list[i].main.temp_min < min_temps[4])
+                            min_temps[4] = forecast.list[i].main.temp_min;
+                        days[4] = new Date(forecast.list[i].dt_txt).getDay();
+                        details[4] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     }
                 }
-                var day1_text = "Hoje: <br>Temperatura Máxima: " + day1_max + "°C" + "<br>Temperatura Mínima: " + day1_min + "°C";
-                var day2_text = "Amanhã: <br>Temperatura Máxima: " + day2_max + "°C" + "<br>Temperatura Mínima: " + day2_min + "°C";
-                if(day3_day == 1)
-                    day3_text = "Domingo:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else if(day3_day == 2)
-                    day3_text = "Segunda:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else if(day3_day == 3)
-                    day3_text = "Terça:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else if(day3_day == 4)
-                    day3_text = "Quarta:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else if(day3_day == 5)
-                    day3_text = "Quinta:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else if(day3_day == 6)
-                    day3_text = "Sexta:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                else
-                    day3_text = "Sábado:<br>Temperatura Máxima: " + day3_max + "°C" + "<br>Temperatura Mínima: " + day3_min + "°C";
-                if(day4_day == 1)
-                    day4_text = "Domingo:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else if(day4_day == 2)
-                    day4_text = "Segunda:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else if(day4_day == 3)
-                    day4_text = "Terça:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else if(day4_day == 4)
-                    day4_text = "Quarta:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else if(day4_day == 5)
-                    day4_text = "Quinta:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else if(day4_day == 6)
-                    day4_text = "Sexta:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                else
-                    day4_text = "Sábado:<br>Temperatura Máxima: " + day4_max + "°C" + "<br>Temperatura Mínima: " + day4_min + "°C";
-                if(day5_day == 1)
-                    day5_text = "Domingo:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else if(day5_day == 2)
-                    day5_text = "Segunda:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else if(day5_day == 3)
-                    day5_text = "Terça:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else if(day5_day == 4)
-                    day5_text = "Quarta:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else if(day5_day == 5)
-                    day5_text = "Quinta:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else if(day5_day == 6)
-                    day5_text = "Sexta:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-                else
-                    day5_text = "Sábado:<br>Temperatura Máxima: " + day5_max + "°C" + "<br>Temperatura Mínima: " + day5_min + "°C";
-
-                function expandDay1() {
-                    document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='unexpandDay1()'> Esconder </button><br>" + day1_details;
+                texts[0] = "Hoje: <br>Temperatura Máxima: " + max_temps[0] + "°C" + "<br>Temperatura Mínima: " + min_temps[0] + "°C";
+                texts[1] = "Amanhã: <br>Temperatura Máxima: " + max_temps[1] + "°C" + "<br>Temperatura Mínima: " + min_temps[1] + "°C";
+                for(var i = 2; i < forecast.cnt; i++) {
+                    if(days[i] == 1)
+                        texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else if(days[i] == 2)
+                        texts[i] = "Segunda:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else if(days[i] == 3)
+                        texts[i] = "Terça:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else if(days[i] == 4)
+                        texts[i] = "Quarta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else if(days[i] == 5)
+                        texts[i] = "Quinta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else if(days[i] == 6)
+                        texts[i] = "Sexta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else
+                        texts[i] = "Sábado:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
                 }
 
-                function unexpandDay1() {
-                    document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='expandDay1()'> Detalhes </button><br>"
+                function expandDay(day) {
+                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='unexpandDay(" + (day) + ")'> Esconder </button><br>" + details[day - 1];
                 }
 
-                document.getElementById("day1").innerHTML = day1_text + "<br><button onClick='expandDay1()'> Detalhes </button><br>";
-                document.getElementById("day2").innerHTML = day2_text;
-                document.getElementById("day3").innerHTML = day3_text;
-                document.getElementById("day4").innerHTML = day4_text;
-                document.getElementById("day5").innerHTML = day5_text;
+                function unexpandDay(day) {
+                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='expandDay(" + (day) + ")'> Detalhes </button><br>";
+                }
+
+                for(var i = 0 ; i < 5; i ++) {
+                    document.getElementById("day" + (i + 1)).innerHTML = texts[i] + "<br><button onClick='expandDay(" + (i+1) + ")'> Detalhes </button><br>";
+                }
             </script>
         </section>
     </body>
