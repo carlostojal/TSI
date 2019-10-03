@@ -92,19 +92,19 @@
                 texts[1] = "Amanhã: <br>Temperatura Máxima: " + max_temps[1] + "°C" + "<br>Temperatura Mínima: " + min_temps[1] + "°C";
                 for(var i = 2; i < 5; i++) {
                     if(days[i] == 1)
-                        texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "Segunda:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
                     else if(days[i] == 2)
-                        texts[i] = "Segunda:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
-                    else if(days[i] == 3)
                         texts[i] = "Terça:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
-                    else if(days[i] == 4)
+                    else if(days[i] == 3)
                         texts[i] = "Quarta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
-                    else if(days[i] == 5)
+                    else if(days[i] == 4)
                         texts[i] = "Quinta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
-                    else if(days[i] == 6)
+                    else if(days[i] == 5)
                         texts[i] = "Sexta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
-                    else
+                    else if(days[i] == 6)
                         texts[i] = "Sábado:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                    else
+                        texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
                 }
 
                 function expandDay(day) {
