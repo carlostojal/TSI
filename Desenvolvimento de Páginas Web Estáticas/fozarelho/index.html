@@ -25,7 +25,7 @@
         <header>
             <!-- Itens do menu -->
             <nav class="menu">
-                <a class="menu_items" href="#"> ONDE SE LOCALIZA </a>
+                <a class="menu_items" href="#"> ONDE FICAR </a>
                 <a class="menu_items" href="#"> O QUE FAZER </a>
                 <a class="menu_items" href="previsao"> PREVISÃO METEOROLÓGICA </a>
                 <a class="menu_items" href="#"> CONTATOS </a>
@@ -57,7 +57,7 @@
     <!-- Obtém meteorogia da API OpenWheatherMap -->
     <script type="text/javascript"> 
         var weather = getWeather();
-        var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "km/h";
+        var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "m/s";
 
         document.getElementById("weather").innerHTML = weather_text;
     </script>
