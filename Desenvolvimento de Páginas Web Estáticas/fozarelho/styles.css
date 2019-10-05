@@ -10,12 +10,16 @@ body {
     margin: 0;
 }
 
+.title_header {
+    padding: 25px;
+}
+
 .title {
     font-family: 'Raleway';
     font-weight: 100;
     font-size: 40px;
     color: #565656;
-    padding-left: 25px;
+    display: inline;
     animation: title_animation;
     animation-duration: 0.75s;
 }
@@ -36,8 +40,8 @@ body {
 
 .menu {
     float: right;
-    display: inline;
     margin-top: 15px;
+    clear: both;
 }
 
 .menu_items {
@@ -72,8 +76,9 @@ body {
 
 .weather_area {
     background-color: #F8F8F8;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    clear: both;
 }
 
 .weather_label {
@@ -249,6 +254,10 @@ body {
     60% {opacity: 0.6;}
     80% {opacity: 0.8;}
     100% {opacity: 1;}
+}
+
+.map {
+    max-width: 100%;
 }
 
 footer {
