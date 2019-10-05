@@ -188,6 +188,17 @@ body {
     padding-top: 20px;
     padding-left: 25px;
     padding-right: 25px;
+    animation: home_text_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes home_text_animation {
+    0% {opacity: 0;}
+    20% {opacity: 0.2;}
+    40% {opacity: 0.4;}
+    60% {opacity: 0.6;}
+    80% {opacity: 0.8;}
+    100% {opacity: 1;}
 }
 
 .home_text a {
@@ -227,6 +238,17 @@ body {
 .where_is_text {
     font-size: 17px;
     padding-bottom: 20px;
+    animation: where_is_text_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes where_is_text_animation {
+    0% {opacity: 0;}
+    20% {opacity: 0.2;}
+    40% {opacity: 0.4;}
+    60% {opacity: 0.6;}
+    80% {opacity: 0.8;}
+    100% {opacity: 1;}
 }
 
 footer {
