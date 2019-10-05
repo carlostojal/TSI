@@ -31,5 +31,5 @@ function getTemperature(weather) {
 
 // Função que obtém a velocidade do vento
 function getWind(weather) {
-    return weather.wind.speed;
+    return weather.wind.speed * 3.6; //convertido de m/s para km/h
 }

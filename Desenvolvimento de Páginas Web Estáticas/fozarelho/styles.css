@@ -125,6 +125,9 @@ body {
     animation: home_img_animation;
     animation-duration: 0.75s;
     transition: all 0.3s;
+    -webkit-box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
+    -moz-box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
+    box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
 }
 
 .home_image:hover {
