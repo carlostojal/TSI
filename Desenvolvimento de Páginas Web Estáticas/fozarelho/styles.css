@@ -262,11 +262,80 @@ body {
     width: 421px;
     height: 280px;
     max-width: 100%;
-    max-width: 100%;
-
+    max-height: 100%;
 }
 
 .map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hotel {
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+}
+
+.hotel_name {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    color: #565656;
+    animation: hotel_name_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes hotel_name_animation {
+    0% {padding-top: 40px;}
+    10% {padding-top: 36px;}
+    20% {padding-top: 32px;}
+    30% {padding-top: 28px;}
+    40% {padding-top: 24px;}
+    50% {padding-top: 20px;}
+    60% {padding-top: 16px;}
+    70% {padding-top: 14px;}
+    80% {padding-top: 12px;}
+    90% {padding-top: 8px}
+    100% {padding-top: 0px;}
+}
+
+.hotel_details {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: home_details_animation;
+    animation-duration: 0.75s;
+    margin-bottom: 25px;
+}
+
+@keyframes home_details_animation {
+    0% {opacity: 0;}
+    20% {opacity: 0.2;}
+    40% {opacity: 0.4;}
+    60% {opacity: 0.6;}
+    80% {opacity: 0.8;}
+    100% {opacity: 1;}
+}
+
+.hotel_video {
+    position: relative;
+    width: 100%;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hotel_image img {
+    width: 100%;
+}
+
+.hotel_video iframe {
     position: absolute;
     top: 0;
     left: 0;
