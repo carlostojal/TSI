@@ -229,16 +229,16 @@ body {
 
 @keyframes where_is_animation {
     0% {padding-top: 40px;}
-    10% {padding-top: 36.2px;}
-    20% {padding-top: 32.4px;}
-    30% {padding-top: 28.6px;}
-    40% {padding-top: 24.8px;}
-    50% {padding-top: 21.2px;}
-    60% {padding-top: 17.6px;}
-    70% {padding-top: 13.8.85px;}
-    80% {padding-top: 10px;}
-    90% {padding-top: 6.2px}
-    100% {padding-top: 5px;}
+    10% {padding-top: 38.4px;}
+    20% {padding-top: 36.8px;}
+    30% {padding-top: 35.2px;}
+    40% {padding-top: 33.6px;}
+    50% {padding-top: 32px;}
+    60% {padding-top: 30.4px;}
+    70% {padding-top: 28.8px;}
+    80% {padding-top: 27.2px;}
+    90% {padding-top: 25.6px}
+    100% {padding-top: 25px;}
 }
 
 .where_is_text {
