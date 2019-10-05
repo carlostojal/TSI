@@ -261,7 +261,8 @@ body {
     position: relative;
     width: 421px;
     height: 280px;
-    max-width: 100% !important;
+    max-width: 100%;
+    max-width: 100%;
 
 }
 
