@@ -26,10 +26,10 @@ function getStatus(weather) {
 
 // Função que obtém a temperatura
 function getTemperature(weather) {
-    return weather.main.temp;
+    return weather.main.temp.toFixed(1);
 }
 
 // Função que obtém a velocidade do vento
 function getWind(weather) {
-    return weather.wind.speed * 3.6; //convertido de m/s para km/h
+    return (weather.wind.speed * 3.6).toFixed(1); //convertido de m/s para km/h
 }

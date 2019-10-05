@@ -36,15 +36,15 @@ function getForecastStatus(forecast) {
 
 // Função que obtém a temperatura da previsão
 function getForecastTemp(forecast) {
-    return forecast.main.temp;
+    return forecast.main.temp.toFixed(1);
 }
 
 // Função que obtém a temperatura máxima da previsão
 function getForecastMaxTemp(forecast) {
-    return forecast.main.temp_max;
+    return forecast.main.temp_max.toFixed(1);
 }
 
 // Função que obtém a temperatura mínima da previsão
 function getForecastMinTemp(forecast) {
-    return forecast.main.temp_min;
+    return forecast.main.temp_min.toFixed(1);
 }
