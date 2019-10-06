@@ -13,26 +13,41 @@
 
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title> Previsão Meteorológica - Foz do Arelho </title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title> Previsão Meteorológica - Foz do Arelho </title>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
+            <link rel="stylesheet" href="../styles.css">
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <!-- Scripts JS relativos à meteorologia -->
+            <script type="text/javascript" src="../scripts/weather.js"></script>
+            <script type="text/javascript" src="../scripts/forecast.js"></script>
     </head>
     <body>
+        <!-- Contém todo o cabeçalho da página -->
         <header>
-            <h1>Previsão Meteorológica</h1>
-            <script type="text/javascript" src="../scripts/forecast.js"></script>
+            <div class="title_header">
+                <!-- Título grande -->
+                <h1 class="title"> Previsão Meteorológica </h1>
+                    
+                <!-- Itens do menu -->
+                <nav class="menu">
+                    <a class="menu_items" href="../">INÍCIO</a>
+                    <a class="menu_items" href="../onde-ficar/"> ONDE FICAR </a>
+                    <a class="menu_items" href="#o-que-fazer"> O QUE FAZER </a>
+                    <a class="menu_items" href="."> PREVISÃO METEOROLÓGICA </a>
+                    <a class="menu_items" href="#contatos"> CONTATOS </a>
+                    <a class="menu_items" href="#en"> EN </a>
+                </nav>
+            </div>
         </header>
-        <nav>
-            <ul>
-                <li><a href=".."> Início </a></li>
-                <li><a href="."> Previsão Meteorológica </a></li>
-            </ul>
-        </nav>
         <section>
-            <div id="day1">A obter a previsão meteorológica. Por favor aguarde.</div><br>
-            <div id="day2"></div><br>
-            <div id="day3"></div><br>
-            <div id="day4"></div><br>
-            <div id="day5"></div><br>
+            <div class="forecast_day" id="day1">A obter a previsão meteorológica. Por favor aguarde.</div><br>
+            <div class="forecast_day" id="day2">A obter a previsão meteorológica. Por favor aguarde.</div><br>
+            <div class="forecast_day" id="day3">A obter a previsão meteorológica. Por favor aguarde.</div><br>
+            <div class="forecast_day" id="day4">A obter a previsão meteorológica. Por favor aguarde.</div><br>
+            <div class="forecast_day" id="day5">A obter a previsão meteorológica. Por favor aguarde.</div><br>
             <!-- Obtém previsão meteorológica da API OpenWeatherMap -->
             <script>
                 var forecast = getForecast(); // obtém a previsão
@@ -61,71 +76,101 @@
                         if(forecast.list[i].main.temp_min < min_temps[0])
                             min_temps[0] = forecast.list[i].main.temp_min;
                         days[0] = new Date(forecast.list[i].dt_txt).getDay();
-                        details[0] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        var hours = date.getHours();
+                        var minutes = date.getMinutes();
+                        if (hours <= 9)
+                            hours = "0" + hours;
+                        if (minutes <= 9)
+                            minutes = "0" + minutes;
+                        details[0] += hours + ":" + minutes + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 1)) {
                         if(forecast.list[i].main.temp_max > max_temps[1])
                             max_temps[1] = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < min_temps[1])
                             min_temps[1] = forecast.list[i].main.temp_min;
                         days[1] = new Date(forecast.list[i].dt_txt).getDay();
-                        details[1] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        var hours = date.getHours();
+                        var minutes = date.getMinutes();
+                        if (hours <= 9)
+                            hours = "0" + hours;
+                        if (minutes <= 9)
+                            minutes = "0" + minutes;
+                        details[1] += hours + ":" + minutes + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 2)) {
                         if(forecast.list[i].main.temp_max > max_temps[2])
                             max_temps[2] = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < min_temps[2])
                             min_temps[2] = forecast.list[i].main.temp_min;
                         days[2] = new Date(forecast.list[i].dt_txt).getDay();
-                        details[2] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        var hours = date.getHours();
+                        var minutes = date.getMinutes();
+                        if (hours <= 9)
+                            hours = "0" + hours;
+                        if (minutes <= 9)
+                            minutes = "0" + minutes;
+                        details[2] += hours + ":" + minutes + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 3)) {
                         if(forecast.list[i].main.temp_max > max_temps[3])
                             max_temps[3] = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < min_temps[3])
                             min_temps[3] = forecast.list[i].main.temp_min;
                         days[3] = new Date(forecast.list[i].dt_txt).getDay();
-                        details[3] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        var hours = date.getHours();
+                        var minutes = date.getMinutes();
+                        if (hours <= 9)
+                            hours = "0" + hours;
+                        if (minutes <= 9)
+                            minutes = "0" + minutes;
+                        details[3] += hours + ":" + minutes + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     } else if(date.getDate() == (day1 + 4)) {
                         if(forecast.list[i].main.temp_max > max_temps[4])
                             max_temps[4] = forecast.list[i].main.temp_max;
                         if(forecast.list[i].main.temp_min < min_temps[4])
                             min_temps[4] = forecast.list[i].main.temp_min;
                         days[4] = new Date(forecast.list[i].dt_txt).getDay();
-                        details[4] += date.getHours() + ":" + date.getMinutes() + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
+                        var hours = date.getHours();
+                        var minutes = date.getMinutes();
+                        if (hours <= 9)
+                            hours = "0" + hours;
+                        if (minutes <= 9)
+                            minutes = "0" + minutes;
+                        details[4] += hours + ":" + minutes + " - " + getForecastStatus(forecast.list[i]) + ", " + getForecastTemp(forecast.list[i]) + "°C<br>";
                     }
                 }
                 // Criação do texto para os primeiros 2 dias (hoje e amanhã, em que nunca muda a descrição do dia (hoje ou amanhã))
-                texts[0] = "Hoje: <br>Temperatura Máxima: " + max_temps[0] + "°C" + "<br>Temperatura Mínima: " + min_temps[0] + "°C";
-                texts[1] = "Amanhã: <br>Temperatura Máxima: " + max_temps[1] + "°C" + "<br>Temperatura Mínima: " + min_temps[1] + "°C";
+                texts[0] = "<h2 class='weather_day_label'> Hoje: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[0]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[0] + "°C </div>";
+                texts[1] = "<h2 class='weather_day_label'> Amanhã: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[1]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[1] + "°C </div>";
                 // Criação do texto para cada outro dia, em função de qual o dia da semana (days[i])
                 for(var i = 2; i < 5; i++) {
                     if(days[i] == 1)
-                        texts[i] = "Segunda:<br>Temperatura Máxima: " + max_temps[i]+ "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Segunda: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else if(days[i] == 2)
-                        texts[i] = "Terça:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Terça: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else if(days[i] == 3)
-                        texts[i] = "Quarta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Quarta: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else if(days[i] == 4)
-                        texts[i] = "Quinta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Quinta: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else if(days[i] == 5)
-                        texts[i] = "Sexta:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Sexta: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else if(days[i] == 6)
-                        texts[i] = "Sábado:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Sábado: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                     else
-                        texts[i] = "Domingo:<br>Temperatura Máxima: " + max_temps[i] + "°C" + "<br>Temperatura Mínima: " + min_temps[i] + "°C";
+                        texts[i] = "<h2 class='weather_day_label'> Domingo: </h2><div class='weather_day_overview'><div class='weather_day_overview_title'> Temperatura máxima: </div>" + max_temps[i]+ "°C" + "<br><div class='weather_day_overview_title'> Temperatura mínima: </div>" + min_temps[i] + "°C </div>";
                 }
 
                 // Função responsável por mostrar as previsões detalhadas do dia
                 function expandDay(day) {
-                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='unexpandDay(" + (day) + ")'> Esconder </button><br>" + details[day - 1];
+                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='unexpandDay(" + (day) + ")'> Esconder </button><br><br><div class='weather_day_details'> " + details[day - 1] + " </div>";
                 }
 
                 // Função responsável por ocultar as previsões (volta ao estado inicial)
                 function unexpandDay(day) {
-                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='expandDay(" + (day) + ")'> Detalhes </button><br>";
+                    document.getElementById("day" + day).innerHTML = texts[day - 1] + "<br><button onClick='expandDay(" + (day) + ")'> Detalhes </button>";
                 }
 
                 // Criação inicial do conteúdo de cada dia
                 for(var i = 0 ; i < 5; i ++) {
-                    document.getElementById("day" + (i + 1)).innerHTML = texts[i] + "<br><button onClick='expandDay(" + (i+1) + ")'> Detalhes </button><br>";
+                    document.getElementById("day" + (i + 1)).innerHTML = texts[i] + "<br><button onClick='expandDay(" + (i+1) + ")'> Detalhes </button>";
                 }
             </script>
         </section>

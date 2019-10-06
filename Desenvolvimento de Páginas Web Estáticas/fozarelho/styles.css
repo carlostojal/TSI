@@ -375,6 +375,77 @@ body {
     color: #808080;
 }
 
+.forecast_day {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    font-size: 18px;
+    padding: 25px;
+    margin: 25px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: forecast_day_animation;
+    animation-duration: 0.75s;
+    clear: both;
+}
+
+@keyframes forecast_day_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
+}
+
+.forecast_day:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+.weather_day_label {
+    color: #565656;
+    animation: weather_day_label_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes weather_day_label_animation {
+    from {margin-top: 25px;}
+    to {margin-top: 0px;}
+}
+
+.weather_day_overview {
+    animation: weather_day_overview_animation;
+    animation-duration: 1.5s;
+}
+
+@keyframes weather_day_overview_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.weather_day_overview_title {
+    display: inline;
+    color: #474747;
+}
+
+button {
+    color: #808080;
+    background-color: #F8F8F8;
+    border: none;
+}
+
+.weather_day_details {
+    animation: weather_day_details_animation;
+    animation-duration: 1.75s;
+}
+
+@keyframes weather_day_details_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 footer {
     font-family: 'Raleway';
     font-weight: 100;
