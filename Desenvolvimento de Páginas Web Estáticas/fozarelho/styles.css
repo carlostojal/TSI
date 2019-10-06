@@ -20,22 +20,6 @@ body {
     font-size: 40px;
     color: #565656;
     display: inline;
-    animation: title_animation;
-    animation-duration: 0.75s;
-}
-
-@keyframes title_animation {
-    0% {padding-top: 40px;}
-    10% {padding-top: 35.55px;}
-    20% {padding-top: 31.1px;}
-    30% {padding-top: 26.65px;}
-    40% {padding-top: 22.2px;}
-    50% {padding-top: 17.75px;}
-    60% {padding-top: 13.3px;}
-    70% {padding-top: 8.85px;}
-    80% {padding-top: 4.4px;}
-    90% {padding-top: 0px}
-    100% {padding-top: 0px;}
 }
 
 .menu {
@@ -58,12 +42,8 @@ body {
 }
 
 @keyframes menu_animation {
-    0% {opacity: 0;}
-    20% {opacity: 0.2;}
-    40% {opacity: 0.4;}
-    60% {opacity: 0.6;}
-    80% {opacity: 0.8;}
-    100% {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .menu_items:hover {
@@ -103,26 +83,13 @@ body {
 }
 
 @keyframes weather_label_animation {
-    0% {padding-top: 40px;}
-    10% {padding-top: 35.55px;}
-    20% {padding-top: 31.1px;}
-    30% {padding-top: 26.65px;}
-    40% {padding-top: 22.2px;}
-    50% {padding-top: 17.75px;}
-    60% {padding-top: 13.3px;}
-    70% {padding-top: 8.85px;}
-    80% {padding-top: 4.4px;}
-    90% {padding-top: 0px}
-    100% {padding-top: 0px;}
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
 }
 
 @keyframes weather_animation {
-    0% {opacity: 0;}
-    20% {opacity: 0.2;}
-    40% {opacity: 0.4;}
-    60% {opacity: 0.6;}
-    80% {opacity: 0.8;}
-    100% {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .home_image {
@@ -137,51 +104,15 @@ body {
 }
 
 .home_image:hover {
-    transform: scale(1.005);
+    transform: scale(1.01);
 }
 
 @keyframes home_img_animation {
-    0% {
+    from {
         opacity: 0;
         transform: scale(1.1);
     }
-    10% {
-        opacity: 0.1;
-        transform: scale(1.09);
-    }
-    20% {
-        opacity: 0.2;
-        transform: scale(1.08);
-    }
-    30% {
-        opacity: 0.3;
-        transform: scale(1.07);
-    }
-    40% {
-        opacity: 0.4;
-        transform: scale(1.06);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.05);
-    }
-    60% {
-        opacity: 0.6;
-        transform: scale(1.04);
-    }
-    70% {
-        opacity: 0.7;
-        transform: scale(1.03);
-    }
-    80% {
-        opacity: 0.8;
-        transform: scale(1.02);
-    }
-    90% {
-        opacity: 0.9;
-        transform: scale(1.01);
-    }
-    100% {
+    to {
         opacity: 1;
         transform: scale(1);
     }
@@ -199,12 +130,8 @@ body {
 }
 
 @keyframes home_text_animation {
-    0% {opacity: 0;}
-    20% {opacity: 0.2;}
-    40% {opacity: 0.4;}
-    60% {opacity: 0.6;}
-    80% {opacity: 0.8;}
-    100% {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .home_text a {
@@ -228,17 +155,8 @@ body {
 }
 
 @keyframes where_is_animation {
-    0% {padding-top: 40px;}
-    10% {padding-top: 38.4px;}
-    20% {padding-top: 36.8px;}
-    30% {padding-top: 35.2px;}
-    40% {padding-top: 33.6px;}
-    50% {padding-top: 32px;}
-    60% {padding-top: 30.4px;}
-    70% {padding-top: 28.8px;}
-    80% {padding-top: 27.2px;}
-    90% {padding-top: 25.6px}
-    100% {padding-top: 25px;}
+    from {padding-top: 40px;}
+    to {padding-top: 25px;}
 }
 
 .where_is_text {
@@ -249,18 +167,13 @@ body {
 }
 
 @keyframes where_is_text_animation {
-    0% {opacity: 0;}
-    20% {opacity: 0.2;}
-    40% {opacity: 0.4;}
-    60% {opacity: 0.6;}
-    80% {opacity: 0.8;}
-    100% {opacity: 1;}
+    from {opacity: 0;}
 }
 
 .map {
     position: relative;
-    width: 421px;
-    height: 280px;
+    width: 540px;
+    height: 315px;
     max-width: 100%;
     max-height: 100%;
 }
@@ -280,29 +193,43 @@ body {
     -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: hotel_animation;
+    animation-duration: 0.75s;
+}
+
+.hotel:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+@keyframes hotel_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
 }
 
 .hotel_name {
     font-family: 'Raleway';
     font-weight: 100;
     font-size: 25px;
+    text-decoration: none;
+    display: block;
     color: #565656;
-    animation: hotel_name_animation;
+    animation-name: hotel_name_animation;
     animation-duration: 0.75s;
+    transition: all 0.3s;
+}
+
+.hotel_name:hover {
+    text-decoration: none;
+    color: #222222;
 }
 
 @keyframes hotel_name_animation {
-    0% {padding-top: 40px;}
-    10% {padding-top: 36px;}
-    20% {padding-top: 32px;}
-    30% {padding-top: 28px;}
-    40% {padding-top: 24px;}
-    50% {padding-top: 20px;}
-    60% {padding-top: 16px;}
-    70% {padding-top: 14px;}
-    80% {padding-top: 12px;}
-    90% {padding-top: 8px}
-    100% {padding-top: 0px;}
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
 }
 
 .hotel_details {
@@ -315,12 +242,8 @@ body {
 }
 
 @keyframes home_details_animation {
-    0% {opacity: 0;}
-    20% {opacity: 0.2;}
-    40% {opacity: 0.4;}
-    60% {opacity: 0.6;}
-    80% {opacity: 0.8;}
-    100% {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .hotel_video {
@@ -331,8 +254,32 @@ body {
     max-height: 100%;
 }
 
+.hotel_image_overview img {
+    width: 100%;
+    animation: hotel_image_animation;
+    animation-duration: 0.75s;
+}
+
 .hotel_image img {
     width: 100%;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+    animation: hotel_image_animation;
+    animation-duration: 0.75s;
+}
+
+.hotel_image img:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    transform: scale(1.01);
+}
+
+@keyframes hotel_image_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 0px;}
 }
 
 .hotel_video iframe {
@@ -342,6 +289,84 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+.hotel_subtitle {
+    margin-bottom: 25px;
+    animation: hotel_subtitle_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes hotel_subtitle_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.hotel_intro {
+    padding: 25px;
+    padding-top: 0px;
+}
+
+.hotel_video_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.where_is_hotel_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+
+.book_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.book_hotel {
+    position: relative;
+    width: 540px;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.book_hotel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.visit_page {
+    font-family: 'Raleway';
+    font-weight: 100;
+    text-decoration: none;
+    color: #bdbdbd; 
+    font-size: 17px;
+    transition: all 0.3s;
+}
+
+.visit_page:hover {
+    text-decoration: none;
+    color: #808080;
 }
 
 footer {
