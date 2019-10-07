@@ -335,7 +335,6 @@ body {
     background-color: #F8F8F8;
 }
 
-
 .book_box {
     font-family: 'Raleway';
     font-size: 18px;
@@ -373,6 +372,82 @@ body {
 .visit_page:hover {
     text-decoration: none;
     color: #808080;
+}
+
+.activity {
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: activity_animation;
+    animation-duration: 0.75s;
+}
+
+.activity:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+@keyframes activity_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
+}
+
+.activity_name {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    text-decoration: none;
+    display: block;
+    color: #565656;
+    animation-name: activity_name_animation;
+    animation-duration: 0.75s;
+    transition: all 0.3s;
+}
+
+.activity_name:hover {
+    text-decoration: none;
+    color: #222222;
+}
+
+@keyframes activity_name_animation {
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
+}
+
+.activity_details {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: activity_details_animation;
+    animation-duration: 0.75s;
+    margin-bottom: 25px;
+}
+
+@keyframes activity_details_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.activity_image_overview img {
+    width: 100%;
+    animation: activity_image_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes activity_image_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
 }
 
 .forecast_day {
