@@ -1,7 +1,10 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Variaveis()
-comment0.text=In\ Java,\ there\ are\ two\ types\ of\ casting\:\r\n\ Widening\ Casting\ (automatically)\ -\ converting\ a\ smaller\ type\ to\ a\ larger\ type\ size\r\n\ byte\ ->\ short\ ->\ char\ ->\ int\ ->\ long\ ->\ float\ ->\ double\r\n\r\n\ Narrowing\ Casting\ (manually)\ -\ converting\ a\ larger\ type\ to\ a\ smaller\ size\ type\r\n\ double\ ->\ float\ ->\ long\ ->\ int\ ->\ char\ ->\ short\ ->\ byte\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment0.target=Variaveis
+comment1.params=
+comment1.target=Variaveis()
+comment1.text=\n\ Construtor\ para\ objetos\ da\ classe\ Variaveis\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment3.params=x\ y
+comment3.target=int\ sampleMethod(int,\ int)
+numComments=4
