@@ -70,100 +70,76 @@ public class Principal {
         //cálculo do signo
         switch(mes) {
             case 3:
-                if(dia >= 21) {
+                if(dia >= 21)
                     System.out.println("O seu signo é carneiro.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é peixes.");
-                }
                 break;
             case 4:
-                if(dia >= 20) {
+                if(dia >= 20)
                     System.out.println("O seu signo é touro.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é carneiro.");
-                }
                 break;
             case 5:
-                if(dia >= 21) {
+                if(dia >= 21)
                     System.out.println("O seu signo é gémeos.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é touro.");
-                }
                 break;
             case 6:
-                if(dia >= 22) {
+                if(dia >= 22)
                     System.out.println("O seu signo é caranguejo.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é gémeos.");
-                }
                 break;
             case 7:
-                if(dia >= 23) {
+                if(dia >= 23)
                     System.out.println("O seu signo é leão.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é caranguejo.");
-                }
                 break;
             case 8:
-                if(dia >= 23) {
+                if(dia >= 23)
                     System.out.println("O seu signo é virgem.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é leão.");
-                }
                 break;
             case 9:
-                if(dia >= 23) {
+                if(dia >= 23)
                     System.out.println("O seu signo é balança.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é virgem.");
-                }
                 break;
             case 10:
-                if(dia >= 23) {
+                if(dia >= 23)
                     System.out.println("O seu signo é escorpião.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é balança.");
-                }
                 break;
             case 11:
-                if(dia >= 22) {
+                if(dia >= 22)
                     System.out.println("O seu signo é sagitário.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é escorpião.");
-                }
                 break;
             case 12:
-                if(dia >= 22) {
+                if(dia >= 22)
                     System.out.println("O seu signo é capricórnio.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é sagitário.");
-                }
                 break;
             case 1:
-                if(dia >= 20) {
+                if(dia >= 20)
                     System.out.println("O seu signo é aquário.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é capricórnio.");
-                }
                 break;
             case 2:
-                if(dia >= 19) {
+                if(dia >= 19)
                     System.out.println("O seu signo é peixes.");
-                }
-                else {
+                else
                     System.out.println("O seu signo é aquário.");
-                }
         }
     }
 }
