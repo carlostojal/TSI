@@ -44,23 +44,31 @@ public class Principal {
         if(mes % 2 == 0) { //meses de 28/29/30 dias
             if(mes == 2) { //fevereiro
                 if(ano % 4 != 0) { //anos bissextos
-                    while(dia < 1 || dia >= 29) {
+                    while(dia < 1 || dia > 29) {
                         System.out.println("Dia inválido.");
                         System.out.print("Informe o dia: ");
                         dia = new Scanner(System.in).nextInt();
+                        mes = 0;
                     }
                 }
                 else { //anos simples
-                    while(dia < 1 || dia >= 28) {
+                    while(dia < 1 || dia > 28) {
                         System.out.println("Dia inválido.");
                         System.out.print("Informe o dia: ");
                         dia = new Scanner(System.in).nextInt();
                     }
                 }
             }
+            else { //todos os outros meses de 30 dias
+                while(dia < 1 || dia > 30) {
+                    System.out.println("Dia invalido.");
+                    System.out.print("Informe o dia: ");
+                    dia = new Scanner(System.in).nextInt();
+                }
+            }
         }
         else { //meses de 31 dias
-            while(dia < 1 || dia >= 31) {
+            while(dia < 1 || dia > 31) {
                 System.out.println("Dia inválido.");
                 System.out.print("Informe o dia: ");
                 dia = new Scanner(System.in).nextInt();

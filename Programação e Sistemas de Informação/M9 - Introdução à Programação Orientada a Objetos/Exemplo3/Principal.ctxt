@@ -2,10 +2,4 @@
 comment0.target=Principal
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=int\ readDay()
-comment3.params=
-comment3.target=int\ readMonth()
-comment4.params=
-comment4.target=int\ readYear()
-numComments=5
+numComments=2
