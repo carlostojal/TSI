@@ -35,6 +35,8 @@ public class Principal {
         System.out.print("Informe o ano de nascimento: ");
         ano = new Scanner(System.in).nextInt();
 
+        System.out.println(mes % 4);
+
         while(mes > 12 || mes <= 0) {
             System.out.println("Mês inválido.");
             System.out.print("Informe o mês de nascimento: ");
@@ -43,7 +45,7 @@ public class Principal {
         //verificação dos dias
         if(mes % 2 == 0) { //meses de 28/29/30 dias
             if(mes == 2) { //fevereiro
-                if(ano % 4 != 0) { //anos bissextos
+                if(ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0)) { //anos bissextos
                     while(dia < 1 || dia > 29) {
                         System.out.println("Dia inválido.");
                         System.out.print("Informe o dia: ");
