@@ -2,23 +2,48 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <title>FIcha de Inscrição de Alunos em Módulos Atrasados</title>
     </head>
     <body>
-        <img src="img/aerbp.jpeg">
-        <h1 align="center">FICHA DE INSCRIÇÃO DE ALUNOS EM MÓDULOS ATRASADOS</h1>
+        <img src="img/aerbp.jpeg" style="margin-top: -50px">
+        <h3 align="center" style="margin-top: -50px">FICHA DE INSCRIÇÃO DE ALUNOS EM MÓDULOS ATRASADOS</h3><br>
         <form>
             <fieldset align="center">
                 <legend align="center">Dados do aluno</legend>
-                Nome: <input type="text" name="nome"><br>
-                Morada <input type="text" name="morada"><br>
-                Código Postal: <input type="number"> <input type="number"> Localidade: <input type="text" name="localidade"><br>
-                Data de Nascimento: <input type="date"> Género: <input type="radio" name="genero" value="m"> Masculino <input type="radio" name="genero" value="f"> Feminino
+                Nome: <input type="text" size="50" name="nome"><br><br>
+                Morada <input type="text" size="50" name="morada"><br>
+                Código Postal: <input type="text" size="4"> <input type="text" size="3"> Localidade: <input type="text" size="20" name="localidade"><br><br>
+                Data de Nascimento: <input type="text" size="10"> Género: <input type="radio" name="genero" value="m"> Masculino <input type="radio" name="genero" value="f"> Feminino
             </fieldset>
             <fieldset align="center">
                 <legend align="center">Disciplinas para inscrição nos exames</legend>
                 <input type="checkbox" name="psi"> PSI <select name="modulo_psi">
-                    <option value="modulo1">Módulo 1</option>
+                    <option value="m1">Módulo 1</option>
+                    <option value="m2">Módulo 2</option>
+                    <option value="m3">Módulo 3</option>
+                    <option value="m4">Módulo 4</option>
+                    <option value="m5">Módulo 5</option>
+                    <option value="m6">Módulo 6</option>
+                    <option value="m7">Módulo 7</option>
+                </select><br>
+                <input type="checkbox" name="redes"> Redes de Comunicação <select name="modulo_redes">
+                    <option value="m1">Módulo 1</option>
+                    <option value="m2">Módulo 2</option>
+                    <option value="m3">Módulo 3</option>
+                </select><br>
+                <input type="checkbox" name="so"> Sistemas Operativos <select name="modulos_so">
+                    <option value="m1">Módulo 1</option>
+                    <option value="m2">Módulo 2</option>
+                    <option value="m3">Módulo 3</option>
                 </select>
+            </fieldset><br><br>
+            <fieldset align="center">
+                <legend>Observações</legend>
+                <textarea name="obs" rows="8" cols="50" placeholder="Escreva aqui as suas observações..."></textarea>
+            </fieldset><br>
+            <fieldset align="center">
+                <input type="submit" value="Gravar">
+                <input type="reset" value="Limpar">
             </fieldset>
         </form>
     </body>
