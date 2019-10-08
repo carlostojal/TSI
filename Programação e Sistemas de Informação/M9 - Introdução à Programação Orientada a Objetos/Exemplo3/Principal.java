@@ -34,7 +34,7 @@ public class Principal {
         mes = new Scanner(System.in).nextInt();
         System.out.print("Informe o ano de nascimento: ");
         ano = new Scanner(System.in).nextInt();
-        
+
         while(mes > 12 || mes <= 0) {
             System.out.println("Mês inválido.");
             System.out.print("Informe o mês de nascimento: ");
