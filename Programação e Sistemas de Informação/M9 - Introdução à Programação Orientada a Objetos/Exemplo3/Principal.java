@@ -43,12 +43,11 @@ public class Principal {
         //verificação dos dias
         if(mes % 2 == 0) { //meses de 28/29/30 dias
             if(mes == 2) { //fevereiro
-                if(ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0)) { //anos bissextos
+                if(new Bissexto().verificarBissexto(ano)) { //anos bissextos
                     while(dia < 1 || dia > 29) {
                         System.out.println("Dia inválido.");
                         System.out.print("Informe o dia: ");
                         dia = new Scanner(System.in).nextInt();
-                        mes = 0;
                     }
                 }
                 else { //anos simples
@@ -56,6 +55,7 @@ public class Principal {
                         System.out.println("Dia inválido.");
                         System.out.print("Informe o dia: ");
                         dia = new Scanner(System.in).nextInt();
+
                     }
                 }
             }
