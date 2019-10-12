@@ -648,11 +648,56 @@ button {
 }
 
 .contacts_box {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    font-size: 18px;
     padding: 25px;
     margin: 25px;
+    margin-bottom: 10px;
     -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: contacts_box_animation;
+    animation-duration: 1.5s;
+    clear: both;
+}
+
+@keyframes contacts_box_animation {
+    from {margin-top: 50px;}
+    to {margin-top: 25px;}
+}
+
+.contacts_box:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+.contacts_title {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    color: #565656;
+    margin-bottom: 20px;
+}
+
+.contacts_box div {
+    animation: contacts_animation;
+    animation-duration: 1s;
+}
+
+@keyframes contacts_animation {
+    from {
+        padding-top: 5px;
+        opacity: 0;
+    }
+    to {
+        padding-top: 0px;
+        opacity: 1;
+    }
 }
 
 .phone_label {
