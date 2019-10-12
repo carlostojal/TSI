@@ -10,11 +10,20 @@
 
 // Link da API
 var forecastlink = "https://api.openweathermap.org/data/2.5/forecast?apikey=c9f1d2a6eaec5f917473c187547ba288&id=2267937&lang=pt&units=metric";
+var forecastlink_en = "https://api.openweathermap.org/data/2.5/forecast?apikey=c9f1d2a6eaec5f917473c187547ba288&id=2267937&units=metric";
 
 // Função que obtém a previsão em forma de objeto a partir do JSON retornado pela REST API
 function getForecast() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", forecastlink, false);
+    xmlHttp.send(null);
+    return JSON.parse(xmlHttp.responseText);
+}
+
+// Função que obtém a previsão em forma de objeto a partir do JSON retornado pela REST API, em inglês
+function getForecastEn() {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", forecastlink_en, false);
     xmlHttp.send(null);
     return JSON.parse(xmlHttp.responseText);
 }
