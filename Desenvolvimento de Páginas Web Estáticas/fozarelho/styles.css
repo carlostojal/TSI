@@ -647,6 +647,42 @@ button {
     to {opacity: 1;}
 }
 
+.contacts_box {
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+}
+
+.phone_label {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+.phone {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 19px;
+    color: #b0b0b0
+}
+
+.fax_label {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+.fax {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 19px;
+    color: #b0b0b0
+}
+
 footer {
     font-family: 'Raleway';
     font-weight: 100;
