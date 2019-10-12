@@ -95,8 +95,8 @@
 
     <!-- Obtém meteorogia da API OpenWheatherMap -->
     <script type="text/javascript"> 
-        var weather = getWeather();
-        var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, vento a " + getWind(weather) + "km/h";
+        var weather = getWeatherEn();
+        var weather_text = getStatus(weather) + ", " + getTemperature(weather) + "°C, wind at " + getWind(weather) + "km/h";
 
         document.getElementById("weather").innerHTML = weather_text;
     </script>
