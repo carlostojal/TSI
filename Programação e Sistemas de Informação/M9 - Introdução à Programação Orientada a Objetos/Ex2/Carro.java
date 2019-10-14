@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) Carlos Tojal (10-10-2019)
+// Copyright (c) Carlos Tojal (14-10-2019)
 // Ex2
 // Carro.java
 //
@@ -26,15 +26,17 @@ public class Carro {
     }
 
     void travar(int intensidadeTravagem) {
-        if(intensidadeTravagem > velocidadeMaxima)
+        if(intensidadeTravagem > velocidadeMaxima) {
             intensidadeTravagem = velocidadeMaxima;
+        }
         else {
             if(intensidadeTravagem < 0)
                 intensidadeTravagem = 0;
-            velocidadeAtual -= intensidadeTravagem;
-            if(velocidadeAtual > velocidadeMaxima)
-                velocidadeAtual = velocidadeMaxima;
-        } else if(velocidadeAtual < 0) {
+        }
+        velocidadeAtual -= intensidadeTravagem;
+        if(velocidadeAtual > velocidadeMaxima)
+            velocidadeAtual = velocidadeMaxima;
+        else if(velocidadeAtual < 0) {
             velocidadeAtual = 0;
         }
     }
