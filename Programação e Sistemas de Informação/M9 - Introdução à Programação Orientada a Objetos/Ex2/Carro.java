@@ -7,18 +7,52 @@
 
 public class Carro {
     // Atributos da classe Carro
-    String matricula;
-    int velocidadeAtual = 0;
-    int velocidadeMaxima = 200;
-    Condutor condutor;
+    private String matricula;
+    private int velocidadeAtual = 0;
+    private int velocidadeMaxima = 200;
+    private Condutor condutor;
+    private boolean ligado = false;
 
     // Construtor da classe atual
     public Carro() {
     }
 
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getVelocidadeAtual() {
+        return velocidadeAtual;
+    }
+
+    public void setVelocidadeAtual(int velocidadeAtual) {
+        this.velocidadeAtual = velocidadeAtual;
+    }
+
+    public int getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public void setVelocidadeMaxima(int velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public Condutor getCondutor() {
+        return condutor;
+    }
+
+    public void setCondutor(Condutor condutor) {
+        this.condutor = condutor;
+    }
+
     // Métodos
     void ligar() {
         System.out.println("VRUUUMMMMMMMMM");
+        ligado = true;
     }
 
     void desligar() {
@@ -42,7 +76,11 @@ public class Carro {
     }
 
     void acelerar() {
-        if(velocidadeAtual + 10 + condutor.destreza * 0.1 <= velocidadeMaxima)
-            velocidadeAtual += 10 + condutor.destreza * 0.1;
+        if(velocidadeAtual + 10 + condutor.getDestreza() * 0.1 <= velocidadeMaxima)
+            velocidadeAtual += 10 + condutor.getDestreza() * 0.1;
+    }
+
+    public boolean isLigado() {
+        return ligado;
     }
 }
