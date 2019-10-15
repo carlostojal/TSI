@@ -364,7 +364,7 @@ body {
     font-family: 'Raleway';
     font-weight: 100;
     text-decoration: none;
-    color: #bdbdbd; 
+    color: #bdbdbd;
     font-size: 17px;
     transition: all 0.3s;
 }
@@ -725,6 +725,108 @@ button {
     font-weight: 100;
     font-size: 19px;
     color: #b0b0b0
+}
+
+.form_fail {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    background-color: #ff5959;
+    color: #ffc4c4;
+    animation: form_fail_animation;
+    animation-duration: 1.2s;
+    transition: all 0.5s;
+}
+
+@keyframes form_fail_animation {
+    from {
+        background-color: red;
+        color: #ffffff;
+        padding-top: 55px;
+    }
+    to {
+        background-color: #ff5959;
+        color: #ffc4c4;
+        padding-top: 25px;
+    }
+}
+
+.form_fail:hover {
+    color: #ffffff;
+}
+
+.form {
+    padding: 25px;
+}
+
+.form input {
+    background-color: white;
+    color: grey;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a6a6a6;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    animation: form_fields_animation;
+    animation-duration: 0.75s;
+    transition: all 0.5s;
+}
+
+.form input:hover {
+    color: black;
+}
+
+.form select {
+    background-color: white;
+    color: grey;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a6a6a6;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    animation: form_fields_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes form_fields_animation {
+    from {
+        margin-top: 5px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.form .respond {
+    background-color: #3b3b3b;
+    color: #bababa;
+    animation: respond_animation;
+    animation-duration: 0.75s;
+    transition: all 0.5s;
+}
+
+@keyframes respond_animation {
+    from {
+        background-color: #bababa;
+        color: #3b3b3b;
+    }
+    to {
+        background-color: #3b3b3b;
+        color: #bababa;
+    }
+}
+
+.form .respond:hover {
+    background-color: black;
+    color: white;
 }
 
 footer {

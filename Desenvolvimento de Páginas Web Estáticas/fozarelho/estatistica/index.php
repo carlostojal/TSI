@@ -43,11 +43,11 @@
             </div>
         </header>
         <section>
-            <a href="responder">Responder ao questionário</a>
+            <a href="questionario">Responder ao questionário</a>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>
-            Developed by Carlos Tojal<br>
+            Desenvolvido por Carlos Tojal<br>
             <div class="contacts">
                 GitHub: <a href="https://github.com/carlostojal" target="blank">carlostojal</a><br>
                 Email: <a href="mailto:carlos.tojal@hotmail.com" target="blank">carlos.tojal@hotmail.com</a>

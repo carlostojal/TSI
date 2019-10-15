@@ -15,7 +15,7 @@
     <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title> Estatística - Foz do Arelho </title>
+            <title> Questionário - Foz do Arelho </title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
             <link rel="stylesheet" href="../../styles.css">
             <!-- Bootstrap -->
@@ -43,20 +43,20 @@
             </div>
         </header>
         <section>
-            <div>
             <?php
                 if(isset($_GET['cause'])) {
+                    echo "<div class='form_fail'>\n";
                     $cause = $_GET['cause'];
                     if($cause == "empty fields")
-                        echo "\tForam deixados um ou mais campos por responder.\n";
+                        echo "\t\t\t\tForam deixados um ou mais campos por responder.\n";
                     else if($cause == "age not in range")
-                        echo "\tO valor introduzido no campo idade é inválido.\n";
+                        echo "\t\t\t\tO valor introduzido no campo idade é inválido.\n";
                     else if($cause == "classification not in range")
-                        echo "\tA classificação tem de ser um valor de 0 a 5.\n";
+                        echo "\t\t\t\tA classificação tem de ser um valor de 0 a 5.\n";
+                    echo "\t\t\t</div><br>\n";
                 }
             ?>
-            </div><br>
-            <form method="post" action="responder_questionario.php">
+            <form class="form" method="post" action="responder_questionario.php">
                 <input type="text" name="name" placeholder="Nome"><br>
                 <input type="number" name="age" placeholder="Idade"><br>
                 <select name="country">
@@ -236,13 +236,13 @@
                     <option value="Zâmbia">Zâmbia</option>
                     <option value="Zimbábue">Zimbábue</option>
                 </select><br>
-                <input type="number" name="classification" placeholder="Classificação de 0 a 10"><br><br>
-                <input type="submit" value="Responder">
+                <input type="number" name="classification" placeholder="Classificação de 0 a 5"><br><br>
+                <input class="respond" type="submit" value="Responder">
             </form><br>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>
-            Developed by Carlos Tojal<br>
+            Desenvolvido por Carlos Tojal<br>
             <div class="contacts">
                 GitHub: <a href="https://github.com/carlostojal" target="blank">carlostojal</a><br>
                 Email: <a href="mailto:carlos.tojal@hotmail.com" target="blank">carlos.tojal@hotmail.com</a>
