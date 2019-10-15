@@ -9,6 +9,8 @@
 
 public class Piloto {
 
+    // 5
+    // 6 - b)
     private String nome;
     private int idade;
     private int destreza;
@@ -16,6 +18,7 @@ public class Piloto {
     public Piloto() {
     }
 
+    // 5
     public String getNome() {
         return nome;
     }

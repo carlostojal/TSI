@@ -17,6 +17,7 @@ public class Corrida {
         CarroCorrida carroEquipa1 = new CarroCorrida();
         CarroCorrida carroEquipa2 = new CarroCorrida();
 
+        // 10
         carroEquipa1.motor = new Motor(50);
         carroEquipa2.motor = new Motor(100);
 
@@ -52,7 +53,9 @@ public class Corrida {
         carroEquipa1.travar(60);
         carroEquipa2.acelerar();
 
-        //carroEquipa2.velocidadeAtual = 300.0f; // 3
+        // carroEquipa2.velocidadeAtual = 300.0f; // 3
+        /* Esta linha atribui o valor de 300.0 (float) ao atributo velocidadeAtual
+        * do objeto carroEquipa2
 
         System.out.println("Velocidade do carroEquipa1: " + carroEquipa1.getVelocidadeAtual());
         System.out.println("Velocidade do carroEquipa2: " + carroEquipa2.getVelocidadeAtual());

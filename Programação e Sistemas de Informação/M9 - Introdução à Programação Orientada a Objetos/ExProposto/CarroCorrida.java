@@ -8,12 +8,14 @@
 // 1 - a)
 
 public class CarroCorrida {
+    // 4
+    // 6 - a)
     private String numeroIdentificacao;
     private int velocidadeAtual = 0;
     private int velocidadeMaxima = 200;
     private Piloto piloto; // 1 - c)
     private boolean ligado = false;
-    Motor motor;
+    Motor motor; // 9
 
     public CarroCorrida() {
 
@@ -71,7 +73,7 @@ public class CarroCorrida {
     void acelerar() {
         if(isLigado()) {
             if(velocidadeAtual + 10 + piloto.getDestreza() * 0.1 + motor.potencia * 0.1 <= velocidadeMaxima)
-                velocidadeAtual += 10 + piloto.getDestreza() * 0.1 + motor.potencia * 0.1; // 1 - c)
+                velocidadeAtual += 10 + piloto.getDestreza() * 0.1 + motor.potencia * 0.1; // 1 - c)    9
         }
     }
 

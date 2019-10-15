@@ -5,7 +5,10 @@
 // Motor.java
 //
 
+// 8
+
 public class Motor {
+
     int potencia;
 
     public Motor(int potencia) {
