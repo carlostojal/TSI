@@ -26,7 +26,7 @@
         else if($age <= 0 || $classification > 120) {
             header("location: ./?cause=age+not+in+range");
         }
-        else if($classification < 0 || $classification > 5) {
+        else if($classification <= 0 || $classification > 5) {
             header("location: ./?cause=classification+not+in+range");
         }
         else {

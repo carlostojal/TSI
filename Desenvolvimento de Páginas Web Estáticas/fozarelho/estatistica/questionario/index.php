@@ -52,7 +52,7 @@
                     else if($cause == "age not in range")
                         echo "\t\t\t\tO valor introduzido no campo idade é inválido.\n";
                     else if($cause == "classification not in range")
-                        echo "\t\t\t\tA classificação tem de ser um valor de 0 a 5.\n";
+                        echo "\t\t\t\tA classificação é necessariamente um valor entre 1 e 5.\n";
                     echo "\t\t\t</div><br>\n";
                 }
             ?>
@@ -236,8 +236,8 @@
                     <option value="Zâmbia">Zâmbia</option>
                     <option value="Zimbábue">Zimbábue</option>
                 </select><br>
-                <input type="number" name="classification" placeholder="Classificação de 0 a 5"><br>
-                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê-nos uma curta opinião acerca da sua visita, pontos fortes e fracos.Sinta-se à vontade."></textarea>
+                <input type="number" name="classification" placeholder="Classificação de 1 a 5"><br>
+                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê-nos uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade."></textarea>
                 <br><br>
                 <input class="respond" type="submit" value="Responder">
             </form>

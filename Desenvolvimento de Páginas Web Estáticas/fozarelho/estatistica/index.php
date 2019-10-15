@@ -43,7 +43,54 @@
             </div>
         </header>
         <section>
-            <a href="questionario">Responder ao questionário</a>
+            <div class="stats_introduction">
+                É interessante também saber a opinião dos visitantes da Foz do Arelho, que idade têm, e de onde vêm.<br>
+                Abaixo está essa informação, em tempo real.<br>
+                Se visitou recentemente a Foz do Arelho, ou está atualmente a visitar, dê também por favor o seu
+                contributo, respondendo a <a href="questionario">este</a> questionário.
+            </div>
+            <div class="age_stats">
+                <h3> Que idade têm os visitantes da Foz do Arelho? </h3>
+                <table border="2">
+                    <tr>
+                        <th> Menos de 18 anos </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Entre 18 e 35 anos </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Entre 35 e 50 anos </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Entre 50 e 70 anos </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Mais de 70 anos </th>
+                        <td> x% </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="provenence_stats">
+                <h3> De onde vêm? </h3>
+                <table border="2">
+                    <tr>
+                        <th> Portugal </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Espanha </th>
+                        <td> x% </td>
+                    </tr>
+                    <tr>
+                        <th> Outros </th>
+                        <td> x% </td>
+                    </tr>
+                </table>
+            </div>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>
