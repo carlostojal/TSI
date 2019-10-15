@@ -238,7 +238,7 @@
                 </select><br>
                 <input type="number" name="classification" placeholder="Classificação de 0 a 5"><br><br>
                 <input class="respond" type="submit" value="Responder">
-            </form><br>
+            </form>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>

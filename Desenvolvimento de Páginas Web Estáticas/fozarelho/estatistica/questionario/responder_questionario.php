@@ -19,7 +19,7 @@
         $classification = $_POST['classification'];
         $year = date("Y");
 
-        if($name == "" || $age == "" || $country == "País" || $classification == "") {
+        if($name == "" || $age == "" || $country == "" || $classification == "") {
             header("location: ./?cause=empty+fields");
         }
         else if($age <= 0 || $classification > 120) {
