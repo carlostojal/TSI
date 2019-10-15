@@ -17,9 +17,10 @@
         $age = $_POST['age'];
         $country = $_POST['country'];
         $classification = $_POST['classification'];
+        $opinion = $_POST['opinion'];
         $year = date("Y");
 
-        if($name == "" || $age == "" || $country == "" || $classification == "") {
+        if($name == "" || $age == "" || $country == "" || $classification == "" || $opinion == "") {
             header("location: ./?cause=empty+fields");
         }
         else if($age <= 0 || $classification > 120) {
@@ -29,9 +30,9 @@
             header("location: ./?cause=classification+not+in+range");
         }
         else {
-            $sql = "INSERT INTO visitantes (name, age, country, classification, year) VALUES ('$name', '$age', '$country', '$classification', '$year')";
+            $sql = "INSERT INTO visitantes (name, age, country, classification, opinion, year) VALUES ('$name', '$age', '$country', '$classification', '$opinion', '$year')";
 
-            $res = mysqli_query($con, $sql) or die("Error.".mysqli_errno($con));
+            $res = mysqli_query($con, $sql) or die("Erro.".mysqli_errno($con));
 
             if($res)
                 header("location: /");

@@ -236,7 +236,9 @@
                     <option value="Zâmbia">Zâmbia</option>
                     <option value="Zimbábue">Zimbábue</option>
                 </select><br>
-                <input type="number" name="classification" placeholder="Classificação de 0 a 5"><br><br>
+                <input type="number" name="classification" placeholder="Classificação de 0 a 5"><br>
+                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê-nos uma curta opinião acerca da sua visita, pontos fortes e fracos.Sinta-se à vontade."></textarea>
+                <br><br>
                 <input class="respond" type="submit" value="Responder">
             </form>
         </section>
