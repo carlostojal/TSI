@@ -14,7 +14,7 @@
 <?php
     require_once("../connection.php");
 
-    $total = 0;
+    $total = 1;
     $n_menos_dezoito = 0;
     $n_dezoito_trintacinco = 0;
     $n_trintacinco_cinquenta = 0;
@@ -92,6 +92,7 @@
                 contributo, respondendo a <a href="questionario">este</a> questionário.
             </div>
                 <?php
+                    if($total == 0) $total = 1;
                     if(mysqli_num_rows($res1) > 0)
                         echo "<div class='top_opinions'>";
                     $count = 0;
