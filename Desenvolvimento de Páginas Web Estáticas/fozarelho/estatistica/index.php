@@ -49,7 +49,7 @@
             $n_outros++;
     }
 
-    $sql = "SELECT * FROM visitantes ORDER BY classification DESC";
+    $sql = "SELECT * FROM visitantes WHERE divulgation = '1' ORDER BY classification DESC";
     $res1 = mysqli_query($con, $sql);
 ?>
 
@@ -91,11 +91,12 @@
                 Se visitou recentemente a Foz do Arelho, ou está atualmente a visitar, dê também por favor o seu
                 contributo, respondendo a <a href="questionario">este</a> questionário.
             </div>
-            <div class="top_opinions">
                 <?php
+                    if(mysqli_num_rows($res1) > 0)
+                        echo "<div class='top_opinions'>";
                     $count = 0;
                     while(($melhores = mysqli_fetch_assoc($res1)) && $count < 3) {
-                        if($melhores['classification'] >= 3) {
+                        if($melhores['classification'] >= 4) {
                             $count++;
                 ?>
                 <h5><i> <?php echo "\"".$melhores['opinion']."\"" ?> </i></h5>
@@ -103,8 +104,9 @@
                 <?php
                         }
                     }
+                    if(mysqli_num_rows($res1) > 0)
+                        echo "</div>"
                 ?>
-            </div>
             <div class="age_stats">
                 <h3> Que idade têm os visitantes da Foz do Arelho? * </h3>
                 <table border="2">
@@ -147,7 +149,7 @@
                     </tr>
                 </table>
             </div>
-            <p class="stats_legend"> * Num total de <?php echo mysqli_num_rows($res) ?> respostas ao questionário. </p>
+            <p class="stats_legend"> * Num total de <?php echo mysqli_num_rows($res); if(mysqli_num_rows($res) == 1) echo " resposta"; else echo " respostas"?> ao questionário. </p>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>

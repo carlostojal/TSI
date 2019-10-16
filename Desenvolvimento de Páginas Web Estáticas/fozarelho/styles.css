@@ -760,6 +760,7 @@ button {
     margin-bottom: -20px;
     background-color: #F8F8F8;
     font-family: 'Raleway';
+    color: #808080;
 }
 
 .form input {
@@ -905,6 +906,11 @@ button {
     color: #606060;
 }
 
+.age_stats h3 {
+    animation: stats_title_animation;
+    animation-duration: 0.75s;
+}
+
 .age_stats th, td {
     padding: 5px;
 }
@@ -920,8 +926,22 @@ button {
     color: #606060;
 }
 
+.provenence_stats h3 {
+    animation: stats_title_animation;
+    animation-duration: 0.75s;
+}
+
 .provenence_stats th, td {
     padding: 5px;
+}
+
+@keyframes stats_title_animation {
+    from {
+        margin-top: 40px;
+    }
+    to {
+        margin-top: 0px;
+    }
 }
 
 .stats_legend {

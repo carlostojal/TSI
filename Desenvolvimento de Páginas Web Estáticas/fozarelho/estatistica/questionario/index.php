@@ -238,9 +238,10 @@
                 </select><br>
                 <input type="number" name="classification" placeholder="Classificação de 1 a 5"><br>
                 <textarea class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade."></textarea><br>
-                <input class="checkbox" type="checkbox"> Aceita a divulgação dos meus dados dentro deste site (poderá ser divulgado o seu nome, idade e opinião caso tenha dado uma das classificações mais altas do estudo)
+                <input class="checkbox" type="checkbox" name="divulgation" checked> Aceita a divulgação dos seus dados dentro deste website (poderá ser divulgado o seu nome, idade e opinião, caso tenha dado uma das classificações mais altas do estudo)
                 <br><br>
                 <input class="respond" type="submit" value="Responder">
+                <p>Ao responder, aceita a utilização dos seus dados para fins estatísticos dentro deste website. A segurança e privacidade dos mesmos não pode ser completamente assegurada.</p>
             </form>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
