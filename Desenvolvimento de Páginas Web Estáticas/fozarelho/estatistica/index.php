@@ -11,6 +11,48 @@
 
 <!-- Estatística dos turistas -->
 
+<?php
+    require_once("../connection.php");
+
+    $total = 0;
+    $n_menos_dezoito = 0;
+    $n_dezoito_trintacinco = 0;
+    $n_trintacinco_cinquenta = 0;
+    $n_cinquenta_setenta = 0;
+    $n_setenta_mais = 0;
+
+    $n_portugal = 0;
+    $n_espanha = 0;
+    $n_outros = 0;
+
+    $sql = "SELECT * FROM visitantes";
+    $res = mysqli_query($con, $sql);
+    $total = mysqli_num_rows($res);
+
+    while($row = mysqli_fetch_assoc($res)) {
+        if($row['age'] < 18)
+            $n_menos_dezoito++;
+        else if($row['age'] >= 18 && $row['age'] < 35)
+            $n_dezoito_trintacinco++;
+        else if($row['age'] >= 35 && $row['age'] < 50)
+            $n_trintacinco_cinquenta++;
+        else if($row['age'] >= 50 && $row['age'] < 70)
+            $n_cinquenta_setenta++;
+        else
+            $n_setenta_mais++;
+
+        if($row['country'] == "Portugal")
+            $n_portugal++;
+        else if($row[$i]['country'] == "Espanha")
+            $n_espanha++;
+        else
+            $n_outros++;
+    }
+
+    $sql = "SELECT * FROM visitantes ORDER BY classification DESC";
+    $res1 = mysqli_query($con, $sql);
+?>
+
 <html>
     <head>
             <meta charset="UTF-8">
@@ -49,48 +91,63 @@
                 Se visitou recentemente a Foz do Arelho, ou está atualmente a visitar, dê também por favor o seu
                 contributo, respondendo a <a href="questionario">este</a> questionário.
             </div>
+            <div class="top_opinions">
+                <?php
+                    $count = 0;
+                    while(($melhores = mysqli_fetch_assoc($res1)) && $count < 3) {
+                        if($melhores['classification'] >= 3) {
+                            $count++;
+                ?>
+                <h5><i> <?php echo "\"".$melhores['opinion']."\"" ?> </i></h5>
+                <p> <?php echo $melhores['name'].", ".$melhores['year']." (".$melhores['classification']."/5)" ?> </p>
+                <?php
+                        }
+                    }
+                ?>
+            </div>
             <div class="age_stats">
-                <h3> Que idade têm os visitantes da Foz do Arelho? </h3>
+                <h3> Que idade têm os visitantes da Foz do Arelho? * </h3>
                 <table border="2">
                     <tr>
                         <th> Menos de 18 anos </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_menos_dezoito/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Entre 18 e 35 anos </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_dezoito_trintacinco/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Entre 35 e 50 anos </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_trintacinco_cinquenta/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Entre 50 e 70 anos </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_cinquenta_setenta/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Mais de 70 anos </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_setenta_mais/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                 </table>
-            </div>
+            </div><br>
             <div class="provenence_stats">
-                <h3> De onde vêm? </h3>
+                <h3> De onde vêm? * </h3>
                 <table border="2">
                     <tr>
                         <th> Portugal </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_portugal/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Espanha </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_espanha/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
                         <th> Outros </th>
-                        <td> x% </td>
+                        <td> <?php echo number_format(($n_outros/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                 </table>
             </div>
+            <p class="stats_legend"> * Num total de <?php echo mysqli_num_rows($res) ?> respostas ao questionário. </p>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>

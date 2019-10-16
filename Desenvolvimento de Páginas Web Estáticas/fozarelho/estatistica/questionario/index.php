@@ -237,7 +237,8 @@
                     <option value="Zimbábue">Zimbábue</option>
                 </select><br>
                 <input type="number" name="classification" placeholder="Classificação de 1 a 5"><br>
-                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê-nos uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade."></textarea>
+                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade."></textarea><br>
+                <input class="checkbox" type="checkbox"> Aceita a divulgação dos meus dados dentro deste site (poderá ser divulgado o seu nome, idade e opinião caso tenha dado uma das classificações mais altas do estudo)
                 <br><br>
                 <input class="respond" type="submit" value="Responder">
             </form>

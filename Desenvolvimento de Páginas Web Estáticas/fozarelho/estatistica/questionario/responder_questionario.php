@@ -33,9 +33,7 @@
             $sql = "INSERT INTO visitantes (name, age, country, classification, opinion, year) VALUES ('$name', '$age', '$country', '$classification', '$opinion', '$year')";
 
             $res = mysqli_query($con, $sql) or die("Erro.".mysqli_errno($con));
-
-            if($res)
-                header("location: /");
         }
     }
+    header("location: /");
 ?>
