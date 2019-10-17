@@ -43,7 +43,7 @@
 
         if($row['country'] == "Portugal")
             $n_portugal++;
-        else if($row[$i]['country'] == "Espanha")
+        else if($row['country'] == "Espanha")
             $n_espanha++;
         else
             $n_outros++;
