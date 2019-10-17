@@ -16,5 +16,7 @@ public class Motor {
             this.potencia = potencia;
         else if(potencia > 100)
             this.potencia = 100;
+        else 
+            this.potencia = 1;
     }
 }
