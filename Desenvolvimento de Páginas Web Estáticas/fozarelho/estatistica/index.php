@@ -9,7 +9,7 @@
 
 -->
 
-<!-- Estatística dos turistas -->
+<!-- Estatística dos visitantes -->
 
 <?php
     require_once("../connection.php");
@@ -62,9 +62,6 @@
             <link rel="stylesheet" href="../styles.css">
             <!-- Bootstrap -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-            <!-- Scripts JS relativos à meteorologia -->
-            <script type="text/javascript" src="../scripts/weather.js"></script>
-            <script type="text/javascript" src="../scripts/forecast.js"></script>
     </head>
     <body>
         <!-- Contém todo o cabeçalho da página -->
@@ -101,11 +98,13 @@
                             $count++;
                 ?>
                 <h5><i> <?php echo "\"".$melhores['opinion']."\"" ?> </i></h5>
-                <p> <?php echo $melhores['name'].", ".$melhores['year']." (".$melhores['classification']."/5)" ?> </p>
+                <p> <?php echo $melhores['name'].", ".$melhores['year']." (avaliou em ".$melhores['classification']."/5)" ?> </p>
                 <?php
+                            echo "<br>";
                         }
                     }
                     if(mysqli_num_rows($res1) > 0)
+                        echo "<a class='view_all' href='ver-todos'> Ver todos os comentários </a>";
                         echo "</div>"
                 ?>
             <div class="age_stats">

@@ -727,6 +727,19 @@ button {
     color: #b0b0b0
 }
 
+.view_all {
+    font-family: 'Raleway';
+    font-weight: 100;
+    text-decoration: none;
+    color: #909090;
+    transition: all 0.5s;
+}
+
+.view_all:hover {
+    text-decoration: none;
+    color: #606060;
+}
+
 .form_fail {
     padding: 25px;
     font-family: 'Raleway';
