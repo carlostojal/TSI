@@ -12,13 +12,14 @@ public class Main {
 
     public static void main(String[] args) {
         int opt;
-        almocos[0] = new Almoco("Sandes de presunto/leitão/salmão", 3f);
-        almocos[1] = new Almoco("Salada Multicor", 2.5f);
-        almocos[2] = new Almoco("Sopa", 1.5f);
-        almocos[3] = new Almoco("Tudo", 6f);
+        almocos[0] = new Almoco("Sandes de presunto/leitão/salmão", 3.00f);
+        almocos[1] = new Almoco("Salada Multicor", 2.50f);
+        almocos[2] = new Almoco("Sopa", 1.50f);
+        almocos[3] = new Almoco("Tudo", 6.00f);
 
         opt = menu();
 
+        /*
         switch(opt) {
             case 1:
                 System.out.println("\n" + almocos[0].getDescricao() + " - " + almocos[0].getPreco());
@@ -32,7 +33,9 @@ public class Main {
             case 4:
                 System.out.println("\n" + almocos[3].getDescricao() + " - " + almocos[3].getPreco());
                 break;
-        }
+        }*/
+
+        System.out.println("\n" + almocos[opt-1].getDescricao() + " - " + almocos[opt-1].getPreco());
     }
 
     public static int menu() {
