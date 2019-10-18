@@ -76,6 +76,7 @@
                     <a class="menu_items" href="../onde-ficar"> ONDE FICAR </a>
                     <a class="menu_items" href="../o-que-fazer">O QUE FAZER </a>
                     <a class="menu_items" href="../previsao"> PREVISÃO METEOROLÓGICA </a>
+                    <a class="menu_items" href="."> ESTATÍSTICA </a> 
                     <a class="menu_items" href="../contatos"> CONTATOS </a>
                     <a class="menu_items" href="../"> EN </a>
                 </nav>
