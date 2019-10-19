@@ -43,7 +43,7 @@
 
         if($row['country'] == "Portugal")
             $n_portugal++;
-        else if($row['country'] == "Espanha")
+        else if($row['country'] == "Espanha" || $row['country'] == "Spain")
             $n_espanha++;
         else
             $n_outros++;
@@ -57,7 +57,7 @@
     <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title> Estatística - Foz do Arelho </title>
+            <title> Statistic - Foz do Arelho </title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
             <link rel="stylesheet" href="../styles.css">
             <!-- Bootstrap -->
@@ -68,26 +68,26 @@
         <header>
             <div class="title_header">
                 <!-- Título grande -->
-                <h1 class="title"> Estatística </h1>
+                <h1 class="title"> Statistic </h1>
 
                 <!-- Itens do menu -->
                 <nav class="menu">
-                    <a class="menu_items" href="../"> INÍCIO </a>
-                    <a class="menu_items" href="../onde-ficar"> ONDE FICAR </a>
-                    <a class="menu_items" href="../o-que-fazer">O QUE FAZER </a>
-                    <a class="menu_items" href="../previsao"> PREVISÃO METEOROLÓGICA </a>
-                    <a class="menu_items" href="."> ESTATÍSTICA </a> 
-                    <a class="menu_items" href="../contatos"> CONTATOS </a>
-                    <a class="menu_items" href="../statistic"> EN </a>
+                    <a class="menu_items" href="../en"> HOME </a>
+                    <a class="menu_items" href="../where-to-stay"> WHERE TO STAY </a>
+                    <a class="menu_items" href="../what-to-do"> WHAT TO DO </a>
+                    <a class="menu_items" href="../forecast"> WEATHER FORECAST </a>
+                    <a class="menu_items" href="."> STATISTIC </a> 
+                    <a class="menu_items" href="../contacts"> CONTACTS </a>
+                    <a class="menu_items" href="../estatistica"> PT </a>
                 </nav>
             </div>
         </header>
         <section>
             <div class="stats_introduction">
-                É interessante também saber a opinião dos visitantes da Foz do Arelho, que idade têm, e de onde vêm.<br>
-                Abaixo está essa informação, em tempo real.<br>
-                Se visitou recentemente a Foz do Arelho, ou está atualmente a visitar, dê também por favor o seu
-                contributo, respondendo a <a href="questionario">este</a> questionário.
+                It is also interesting to know the opinion of visitors from Foz do Arelho, how old they are, and where they come from.<br>
+                Below is this information, in real time.<br>
+                If you have recently visited Foz do Arelho, or are currently visiting, please also give your
+                contribution by taking <a href="questionnaire"> this </a> questionnaire.
             </div>
                 <?php
                     if($total == 0) $total = 1;
@@ -105,52 +105,52 @@
                         }
                     }
                     if(mysqli_num_rows($res1) > 0)
-                        echo "<a class='view_all' href='ver-todos'> Ver todos os comentários </a>";
+                        echo "<a class='view_all' href='view-all'> View all </a>";
                         echo "</div>"
                 ?>
             <div class="age_stats">
-                <h3> Que idade têm os visitantes da Foz do Arelho? * </h3>
+                <h3> How old are Foz do Arelho visitors? * </h3>
                 <table border="2">
                     <tr>
-                        <th> Menos de 18 anos </th>
+                        <th> Less than 18 years old </th>
                         <td> <?php echo number_format(($n_menos_dezoito/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Entre 18 e 35 anos </th>
+                        <th> Between 18 and 35 years old </th>
                         <td> <?php echo number_format(($n_dezoito_trintacinco/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Entre 35 e 50 anos </th>
+                        <th> Between 35 and 50 years old </th>
                         <td> <?php echo number_format(($n_trintacinco_cinquenta/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Entre 50 e 70 anos </th>
+                        <th> Between 50 and 70 years old </th>
                         <td> <?php echo number_format(($n_cinquenta_setenta/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Mais de 70 anos </th>
+                        <th> More than 70 years old </th>
                         <td> <?php echo number_format(($n_setenta_mais/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                 </table>
             </div><br>
             <div class="provenence_stats">
-                <h3> De onde vêm? * </h3>
+                <h3> Where are they from? * </h3>
                 <table border="2">
                     <tr>
                         <th> Portugal </th>
                         <td> <?php echo number_format(($n_portugal/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Espanha </th>
+                        <th> Spain </th>
                         <td> <?php echo number_format(($n_espanha/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                     <tr>
-                        <th> Outros </th>
+                        <th> Other </th>
                         <td> <?php echo number_format(($n_outros/$total) * 100, 2, '.', '') ?>% </td>
                     </tr>
                 </table>
             </div>
-            <p class="stats_legend"> * Num total de <?php echo mysqli_num_rows($res); if(mysqli_num_rows($res) == 1) echo " resposta"; else echo " respostas"?> ao questionário. </p>
+            <p class="stats_legend"> * Out of <?php echo mysqli_num_rows($res); if(mysqli_num_rows($res) == 1) echo " respond"; else echo " responds"?>. </p>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>

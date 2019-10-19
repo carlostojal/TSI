@@ -39,7 +39,7 @@
                     <a class="menu_items" href="../../previsao"> PREVISÃO METEOROLÓGICA </a>
                     <a class="menu_items" href=".."> ESTATÍSTICA </a>
                     <a class="menu_items" href="../../contatos"> CONTATOS </a>
-                    <a class="menu_items" href="#"> EN </a>
+                    <a class="menu_items" href="../../statistic/questionnaire"> EN </a>
                 </nav>
             </div>
         </header>

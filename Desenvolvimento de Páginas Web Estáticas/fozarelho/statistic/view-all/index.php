@@ -22,7 +22,7 @@
     <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title> Comentários - Foz do Arelho </title>
+            <title> Comments - Foz do Arelho </title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
             <link rel="stylesheet" href="../../styles.css">
             <!-- Bootstrap -->
@@ -33,17 +33,17 @@
         <header>
             <div class="title_header">
                 <!-- Título grande -->
-                <h1 class="title"> Comentários </h1>
+                <h1 class="title"> Comments </h1>
 
                 <!-- Itens do menu -->
                 <nav class="menu">
-                    <a class="menu_items" href="../../"> INÍCIO </a>
-                    <a class="menu_items" href="../../onde-ficar"> ONDE FICAR </a>
-                    <a class="menu_items" href="../../o-que-fazer">O QUE FAZER </a>
-                    <a class="menu_items" href="../../previsao"> PREVISÃO METEOROLÓGICA </a>
-                    <a class="menu_items" href=".."> ESTATÍSTICA </a>
-                    <a class="menu_items" href="../../contatos"> CONTATOS </a>
-                    <a class="menu_items" href="../../statistic/view-all"> EN </a>
+                    <a class="menu_items" href="../../en"> HOME </a>
+                    <a class="menu_items" href="../../where-to-stay"> WHERE TO STAY </a>
+                    <a class="menu_items" href="../../what-to-do"> WHAT TO DO </a>
+                    <a class="menu_items" href="../../forecast"> WEATHER FORECAST </a>
+                    <a class="menu_items" href=".."> STATISTIC </a>
+                    <a class="menu_items" href="../../contacts"> CONTACTS </a>
+                    <a class="menu_items" href="../../estatistica/ver-todos"> PT </a>
                 </nav>
             </div>
         </header>
@@ -54,7 +54,7 @@
             while($respostas = mysqli_fetch_assoc($res)) {
         ?>
         <h5><i> <?php echo "\"".$respostas['opinion']."\"" ?> </i></h5>
-        <p> <?php echo $respostas['name'].", ".$respostas['year']." (avaliou em ".$respostas['classification']."/5)" ?> </p>
+        <p> <?php echo $respostas['name'].", ".$respostas['year']." (reviewed".$respostas['classification']."/5)" ?> </p>
         <?php
             echo "<br>";
             }
@@ -64,7 +64,7 @@
         </article>
         <!-- Fundo da página que contém dados do desenvolvedor -->
         <footer>
-            Desenvolvido por Carlos Tojal<br>
+            Developed by Carlos Tojal<br>
             <div class="contacts">
                 GitHub: <a href="https://github.com/carlostojal" target="blank">carlostojal</a><br>
                 Email: <a href="mailto:carlos.tojal@hotmail.com" target="blank">carlos.tojal@hotmail.com</a>
