@@ -3,7 +3,7 @@
 
     Copyright (c) Carlos Tojal (carlostojal)
     Foz do Arelho
-    estatistica/responder/responder_questionario.php
+    estatistica/questionario/responder_questionario.php
     github.com/carlostojal/TSI
 
 -->

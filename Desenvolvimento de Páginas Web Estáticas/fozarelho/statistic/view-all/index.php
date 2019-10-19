@@ -4,7 +4,7 @@
 
     Copyright (c) Carlos Tojal (carlostojal)
     Foz do Arelho
-    estatistica/ver-todos/index.php
+    statistic/view-all/index.php
     github.com/carlostojal/TSI
 
 -->
