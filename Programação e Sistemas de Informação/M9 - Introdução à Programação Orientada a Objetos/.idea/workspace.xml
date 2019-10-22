@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84f9db97-b1e0-4ff0-838d-ae076a7ecdaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/en/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/en/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/escola-vela/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/intertidal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/intertidal/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/trombone-jazz-bar/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/what-to-do/trombone-jazz-bar/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/where-to-stay/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/where-to-stay/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/Contador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/Contador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/UsaContador1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/UsaContador1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/UsaContador2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex3/UsaContador2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Desenvolvimento de Páginas Web Estáticas/fozarelho/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +52,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
