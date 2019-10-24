@@ -7,23 +7,21 @@
 
 public class Calculadora {
 
-    //Atributos
-    private double op1, op2;
-
     //Construtor
     public Calculadora() {
     }
 
-    //Getters e Setters
-    public void setOp1(double op1) {
-        this.op1 = op1;
-    }
-    public void setOp2(double op2) {
-        this.op2 = op2;
-    }
-
     //Métodos
-    public double soma() {
+    public double soma(double op1, double op2) {
         return op1 + op2;
+    }
+    public double subtracao(double op1, double op2) {
+        return op1 - op2;
+    }
+    public double multiplicacao(double op1, double op2) {
+        return op1 * op2;
+    }
+    public double divisao(double op1, double op2) {
+        return op1 / op2;
     }
 }

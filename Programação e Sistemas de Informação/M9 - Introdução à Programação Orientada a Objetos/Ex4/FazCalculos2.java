@@ -14,17 +14,13 @@ public class FazCalculos2 {
         
         System.out.print("1 Numero: ");
         double op1 = scanner.nextDouble();
-        //calculadora.setOp1(scanner.nextDouble());
-        calculadora.setOp1(op1);
 
         System.out.print("2 Numero: ");
         double op2 = scanner.nextDouble();
-        //calculadora.setOp2(scanner.nextDouble());
-        calculadora.setOp2(op2);
 
-        System.out.println("\nSoma: " + calculadora.soma());
-        System.out.println("Subtração: " + calculadora.subtracao());
-        System.out.println("Multiplicação: " + calculadora.multiplicacao());
-        System.out.println("Divisão: " + calculadora.divisao());
+        System.out.println("\nSoma: " + calculadora.soma(op1, op2));
+        System.out.println("Subtração: " + calculadora.subtracao(op1, op2));
+        System.out.println("Multiplicação: " + calculadora.multiplicacao(op1, op2));
+        System.out.println("Divisão: " + calculadora.divisao(op1, op2));
     }
 }
