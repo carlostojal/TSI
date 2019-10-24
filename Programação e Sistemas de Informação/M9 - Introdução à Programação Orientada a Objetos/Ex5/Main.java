@@ -22,6 +22,7 @@ public class Main {
                     break;
                 case 3:
                     new ConstroiCirculo();
+                    break;
             }
         } while(opt > 0);
     }
