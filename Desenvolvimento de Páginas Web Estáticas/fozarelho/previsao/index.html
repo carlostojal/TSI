@@ -13,6 +13,14 @@
 
 <html>
     <head>
+        <!-- Scripts Google Analytics-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150584043-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-150584043-1');
+        </script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <title> Previsão Meteorológica - Foz do Arelho </title>
@@ -35,10 +43,11 @@
                 <nav class="menu">
                     <a class="menu_items" href="../">INÍCIO</a>
                     <a class="menu_items" href="../onde-ficar/"> ONDE FICAR </a>
-                    <a class="menu_items" href="#o-que-fazer"> O QUE FAZER </a>
+                    <a class="menu_items" href="../o-que-fazer"> O QUE FAZER </a>
                     <a class="menu_items" href="."> PREVISÃO METEOROLÓGICA </a>
-                    <a class="menu_items" href="#contatos"> CONTATOS </a>
-                    <a class="menu_items" href="#en"> EN </a>
+                    <a class="menu_items" href="../estatistica"> ESTATÍSTICA </a>
+                    <a class="menu_items" href="../contatos"> CONTATOS </a>
+                    <a class="menu_items" href="../forecast"> EN </a>
                 </nav>
             </div>
         </header>
@@ -184,5 +193,14 @@
                 }
             </script>
         </section>
+        <!-- Fundo da página que contém dados do desenvolvedor -->
+        <footer>
+            Desenvolvido por Carlos Tojal<br>
+            <div class="contacts">
+                GitHub: <a href="https://github.com/carlostojal" target="blank">carlostojal</a><br>
+                Email: <a href="mailto:carlos.tojal@hotmail.com" target="blank">carlos.tojal@hotmail.com</a>
+            </div><br>
+            <div class="copyright">Copyright © Carlos Tojal (2019)</div>
+        </footer>
     </body>
 </html>

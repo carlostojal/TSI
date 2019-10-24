@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=MyClass
+comment0.text=\n\ Este\ programa\ serve\ para\ explicar\ o\ m\u00E9todo\ main.\ \n\ \n\ @author\ Carlos\ Tojal\n\ @version\ (03-10-2019)\n
+comment1.params=
+comment1.target=MyClass()
+comment1.text=\n\ Construtor\ para\ objetos\ da\ classe\ MyClass\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3
