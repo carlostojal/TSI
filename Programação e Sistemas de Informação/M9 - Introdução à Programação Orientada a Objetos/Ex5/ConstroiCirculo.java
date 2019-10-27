@@ -21,7 +21,9 @@ public class ConstroiCirculo {
 
         circulo = new Circulo(r);
 
-        System.out.println("\nPerimetro: " + circulo.calcularPerimetro());
+        System.out.println("\nRaio: " + circulo.getRaio());
+        System.out.println("Diametro: " + circulo.calcularDiametro());
+        System.out.println("Perimetro: " + circulo.calcularPerimetro());
         System.out.println("Area: " + circulo.calcularArea());
     }
 }

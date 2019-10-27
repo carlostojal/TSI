@@ -21,6 +21,10 @@ public class Circulo {
         this.r = r;
     }
 
+    public double calcularDiametro() {
+        return 2 * getRaio();
+    }
+
     public double calcularPerimetro() {
         return 2 * Math.PI * r;
     }
