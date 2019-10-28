@@ -12,8 +12,8 @@
 
 <?php
     require_once("../../connection.php");
-    if(isset($_POST)) {
-        $name = $_POST['name'];
+    if(isset($_GET)) {
+        $name = $_GET['name'];
         $age = $_POST['age'];
         $country = $_POST['country'];
         $classification = $_POST['classification'];

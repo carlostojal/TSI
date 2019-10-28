@@ -249,20 +249,11 @@
                 <textarea class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade." id="opinion"></textarea><br>
                 <input class="checkbox" type="checkbox" name="divulgation" id="divulgation" checked> Aceita a divulgação dos seus dados dentro deste website (o seu comentário será público)
                 <br><br>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <button class="respond" type="submit" onclick="respond()">Responder</button>
+                <button class="respond" type="submit"></button>
                 <p>Ao responder, aceita a utilização dos seus dados para fins estatísticos dentro deste website. A segurança e privacidade dos mesmos não pode ser completamente assegurada.</p>
             </form>
             <script>
                 var profile;
-
-                function onSignIn(googleUser) {
-                    profile = googleUser.getBasicProfile();
-                    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                    console.log('Name: ' + profile.getName());
-                    console.log('Image URL: ' + profile.getImageUrl());
-                    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-                }
 
                 function respond() {
                     var age = document.getElementById("age").value;
