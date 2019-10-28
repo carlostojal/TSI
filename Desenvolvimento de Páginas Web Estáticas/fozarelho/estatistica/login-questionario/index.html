@@ -59,13 +59,24 @@
             <script>
                 function onSignIn(googleUser) {
                     var profile = googleUser.getBasicProfile();
-                    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                    console.log('ID: ' + profile.getId());
                     console.log('Name: ' + profile.getName());
                     console.log('Image URL: ' + profile.getImageUrl());
-                    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                    console.log('Email: ' + profile.getEmail());
 
-                    document.getElementById("test").innerHTML = "<img src='" + profile.getImageUrl() +"'><br>Nome: " + profile.getName();
-                    window.location.href = "../questionario/?id=" + profile.getId() + "&name=" + profile.getName() + "&email=" + profile.getEmail() + "&photo_url=" + profile.getImageUrl(); 
+                    login(profile.getId());
+                }
+
+                function login(id) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            if(this.responseText == "ok")
+                                window.location.href = "../questionario/?id=" + profile.getId() + "&name=" + profile.getName() + "&email=" + profile.getEmail() + "&photo_url=" + profile.getImageUrl(); 
+                        }
+                    };
+                    xhttp.open("POST", "login.php", true);
+                    xhttp.send("id=" + id);
                 }
             </script>             
         </section>

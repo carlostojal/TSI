@@ -28,9 +28,8 @@
             <link rel="stylesheet" href="../../styles.css">
             <!-- Bootstrap -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-            <!-- Scripts JS relativos à meteorologia -->
-            <script type="text/javascript" src="../scripts/weather.js"></script>
-            <script type="text/javascript" src="../scripts/forecast.js"></script>
+            <!-- Script Vue.js -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
         <!-- Contém todo o cabeçalho da página -->
@@ -52,23 +51,12 @@
             </div>
         </header>
         <section>
-            <?php
-                if(isset($_GET['cause'])) {
-                    echo "<div class='form_fail'>\n";
-                    $cause = $_GET['cause'];
-                    if($cause == "empty fields")
-                        echo "\t\t\t\tForam deixados um ou mais campos por responder.\n";
-                    else if($cause == "age not in range")
-                        echo "\t\t\t\tO valor introduzido no campo idade é inválido.\n";
-                    else if($cause == "classification not in range")
-                        echo "\t\t\t\tA classificação é necessariamente um valor entre 1 e 5.\n";
-                    echo "\t\t\t</div><br>\n";
-                }
-            ?>
-            <form class="form" method="post" action="responder_questionario.php">
+            <form id="form" class="form">
+                <!--
                 <input type="text" name="name" placeholder="Nome"><br>
-                <input type="number" name="age" placeholder="Idade" id="age"><br>
-                <select name="country" id="country">
+                -->
+                <input v-model="age" type="number" name="age" placeholder="Idade" id="age"><br>
+                <select v-model="country" name="country" id="country">
                     <option disabled selected>País</option>
                     <option value="Portugal">Portugal</option>
                     <option value="África do Sul">África do Sul</option>
@@ -245,14 +233,62 @@
                     <option value="Zâmbia">Zâmbia</option>
                     <option value="Zimbábue">Zimbábue</option>
                 </select><br>
-                <input type="number" name="classification" placeholder="Classificação de 1 a 5" id="classification"><br>
-                <textarea class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade." id="opinion"></textarea><br>
-                <input class="checkbox" type="checkbox" name="divulgation" id="divulgation" checked> Aceita a divulgação dos seus dados dentro deste website (o seu comentário será público)
+                <input v-model="classification" type="number" name="classification" placeholder="Classificação de 1 a 5" id="classification"><br>
+                <textarea v-model="divulgation" class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade." id="opinion"></textarea><br>
+                <input v-model="divulgation" class="checkbox" type="checkbox" name="divulgation" id="divulgation" checked> Aceita a divulgação dos seus dados dentro deste website (o seu comentário será público)
                 <br><br>
                 <button class="respond" type="submit"></button>
                 <p>Ao responder, aceita a utilização dos seus dados para fins estatísticos dentro deste website. A segurança e privacidade dos mesmos não pode ser completamente assegurada.</p>
             </form>
             <script>
+
+                if(!is_logged())
+                    window.location.href = "../login-questionario";
+
+                function is_logged() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            if(this.responseText == "true")
+                                return true;
+                            else
+                                return false;
+                        }
+                    };
+                    xhttp.open("GET", "../islogged.php", true);
+                    xhttp.send();
+                }
+
+                var urlParams = new URLSearchParams(window.location.search);
+                var id = urlParams.get('id');
+                var name = urlParams.get('name');
+                var email = urlParams.get('email');
+                var photo_url = urlParams.get('photo_url');
+
+                var form = new Vue({
+                    el: "#form",
+                    data: {
+                        age: null,
+                        country: '',
+                        classification: null,
+                        opinion: '',
+                        divulgation: on
+                    },
+                    methods: {
+                        confirm_form: function() {
+                            if(age > 0 && age < 120 && country != "" && classification != null && classification >= 1 && classification >= 5 && opinion!= "")
+                                return true;
+                            else
+                                return false;
+                        },
+                        respond_form: function() {
+                            if(this.confirm_form() == true) {
+                                "responder_questionario.php?id=" + id + "&name=" + name + "&age=" + age + "&country=" + country + "&classification=" + classification + "&opinion=" + opinion + "&divulgation=" + divulgation + "&email=" + email + "&photo_url=" + photo_url; 
+                            }
+                        }
+                    }
+                });
+
                 var profile;
 
                 function respond() {
