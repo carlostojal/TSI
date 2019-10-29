@@ -57,6 +57,6 @@ public class CartaoCliente {
     }
 
     public void verPontos() {
-        System.out.println("Cartao " + this.n_cartao + ": " + this.n_pontos + " pontos");
+        System.out.println("Cartao " + this.getNcartao() + " (" + this.getTitular() + "): " + this.n_pontos + " pontos");
     }
 }
