@@ -283,22 +283,19 @@
                         },
                         respond_form: function() {
                             if(this.confirm_form() == true) {
-                                "responder_questionario.php?id=" + id + "&name=" + name + "&age=" + age + "&country=" + country + "&classification=" + classification + "&opinion=" + opinion + "&divulgation=" + divulgation + "&email=" + email + "&photo_url=" + photo_url; 
+                                var xhttp = new XMLHttpRequest();
+                                xhttp.onreadystatechange = function() {
+                                    if (this.readyState == 4 && this.status == 200) {
+                                        if(this.responseText == "success")
+                                            window.location.href = "..";
+                                    }
+                                };
+                                xhttp.open("GET", "responder_questionario.php?id=" + id + "&name=" + name + "&age=" + age + "&country=" + country + "&classification=" + classification + "&opinion=" + opinion + "&divulgation=" + divulgation + "&email=" + email + "&photo_url=" + photo_url, true);
+                                xhttp.send();
                             }
                         }
                     }
                 });
-
-                var profile;
-
-                function respond() {
-                    var age = document.getElementById("age").value;
-                    var country = document.getElementById("country").value;
-                    var classification = document.getElementById("classification").value;
-                    var opinion = document.getElementById("opinion").innerHTML;
-                    var divulgation = document.getElementById("divulgation").innerHTML;
-                    window.location.href = "responder_questionario.php?id=" + profile.getId() + "&name=" + profile.getName() + "&age=" + age + "&country=" + country + "&classification=" + classification + "&opinion=" + opinion + "&divulgation=" + divulgation + "&email=" + profile.getEmail() + "&photo_url=" + profile.getImageUrl(); 
-                }
             </script>
         </section>
         <!-- Fundo da página que contém dados do desenvolvedor -->
