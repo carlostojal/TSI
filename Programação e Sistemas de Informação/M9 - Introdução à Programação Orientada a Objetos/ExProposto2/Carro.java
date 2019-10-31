@@ -1,3 +1,4 @@
+
 //
 // Carlos Tojal (29-10-2019)
 // ExProposto2
@@ -19,6 +20,8 @@ public class Carro {
     private double consumo;
     private double litros;
     private boolean ligado;
+    private double velocidade;
+    private Motor motor;
 
     //Getters e setters
     public String getCor() {
@@ -29,7 +32,7 @@ public class Carro {
         this.cor = cor;
     }
 
-    public String getNportas() {
+    public int getNportas() {
         return n_portas;
     }
 
@@ -89,7 +92,7 @@ public class Carro {
         return peso_carro;
     }
 
-    public void setPesoCarro(double peso_carro) {
+    public void setPesoCarro(int peso_carro) {
         this.peso_carro = peso_carro;
     }
 
@@ -121,6 +124,18 @@ public class Carro {
         return ligado;
     }
 
+    public double getVelocidade() {
+        return velocidade;
+    }
+
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
     //Construtores
     public Carro() {
     }
@@ -145,7 +160,7 @@ public class Carro {
         this.peso_carro = peso_carro;
     }
 
-    public Carro(String cor, int n_portas, int ano_fabrico, int ano_modelo, String marca, String modelo, int n_pessoas, double peso_carro, double consumo, double km, double litros) {
+    public Carro(String cor, int n_portas, int ano_fabrico, int ano_modelo, String marca, String modelo, int n_pessoas, int peso_carro, double consumo, double km, double litros) {
         this.cor = cor;
         this.n_portas = n_portas;
         this.ano_fabrico = ano_fabrico;
@@ -161,16 +176,30 @@ public class Carro {
 
     //Métodos
     public void acelerar() {
-
+        velocidade(getVelocidade() + 0.05 * motor.getPotencia());
+        System.out.println("Vroooom");
     }
 
-    public void travar() {
-        
+    public void travar(double intensidade) {
+        if(getVelocidade() - intensidade>= 0) {
+            velocidade(getVelocidade() - intensidade);
+        }
+        else {
+            velocidade(0);
+        }
+        System.out.println("Skrrrrrr");
     }
 
     public void ligar() {
-        if(getNpessoas() > 0 && getLitros() > 0)
+        if(getNpessoas() > 0 && getLitros() > 0 && !isLigado()) {
             this.ligado = true;
+            System.out.println("Carro ligado.");
+        }
+    }
+
+    public void desligar() {
+        if(isLigado())
+            this.ligado = false;
     }
 
     public void pessoasDentro(int n_pessoas) {
@@ -178,6 +207,6 @@ public class Carro {
     }
 
     public void velocidade(double velocidade) {
-        
+        this.velocidade = velocidade;
     }
 }
