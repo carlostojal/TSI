@@ -1,6 +1,6 @@
 
 //
-// Carlos Tojal (29-10-2019)
+// Carlos Tojal (31-10-2019)
 // ExProposto2
 // Carro.java
 //
@@ -82,10 +82,6 @@ public class Carro {
 
     public int getNpessoas() {
         return n_pessoas;
-    }
-
-    public void setNpessoas(int n_pessoas) {
-        this.n_pessoas = n_pessoas;
     }
 
     public double getPesoCarro() {
@@ -203,7 +199,10 @@ public class Carro {
     }
 
     public void pessoasDentro(int n_pessoas) {
-        this.n_pessoas = n_pessoas;
+        if(n_pessoas <= max_pessoas)
+            this.n_pessoas = n_pessoas;
+        else
+            this.n_pessoas = max_pessoas;
     }
 
     public void velocidade(double velocidade) {

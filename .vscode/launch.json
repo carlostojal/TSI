@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CarroPasseio",
+            "request": "launch",
+            "mainClass": "CarroPasseio"
+        }
+    ]
+}

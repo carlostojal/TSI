@@ -1,6 +1,6 @@
 
 //
-// Carlos Tojal (29-10-2019)
+// Carlos Tojal (31-10-2019)
 // ExProposto2
 // Motor.java
 //
