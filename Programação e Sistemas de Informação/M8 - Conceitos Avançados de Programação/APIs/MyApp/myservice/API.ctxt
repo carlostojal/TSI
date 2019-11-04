@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=API
-comment1.params=address\ port
-comment1.target=java.net.Socket\ connect(java.lang.String,\ int)
-comment2.params=socket
-comment2.target=java.lang.String\ loadMessage(java.net.Socket)
-numComments=3
