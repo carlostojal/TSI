@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestarTempo",
+            "request": "launch",
+            "mainClass": "TestarTempo",
+            "projectName": "TSI_dcb84841"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CarroPasseio",
             "request": "launch",
             "mainClass": "CarroPasseio"

@@ -5,6 +5,10 @@
 // Utilizador.java
 //
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Utilizador {
     private String login;
     private String senha;
@@ -26,5 +30,31 @@ public class Utilizador {
     }
 
     public Utilizador() {
+    }
+
+    public Utilizador[] obterUtilizadores() {
+        BufferedReader br;
+        String line = "";
+        Utilizador[] utilizadores = new Utilizador[10];
+        int i = 0;
+        try {
+            br = new BufferedReader(new FileReader("login.csv"));
+            while(line != null && i < 10) {
+                line = br.readLine();
+                if(line != null && !line.equals("")) {
+                    utilizadores[i] = new Utilizador();
+                    utilizadores[i].setLogin(line.split("; ")[0]);
+                    utilizadores[i].setSenha(line.split("; ")[1]);
+                }
+                i++;
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        return utilizadores;
+    }
+
+    public void registarLogin() {
+
     }
 }

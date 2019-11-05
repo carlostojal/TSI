@@ -49,7 +49,7 @@ public class DadosFisicos {
         return peso / (altura * altura);
     }
 
-    public void mostrarDadosFisicos() {
+    public void exibirDados() {
         System.out.println("Peso: " + peso);
         System.out.println("Altura: " + altura);
         System.out.println("Idade: " + idade);

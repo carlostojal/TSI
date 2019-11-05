@@ -119,11 +119,11 @@ public class Atleta {
 
     public void exibirDados() {
         System.out.println("\n** Atleta **\n");
-        System.out.println("Nome: " + nome);
-        System.out.println("Contato: " + contato);
-        System.out.println("Nacionalidade: " + nacionalidade);
-        System.out.println("Numero da Camisa: " + numeroCamisa);
-        System.out.println("Posicao: " + posicao);
-        System.out.println("Status: " + status);
+        System.out.println("Nome: " + getNome());
+        System.out.println("Contato: " + getContacto());
+        System.out.println("Nacionalidade: " + getNacionalidade());
+        System.out.println("Numero da Camisa: " + getNumeroCamisa());
+        System.out.println("Posicao: " + getPosicao());
+        System.out.println("Status: " + getStatus());
     }
 }
