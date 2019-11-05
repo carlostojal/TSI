@@ -35,6 +35,7 @@ public class Login {
             System.out.print("Opcao: ");
             opt = scanner.nextInt();
         }while(opt < 0 || opt > 2);
+        scanner.close();
         return opt;
     }
 
@@ -64,6 +65,7 @@ public class Login {
                 }
             }
         }while(!sucesso);
+        scanner.close();
     }
 
     public void fazerRegisto() {
@@ -83,5 +85,6 @@ public class Login {
         } catch(IOException e) {
             e.printStackTrace();
         }
+        scanner.close();
     }
 }
