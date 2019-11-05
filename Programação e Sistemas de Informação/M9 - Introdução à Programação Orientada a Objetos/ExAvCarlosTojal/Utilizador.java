@@ -53,8 +53,4 @@ public class Utilizador {
         }
         return utilizadores;
     }
-
-    public void registarLogin() {
-
-    }
 }
