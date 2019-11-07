@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=DadosFisicos
+comment1.params=
+comment1.target=float\ getPeso()
+comment2.params=peso
+comment2.target=void\ setPeso(float)
+comment3.params=
+comment3.target=float\ getAltura()
+comment4.params=altura
+comment4.target=void\ setAltura(float)
+comment5.params=
+comment5.target=int\ getIdade()
+comment6.params=idade
+comment6.target=void\ setIdade(int)
+comment7.params=
+comment7.target=DadosFisicos()
+comment8.params=peso\ altura
+comment8.target=double\ calcularImc(float,\ float)
+comment9.params=
+comment9.target=void\ exibirDados()
+numComments=10

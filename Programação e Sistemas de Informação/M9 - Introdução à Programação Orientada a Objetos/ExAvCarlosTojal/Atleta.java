@@ -95,7 +95,8 @@ public class Atleta {
     }
 
     // Métodos
-    public int alteraStatus(double imc) {
+    public int alteraStatus() {
+        double imc = getDadosFisicos().calcularImc(getDadosFisicos().getPeso(), getDadosFisicos().getAltura());
         /*
         if(imc < 18.5)
             return -1;

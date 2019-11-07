@@ -47,8 +47,9 @@ public class Login {
             System.out.print("Login: ");
             login = scanner.nextLine();
             System.out.print("Senha: ");
-            char[] senhaChar = System.console().readPassword();
-            senha = new String(senhaChar);
+            //char[] senhaChar = System.console().readPassword();
+            //senha = new String(senhaChar);
+            senha = scanner.nextLine();
 
             Utilizador utilizadorLogin = new Utilizador();
             utilizadorLogin.setLogin(login);

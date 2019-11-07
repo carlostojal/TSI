@@ -50,17 +50,19 @@ public class TestarTempo {
             else
                 System.out.println("O IMC do atleta e de: " + df.format(result) + "> 30 - Jogador está obeso.");
 
-            int alteraStatus = atleta.alteraStatus(atleta.getDadosFisicos().calcularImc(atleta.getDadosFisicos().getPeso(), atleta.getDadosFisicos().getAltura()));
+            int alteraStatus = atleta.alteraStatus();
 
-            if(alteraStatus == -1 && result <= 30) {
-                System.out.println("Jogador nao pode ser titular.");
-                System.out.println("O seu peso esta abaixo da normalidade.");
-            } else if(alteraStatus == -1 && result > 25 && result <= 30) {
-                System.out.println("Jogador nao pode ser titular.");
-                System.out.println("O seu peso esta acima da normalidade.");
-            } else if(alteraStatus == -1 && result > 30) {
-                System.out.println("Jogador nao pode ser titular.");
-                System.out.println("O seu peso esta completamente fora da normalidade, obeso!");
+            if(alteraStatus == -1) {
+                if(result <= 25) {
+                    System.out.println("Jogador nao pode ser titular.");
+                    System.out.println("O seu peso esta abaixo da normalidade.");
+                } else if(result > 25 && result <= 30) {
+                    System.out.println("Jogador nao pode ser titular.");
+                    System.out.println("O seu peso esta acima da normalidade.");
+                } else {
+                    System.out.println("Jogador nao pode ser titular.");
+                    System.out.println("O seu peso esta completamente fora da normalidade, obeso!");
+                }
             } else {
                 System.out.println("O atleta agora e titular.");
             }
