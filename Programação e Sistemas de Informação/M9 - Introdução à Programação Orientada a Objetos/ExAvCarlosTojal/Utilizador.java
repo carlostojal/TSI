@@ -10,9 +10,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Utilizador {
+    // Atributos
     private String login;
     private String senha;
 
+    // Getters e setters
     public String getLogin() {
         return login;
     }
@@ -29,9 +31,11 @@ public class Utilizador {
         this.senha = senha;
     }
 
+    // Construtor
     public Utilizador() {
     }
 
+    // Métodos
     public Utilizador[] obterUtilizadores() {
         BufferedReader br;
         String line = "";

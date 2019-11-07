@@ -24,16 +24,10 @@ public class TestarTempo {
         }
 
         if(opt > 0) {
-            Atleta atleta = new Atleta("Pedro Miguéis", 351912340762L, "Portuguesa");
+            Atleta atleta;
             DadosFisicos dadosFisicos = new DadosFisicos();
             double result;
-            atleta.setNumeroCamisa(7);
-            atleta.setPosicao("Centroavante");
-            atleta.setStatus(false);
-            dadosFisicos.setPeso(98f);
-            dadosFisicos.setAltura(1.88f);
-            dadosFisicos.setIdade(25);
-            atleta.setDadosFisicos(dadosFisicos);
+            atleta = new Atleta("Pedro Miguéis", 351912340762L, "Portuguesa", 7, "Centroavante");
             DecimalFormat df = new DecimalFormat("0.00");
 
             atleta.exibirDados();

@@ -89,7 +89,10 @@ public class Atleta {
         this.nacionalidade = nacionalidade;
     }
 
-    public Atleta(int numeroCamisa, String posicao) {
+    public Atleta(String nome, long contacto, String nacionalidade, int numeroCamisa, String posicao) {
+        this.nome = nome;
+        this.contacto = contacto;
+        this.nacionalidade = nacionalidade;
         this.numeroCamisa = numeroCamisa;
         this.posicao = posicao;
     }

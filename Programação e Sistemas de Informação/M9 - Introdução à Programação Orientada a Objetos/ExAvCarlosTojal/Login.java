@@ -11,8 +11,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Login {
+
+    // Atributos
     private Utilizador utilizador;
 
+    // Getters e setters
     public Utilizador getUtilizador() {
         return utilizador;
     }
@@ -21,9 +24,11 @@ public class Login {
         this.utilizador = utilizador;
     }
 
+    // Construtor
     public Login() {
     }
 
+    // Métodos
     public int menu() {
         int opt;
         Scanner scanner = new Scanner(System.in);
