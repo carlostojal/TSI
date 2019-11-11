@@ -130,4 +130,3 @@ public class Atleta {
         System.out.println("Status: " + getStatus());
     }
 }
-
