@@ -57,11 +57,11 @@
                     echo "<div class='form_fail'>\n";
                     $cause = $_GET['cause'];
                     if($cause == "empty fields")
-                        echo "\t\t\t\tForam deixados um ou mais campos por responder.\n";
+                        echo "\t\t\t\tFields were left empty.\n";
                     else if($cause == "age not in range")
-                        echo "\t\t\t\tO valor introduzido no campo idade é inválido.\n";
+                        echo "\t\t\t\tThe age value is not valid.\n";
                     else if($cause == "classification not in range")
-                        echo "\t\t\t\tA classificação é necessariamente um valor entre 1 e 5.\n";
+                        echo "\t\t\t\tClassification is necessarily a value between 1 and 5.\n";
                     echo "\t\t\t</div><br>\n";
                 }
             ?>
@@ -319,7 +319,7 @@
                 <textarea class="opinion" name="opinion" rows="7" placeholder="Dê uma curta opinião acerca da sua visita, pontos fortes e fracos. Sinta-se à vontade."></textarea><br>
                 <input class="checkbox" type="checkbox" name="divulgation" checked> You accept the disclosure of your data within this website (your comment will be public)
                 <br><br>
-                <input class="respond" type="submit" value="Responder">
+                <input class="respond" type="submit" value="Respond">
                 <p> By responding, you agree to the use of your data for statistical purposes within this website. Their security and privacy cannot be completely assured. </p>
             </form>
         </section>
