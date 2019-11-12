@@ -1,7 +1,7 @@
 
 //
 // Carlos Tojal 11-11-2019
-// Ex1
+// FT1
 // Funcionario.java
 //
 
