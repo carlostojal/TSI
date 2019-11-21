@@ -41,20 +41,8 @@ public class Robot {
         this.name = name;
     }
 
-    public void setSpeed(double speed) {
+    private void setSpeed(double speed) {
         this.speed = speed;
-    }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
     }
 
     // Construtores
