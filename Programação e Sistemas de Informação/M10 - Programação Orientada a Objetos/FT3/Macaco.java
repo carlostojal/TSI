@@ -12,7 +12,7 @@ public class Macaco extends Mamifero {
     }
 
     // Metodos
-    public void correr() {
+    public void subirArvores() {
         System.out.println("O macaco trepa as arvores.");
     }
 
