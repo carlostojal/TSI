@@ -93,7 +93,7 @@ public class Robot {
         if(this.currentSpeed + (this.currentSpeed * 0.1) <= this.maxSpeed) {
             double speed = this.currentSpeed * 0.1;
             this.currentSpeed += speed;
-            this.temperature += (speed * 0.5);
+            this.temperature += 0.5;
             this.status = 2;
         }
     }
