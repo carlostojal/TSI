@@ -1,6 +1,5 @@
-
 // 
-// Carlos Tojal 21-11-2019
+// Carlos Tojal e Frederico Bento 21-11-2019
 // Avaliacao
 // Robot.java
 //
@@ -33,20 +32,33 @@ public class Robot {
         return power;
     }
 
-    private int getMaxSpeed() {
+    public byte getStatus() {
+        return status;
+    }
+
+    public int getMaxSpeed() {
         return maxSpeed;
+    }
+
+    public int getCurrentSpeed() {
+        return currentSpeed;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    private void setSpeed(double speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
+    }
+
+    public void setMaxSpeed(int speed) {
+	this.maxSpeed = speed;
     }
 
     // Construtores
     public Robot() {
+	this.power = 100;
     }
 
     public Robot(String name) {
@@ -82,18 +94,19 @@ public class Robot {
     }
 
     public void speedUp(int speed) {
-        if(this.currentSpeed + speed <= this.maxSpeed) {
-            this.currentSpeed += speed;
+        if(this.speed + speed <= this.maxSpeed && this.power > 0) {
+            this.speed += speed;
             this.temperature += (speed * 0.5);
             this.status = 2;
         }
     }
 
     public void speedUp() {
-        if(this.currentSpeed + (this.currentSpeed * 0.1) <= this.maxSpeed) {
-            double speed = this.currentSpeed * 0.1;
-            this.currentSpeed += speed;
+        if(this.speed + (this.currentSpeed * 0.1) <= this.maxSpeed && this.power > 0) {
+            double speed = this.speed * 0.1;
+            this.speed += speed;
             this.temperature += 0.5;
+	    this.power -= 5;
             this.status = 2;
         }
     }
@@ -128,7 +141,9 @@ public class Robot {
     }
 
     public void returning() {
-        if(this.status == 2)
+        if(this.status == 2) {
             this.status = 5;
+	    this.power = 100; // carrega a bateria quando retorna
+	}
     }
 }

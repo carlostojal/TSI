@@ -1,6 +1,5 @@
-
 // 
-// Carlos Tojal 28-11-2019
+// Carlos Tojal e Frederico Bento  28-11-2019
 // Avaliacao
 // TiposRobots.java
 //
