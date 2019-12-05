@@ -18,7 +18,8 @@ public class Principal {
             System.out.println("\n** Robots **\n");
             System.out.println("1 - Listar robots");
             System.out.println("2 - Criar um novo Robot");
-            System.out.println("3 - Selecionar Robot");
+            if(robots.size() > 0)
+                System.out.println("3 - Selecionar Robot");
             System.out.println("4 - Eliminar Robot");
             System.out.println("0 - Sair\n");
             System.out.print("Opção: ");
@@ -46,7 +47,7 @@ public class Principal {
 				robot.setMaxSpeed(maxSpeed);
 				robot.setSpeed(1.0); // pois não é possível incrementar 10% a 0
                 robots.add(robot);
-            } else if(op == 3) {
+            } else if(op == 3 && robots.size() > 0) {
 				int subopt;
 				Robot robot = selecionarRobo(robots);
 				do {
@@ -110,10 +111,14 @@ public class Principal {
 
     public static Robot selecionarRobo(ArrayList<Robot> robots) {
         Scanner sc = new Scanner(System.in);
-        int num;
-        listarRobots(robots);
-        System.out.print("\nNumero: ");
-        num = sc.nextInt();
+        int num = 0;
+        do {
+            listarRobots(robots);
+            System.out.print("\nNumero: ");
+            num = sc.nextInt();
+            if(num > robots.size() || num < 1)
+                System.out.println("Opcao invalida.");
+        } while(num > robots.size());
 		return robots.get(num - 1);
     }
 
