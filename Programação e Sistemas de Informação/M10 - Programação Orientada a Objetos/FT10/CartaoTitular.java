@@ -5,7 +5,7 @@
 // CartaoTitular.java
 //
 
-public abstract class CartaoTitular {
+public abstract class CartaoTitular implements FerramentasCartao {
 
     // Atributos 
     private int numero;
@@ -39,6 +39,7 @@ public abstract class CartaoTitular {
     
     // Construtor
     public CartaoTitular() {
+        setNumero(1000);
     }
     
     public void debito(double valor) {
@@ -51,5 +52,11 @@ public abstract class CartaoTitular {
     }
 
     public void transferirSaldo(CartaoTitular cartao) {
+    }
+
+    // Métodos
+    public void cancelarConta() {
+        setNomeTitular("-- CONTA CANCELADA --");
+        setSaldo(0.0);
     }
 }
