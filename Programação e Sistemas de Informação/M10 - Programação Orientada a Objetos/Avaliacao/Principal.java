@@ -10,22 +10,27 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
         int op = 0;
-        ArrayList<Robot> robo = new ArrayList<Robot>();
-        String nomeRobo, tipoRobot;
+        ArrayList<Robot> robots = new ArrayList<Robot>();
+        String nomeRobot, tipoRobot;
 		int maxSpeed;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("\n** Robots **\n");
-            System.out.println("1 - Criar um novo Robo");
-            System.out.println("2 - Selecionar Robo");
+            System.out.println("1 - Listar robots");
+            System.out.println("2 - Criar um novo Robot");
+            System.out.println("3 - Selecionar Robot");
+            System.out.println("4 - Eliminar Robot");
             System.out.println("0 - Sair\n");
             System.out.print("Opção: ");
             op = sc.nextInt();
             sc.nextLine(); //manda fora o buffer
-            if(op==1){
+            if(op == 1) {
+                listarRobots(robots);
+            }
+            else if(op == 2){
                 Robot robot;
-                System.out.print("\nQual será o nome do robo?? ");
-                nomeRobo = sc.nextLine();
+                System.out.print("\nQual será o nome do robot?? ");
+                nomeRobot = sc.nextLine();
 				System.out.print("Velocidade maxima: ");
 				maxSpeed = sc.nextInt();
 				sc.nextLine();
@@ -37,13 +42,13 @@ public class Principal {
 			    	robot = new Zoomorfico();
 				else
 			    	robot = new Robot();
-            	robot.setName(nomeRobo);
+            	robot.setName(nomeRobot);
 				robot.setMaxSpeed(maxSpeed);
 				robot.setSpeed(1.0); // pois não é possível incrementar 10% a 0
-                robo.add(robot);
-            } else if(op==2) {
+                robots.add(robot);
+            } else if(op == 3) {
 				int subopt;
-				Robot robot = selecionarRobo(robo);
+				Robot robot = selecionarRobo(robots);
 				do {
 			    	System.out.println("\n** Robot " + robot.getName() + " **\n");
 			    	System.out.println("1. Listar");
@@ -84,8 +89,10 @@ public class Principal {
 						case 8:
 							robot.returning();
 							break;
-			    	}
+                    }
 				}while(subopt != 0);
+            } else if(op == 4) {
+                eliminarRobot(robots);
             }
         }while(op != 0);
     }
@@ -110,9 +117,22 @@ public class Principal {
 		return robots.get(num - 1);
     }
 
+    public static void eliminarRobot(ArrayList<Robot> robots) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+        listarRobots(robots);
+        System.out.print("\nNumero: ");
+        num = sc.nextInt();
+		robots.remove(num - 1);
+    }
+
     public static void listarRobots(ArrayList<Robot> robots) {
         System.out.println("\n** Listagem de robots **\n");
-        for(int i = 0; i < robots.size(); i++) 
-            System.out.println((i + 1) + ": " + robots.get(i).getName());
+        if(robots.size() == 0)
+            System.out.println("Lista vazia.");
+        else {
+            for(int i = 0; i < robots.size(); i++) 
+                System.out.println((i + 1) + ": " + robots.get(i).getName());
+        }
     }
 }
