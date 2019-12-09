@@ -1,12 +1,12 @@
 
-// 
+//
 // Carlos Tojal e Frederico Bento 21-11-2019
 // Avaliacao
 // Robot.java
 //
 
 public class Robot {
-    
+
     // Atributos
     private String name;
     private double speed;
@@ -59,7 +59,7 @@ public class Robot {
 
     // Construtores
     public Robot() {
-	this.power = 100;
+	     this.power = 100;
     }
 
     public Robot(String name) {
@@ -90,7 +90,7 @@ public class Robot {
     public void stop() {
         this.currentSpeed = 0;
         if(this.temperature - 10 >= 0)
-            this.temperature -= 10; 
+            this.temperature -= 10;
         this.status = 4;
     }
 
@@ -111,7 +111,7 @@ public class Robot {
             this.status = 2;
         }
     }
-    
+
     public void speedDown(int speed) {
         if(this.currentSpeed - speed >= 0) {
             this.currentSpeed -= speed;
@@ -136,7 +136,7 @@ public class Robot {
     }
 
     public void exploring() {
-        if(this.status == 4) 
+        if(this.status == 4)
             this.status = 3;
         this.temperature += 20.0;
     }
@@ -144,7 +144,7 @@ public class Robot {
     public void returning() {
         if(this.status == 2) {
             this.status = 5;
-	    this.power = 100; // carrega a bateria quando retorna
-	}
+	        this.power = 100; // carrega a bateria quando retorna
+        }
     }
 }
