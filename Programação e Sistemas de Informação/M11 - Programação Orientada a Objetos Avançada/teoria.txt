@@ -1,0 +1,14 @@
+
+Exceções
+
+Uma exceção é um tratamento de um erro que poderá acontecer na execução do programa, por exemplo por culpa do utilizador.
+É um evento gerado pela JVM, que ocorre ao ser identificada uma condição que impede a execução normal do programa. A execução do programa pode parar inesperadamente devido a um erro de "runtime", que pode acontecer por error de lógica (divisão por zero, acesso fora dos limites do array, leitura de input em formato inválido), erro físico (ficheiro removido, ficheiro sem permissões)
+
+Divisão por zero -> ArithmeticException
+Acesso a índice fora dos limites -> ArrayIndexOutOfBounds Exception
+Acesso a ficheir não existente -> FileNotFoundException
+Servidor inacessível -> SocketException
+
+try -> é executado até que uma exceção seja lançada
+catch -> é executado quando é lançada uma exceção (pode ser usado um bloco catch para cada excepção ou um geral)
+finally -> é executado haja ou não uma exceção
