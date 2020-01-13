@@ -8,6 +8,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+// Iterator - Interface do pacote java.util.
+// Permite percorrer as coleções do framework Collections que implementam a interface "Collection". Fornece os métodos next(), hasNext() e ermove().
+
 public class Exemplo1 {
     public static void main(String[] args) {
         List<String> list = new LinkedList<>();
