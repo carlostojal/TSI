@@ -26,7 +26,7 @@ if ( $frontpage_header->have_posts() ): $i = 0; ?>
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i>
         </span>
-        <?php echo esc_html__( 'Latest News', 'newspaper-x' ) ?>
+        <?php echo esc_html__( 'Últimos', 'newspaper-x' ) ?>
     </span>
     <ul class="newspaper-x-news-carousel owl-carousel owl-theme">
         <?php while ( $frontpage_header->have_posts() ) : $frontpage_header->the_post(); ?>
