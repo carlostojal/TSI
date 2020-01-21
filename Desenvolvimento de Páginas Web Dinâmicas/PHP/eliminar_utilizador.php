@@ -1,9 +1,19 @@
+
+<!--
+    Copyright (c) Carlos Tojal 2020
+    PHP
+    eliminar_utilizador.php
+-->
+
 <?php
     require("conexao.php");
     session_start();
+
+    // Não permite que utilizadorem sem sessão iniciada utilizem a página
     if(!isset($_SESSION['username']))
         header("Location: login.php");
 
+    // Não permite que utilizadores normais utilizem a página
     if($_SESSION['role'] == "admin") {
         $sql = "SELECT * FROM utilizadores";
         $res = mysqli_query($con, $sql);
@@ -30,6 +40,7 @@
                 <th> Ação </th>
             </tr>
             <?php 
+                // Lista os dados dos utilizadores numa tabela e gera um botão para eliminar com o id passado por GET
                 while($data = mysqli_fetch_array($res)) {
             ?>
             <tr>
@@ -38,7 +49,7 @@
                 <td> <?php echo $data[2] ?> </td>
                 <td> <?php echo $data[3] ?> </td>
                 <td> <?php echo $data[4] ?> </td>
-                <td><a href="processar_eliminar.php?id=<?php echo $data[0] ?>"> Eliminar </a></td>
+                <td><a href="processar_eliminar.php?id=<?php echo $data[0] ?>" class="btn btn-danger"> Eliminar </a></td>
             </tr>
             <?php 
                 }

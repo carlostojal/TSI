@@ -1,3 +1,10 @@
+
+<!--
+    Copyright (c) Carlos Tojal 2020
+    PHP
+    ver_utilizador.php
+-->
+
 <?php
     require("conexao.php");
     session_start();

@@ -1,3 +1,10 @@
+
+<!--
+    Copyright (c) Carlos Tojal 2020
+    PHP
+    processar_alterar.php
+-->
+
 <?php
     include("conexao.php");
 
@@ -7,6 +14,7 @@
     $email = $_POST['email'];
     $role = $_POST['role'];
 
+    // Atualiza os dados do utilizador com o ID passado por POST
     $sql = "UPDATE utilizadores SET nome_utilizador = '$username', palavra_passe = '$password', email = '$email', role = '$role' WHERE id_utilizador = '$id'";
     $res = mysqli_query($con, $sql);
 

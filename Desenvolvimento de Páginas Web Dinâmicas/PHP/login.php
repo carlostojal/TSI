@@ -1,3 +1,10 @@
+
+<!--
+    Copyright (c) Carlos Tojal 2020
+    PHP
+    login.php
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +26,7 @@
             </div>
             <br><?php if(isset($_GET['msg'])) echo $_GET['msg'] ?><br>
             <button type="submit" value="Iniciar sessão" class="btn btn-primary"> Iniciar sessão </button>
+            <a href="registar_utilizador.php" class="btn btn-outline-primary"> Registar </a>
         </form>
-        <a href="registar_utilizador.php"> Registar </a>
     </body>
 </html>
