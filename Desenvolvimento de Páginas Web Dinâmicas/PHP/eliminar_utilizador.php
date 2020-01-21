@@ -16,6 +16,10 @@
     // Não permite que utilizadores normais utilizem a página
     if($_SESSION['role'] == "admin") {
         $sql = "SELECT * FROM utilizadores";
+        if(isset($_GET['q'])) {
+            $search = $_GET['q'];
+            $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
+        }
         $res = mysqli_query($con, $sql);
 ?>
 
@@ -29,6 +33,11 @@
     </head>
     <body>
         <h1> Eliminar Utilizador </h1>
+        <form action="eliminar_utilizador.php">
+            <input type="text" name="q" placeholder="Pesquisa">
+            <input type="submit" value="Pesquisar" class="btn btn-primary">
+            <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
+        </form>
         <?php if(isset($_GET['msg'])) echo $_GET['msg'] ?>
         <table border="2">
             <tr>
@@ -41,7 +50,8 @@
             </tr>
             <?php 
                 // Lista os dados dos utilizadores numa tabela e gera um botão para eliminar com o id passado por GET
-                while($data = mysqli_fetch_array($res)) {
+                if(mysqli_num_rows($res) > 0) {
+                    while($data = mysqli_fetch_array($res)) {
             ?>
             <tr>
                 <td> <?php echo $data[0] ?> </td>
@@ -62,6 +72,9 @@
                 ?>
             </tr>
             <?php 
+                    }
+                } else {
+                    echo "Não existem resultados.";
                 }
             ?>
         </table>

@@ -16,6 +16,10 @@
     // Não permite que utilizadores normais utilizem a página
     if($_SESSION['role'] == "admin") {
         $sql = "SELECT * FROM utilizadores";
+        if(isset($_GET['q'])) {
+            $search = $_GET['q'];
+            $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
+        }
         $res = mysqli_query($con, $sql);
 ?>
 
@@ -29,10 +33,16 @@
     </head>
     <body>
         <h1> Alterar Utilizador </h1>
+        <form action="alterar_utilizador.php">
+            <input type="text" name="q" placeholder="Pesquisa">
+            <input type="submit" value="Pesquisar" class="btn btn-primary">
+            <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
+        </form>
         <?php 
             if(isset($_GET['msg'])) echo $_GET['msg'];
             // Lista os dados de todos os utilizadores em formulários
-            while($data = mysqli_fetch_array($res)) {
+            if(mysqli_num_rows($res) > 0) {
+                while($data = mysqli_fetch_array($res)) {
         ?>
         <form action="processar_alterar.php" method="POST">
         <div class="form-group">
@@ -59,6 +69,9 @@
             <br><br>
         </form>
         <?php 
+                }
+            } else {
+                echo "Não existem resultados.";
             }
         ?>
     </body>

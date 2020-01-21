@@ -12,6 +12,10 @@
         header("Location: login.php");
 
     $sql = "SELECT * FROM utilizadores";
+    if(isset($_GET['q'])) {
+        $search = $_GET['q'];
+        $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
+    }
     $res = mysqli_query($con, $sql);
 ?>
 
@@ -25,6 +29,11 @@
     </head>
     <body>
         <h1> Ver Utilizador </h1>
+        <form action="ver_utilizador.php">
+            <input type="text" name="q" placeholder="Pesquisa">
+            <input type="submit" value="Pesquisar" class="btn btn-primary">
+            <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
+        </form>
         <table border="2">
             <tr>
                 <th> ID de Utilizador </th>
@@ -34,7 +43,8 @@
                 <th> Privilégios </th>
             </tr>
             <?php 
-                while($data = mysqli_fetch_array($res)) {
+                if(mysqli_num_rows($res) > 0) {
+                    while($data = mysqli_fetch_array($res)) {
             ?>
             <tr>
                 <td> <?php echo $data[0] ?> </td>
@@ -44,6 +54,9 @@
                 <td> <?php echo $data[4] ?> </td>
             </tr>
             <?php 
+                    }
+                } else {
+                    echo "Não existem resultados.";
                 }
             ?>
         </table>
