@@ -21,7 +21,7 @@
     </head>
     <body>
         <h1> Menu </h1>
-        <p> <b>Olá, <?php echo $_SESSION['username']."</b> (".$_SESSION['role'].")" ?> </p>
+        <p> Olá, <b><?php echo $_SESSION['username']."</b> (".$_SESSION['role'].")" ?> </p>
         <ul>
             <li><a href="registar_utilizador.php"> Registar Utilizador </a></li>
             <li><a href="ver_utilizador.php"> Ver Utilizador </a></li>
