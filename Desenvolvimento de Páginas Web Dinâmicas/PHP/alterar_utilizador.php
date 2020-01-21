@@ -45,7 +45,7 @@
                 while($data = mysqli_fetch_array($res)) {
         ?>
         <form action="processar_alterar.php" method="POST">
-        <div class="form-group">
+            <div class="form-group">
                 <label for="id"> ID de Utilizador: </label>
                 <input type="number" class="form-control" name="id" value="<?php /* Preenche o campo com o valor da base de dados */ echo $data[0] ?>" readonly>
             </div>
