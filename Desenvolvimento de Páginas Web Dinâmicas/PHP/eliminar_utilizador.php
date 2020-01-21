@@ -49,7 +49,17 @@
                 <td> <?php echo $data[2] ?> </td>
                 <td> <?php echo $data[3] ?> </td>
                 <td> <?php echo $data[4] ?> </td>
+                <?php
+                    if($data[4] != "admin") {
+                ?>
                 <td><a href="processar_eliminar.php?id=<?php echo $data[0] ?>" class="btn btn-danger"> Eliminar </a></td>
+                <?php
+                    } else {
+                ?>
+                <td> Não é possível eliminar administradores. </td>
+                <?php
+                    }
+                ?>
             </tr>
             <?php 
                 }

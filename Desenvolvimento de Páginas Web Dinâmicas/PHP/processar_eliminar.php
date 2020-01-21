@@ -7,7 +7,8 @@
 
 <?php
     include("conexao.php");
-    if(isset($_SESSION)) {
+    session_start();
+    if(isset($_SESSION['username'])) {
         // Só permite eliminar o utilizador se for administrador
         if($_SESSION['role'] == "admin") {
             // Elimina o utilizador com o id passado por GET
@@ -23,5 +24,7 @@
         } else {
             header("Location: menu.php");
         }
+    } else {
+        header("Location: login.php");
     }
 ?>
