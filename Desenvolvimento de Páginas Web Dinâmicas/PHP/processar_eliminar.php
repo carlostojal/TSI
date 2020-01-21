@@ -23,4 +23,5 @@
         } else {
             header("Location: menu.php");
         }
+    }
 ?>
