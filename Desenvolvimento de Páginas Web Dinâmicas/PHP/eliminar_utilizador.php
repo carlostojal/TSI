@@ -13,14 +13,12 @@
     if(!isset($_SESSION['username']))
         header("Location: login.php");
 
-    // Não permite que utilizadores normais utilizem a página
-    if($_SESSION['role'] == "admin") {
-        $sql = "SELECT * FROM utilizadores";
-        if(isset($_GET['q'])) {
-            $search = $_GET['q'];
-            $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
-        }
-        $res = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM utilizadores";
+    if(isset($_GET['q'])) {
+        $search = $_GET['q'];
+        $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
+    }
+    $res = mysqli_query($con, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +50,7 @@
                 // Lista os dados dos utilizadores numa tabela e gera um botão para eliminar com o id passado por GET
                 if(mysqli_num_rows($res) > 0) {
                     while($data = mysqli_fetch_array($res)) {
+                        if($data[0] == $_SESSION['id'] || $_SESSION['role'] == "admin") {
             ?>
             <tr>
                 <td> <?php echo $data[0] ?> </td>
@@ -59,30 +58,16 @@
                 <td> <?php echo $data[2] ?> </td>
                 <td> <?php echo $data[3] ?> </td>
                 <td> <?php echo $data[4] ?> </td>
-                <?php
-                    if($data[4] != "admin") {
-                ?>
                 <td><a href="processar_eliminar.php?id=<?php echo $data[0] ?>" class="btn btn-danger"> Eliminar </a></td>
-                <?php
-                    } else {
-                ?>
-                <td> Não é possível eliminar administradores. </td>
-                <?php
-                    }
-                ?>
             </tr>
             <?php 
+                        }
                     }
                 } else {
                     echo "Não existem resultados.";
                 }
             ?>
         </table>
+        <a href="menu.php" class="btn btn-primary"> Voltar </a>
     </body>
 </html>
-
-<?php
-    } else {
-        header("location: menu.php");
-    }
-?>

@@ -25,12 +25,8 @@
         <ul>
             <li><a href="registar_utilizador.php"> Registar Utilizador </a></li>
             <li><a href="ver_utilizador.php"> Ver Utilizador </a></li>
-            <?php 
-                // Opções exclusivas para administradores
-                if($_SESSION['role'] == "admin")
-                    echo "<li><a href='alterar_utilizador.php'> Alterar Utilizador </a></li>
-                    <li><a href='eliminar_utilizador.php'> Eliminar Utilizador </a></li>";
-            ?>
+            <li><a href='alterar_utilizador.php'> Alterar Utilizador </a></li>
+            <li><a href='eliminar_utilizador.php'> Eliminar Utilizador </a></li>
             <li><a href="logout.php"> Terminar Sessão </a></li>
         </ul>
     </body>

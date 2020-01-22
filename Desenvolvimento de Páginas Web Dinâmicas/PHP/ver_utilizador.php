@@ -60,5 +60,6 @@
                 }
             ?>
         </table>
+        <a href="menu.php" class="btn btn-primary"> Voltar </a>
     </body>
 </html>

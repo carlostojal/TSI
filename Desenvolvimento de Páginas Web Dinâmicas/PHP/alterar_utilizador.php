@@ -13,14 +13,12 @@
     if(!isset($_SESSION['username']))
         header("Location: login.php");
 
-    // Não permite que utilizadores normais utilizem a página
-    if($_SESSION['role'] == "admin") {
-        $sql = "SELECT * FROM utilizadores";
-        if(isset($_GET['q'])) {
-            $search = $_GET['q'];
-            $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
-        }
-        $res = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM utilizadores";
+    if(isset($_GET['q'])) {
+        $search = $_GET['q'];
+        $sql = "SELECT * FROM utilizadores WHERE id_utilizador = '$search' OR nome_utilizador LIKE '%$search%' OR email LIKE '%$search%' OR role = '$search'";
+    }
+    $res = mysqli_query($con, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -38,11 +36,13 @@
             <input type="submit" value="Pesquisar" class="btn btn-primary">
             <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
         </form>
+        <a href="menu.php" class="btn btn-primary"> Voltar </a>
         <?php 
             if(isset($_GET['msg'])) echo $_GET['msg'];
             // Lista os dados de todos os utilizadores em formulários
             if(mysqli_num_rows($res) > 0) {
                 while($data = mysqli_fetch_array($res)) {
+                    if($data[0] == $_SESSION['id'] || $_SESSION['role'] == "admin") {
         ?>
         <form action="processar_alterar.php" method="POST">
             <div class="form-group">
@@ -69,6 +69,7 @@
             <br><br>
         </form>
         <?php 
+                    }
                 }
             } else {
                 echo "Não existem resultados.";
@@ -76,9 +77,3 @@
         ?>
     </body>
 </html>
-
-<?php 
-    } else {
-        header("location: menu.php");
-    }
-?>
