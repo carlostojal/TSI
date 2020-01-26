@@ -42,7 +42,7 @@ public class ClientOptionsWindow {
         panel.add(create_account);
         frame.add(panel);
 
-        frame.setSize(400, 500);
+        frame.setSize(400, 200);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

@@ -103,11 +103,5 @@ public class ControlPanel {
                 new ListClientAccountsWindow(client, (byte) 3);
             }
         });
-
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent windowEvent) {
-                clientManagement.updateClients(clients);
-            }
-        });
     }
 }

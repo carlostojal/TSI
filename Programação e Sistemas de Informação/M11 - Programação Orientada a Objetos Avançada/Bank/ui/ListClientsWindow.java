@@ -56,6 +56,7 @@ public class ListClientsWindow {
                     int index = list.locationToIndex(evt.getPoint());
                     //JOptionPane.showMessageDialog(null, options.get(index), "Message", JOptionPane.ERROR_MESSAGE);
                     new ClientOptionsWindow(clients.get(index));
+                    frame.setVisible(false);
                 }
             }
         });

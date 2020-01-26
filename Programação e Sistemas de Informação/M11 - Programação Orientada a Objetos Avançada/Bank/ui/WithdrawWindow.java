@@ -13,15 +13,19 @@ import java.lang.Exception;
 
 import structures.Account;
 import structures.AccountMovement;
+import management.AccountManagement;
 
 public class WithdrawWindow {
     // Attributes
     boolean success = true;
     AccountMovement accountMovement;
+    AccountManagement accountManagement;
 
     // Constructor
     public WithdrawWindow(Account account) {
         accountMovement = new AccountMovement();
+        accountMovement.setType((byte )2);
+        accountManagement = new AccountManagement();
         accountMovement.setAccount_id(account.getId());
         do {
             try {
@@ -40,6 +44,7 @@ public class WithdrawWindow {
             }
         }while(!success);
         account.getAccountMovements().add(accountMovement);
+        accountManagement.registerAccountMovement(accountMovement);
         account.setAccountMovements(account.getAccountMovements());
     }
 }

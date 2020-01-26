@@ -63,6 +63,7 @@ public class ListClientAccountsWindow {
                         new DepositWindow(client.getAccounts().get(index));
                     else
                         new WithdrawWindow(client.getAccounts().get(index));
+                    frame.setVisible(false);
                 }
             }
         });

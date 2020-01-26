@@ -47,6 +47,10 @@ public class AccountManagement {
                     byte type = (byte) Integer.parseInt(raw.split(";")[2]);
                     account.getAccountMovements().add(new AccountMovement(account_id, value, type));
                     account.setAccountMovements(account.getAccountMovements());
+                    if(type == 1)
+                        account.deposit(value);
+                    else
+                        account.withdraw(value);
                 }
             }
             fr.close();
@@ -102,8 +106,7 @@ public class AccountManagement {
                     if (clients.get(i).getId().equals(raw.split(";")[0])) {
                         String client_id = raw.split(";")[0];
                         String id = raw.split(";")[1];
-                        double value = Double.parseDouble(raw.split(";")[2]);
-                        clients.get(i).getAccounts().add(new Account(client_id, id, value));
+                        clients.get(i).getAccounts().add(new Account(client_id, id, 0.0));
                         // load last added account movements
                         loadAccountMovements(clients.get(i).getAccounts().get(clients.get(i).getAccounts().size() - 1));
                         clients.get(i).setAccounts(clients.get(i).getAccounts());
@@ -132,7 +135,7 @@ public class AccountManagement {
             fw = new FileWriter("accounts.csv", true);
             bw = new BufferedWriter(fw);
             bw.newLine();
-            bw.write(account.getClient_id() + ";" + account.getId() + ";" + account.getBalance());
+            bw.write(account.getClient_id() + ";" + account.getId());
             bw.close();
         } catch(FileNotFoundException e) {
             System.out.println("[ERROR] File \"accounts.csv\" was not found.");
