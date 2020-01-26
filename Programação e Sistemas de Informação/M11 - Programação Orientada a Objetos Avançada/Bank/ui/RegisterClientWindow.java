@@ -48,7 +48,7 @@ public class RegisterClientWindow {
         name = new JTextField();
         username_label = new JLabel("Username: ");
         username = new JTextField();
-        pin_label = new JLabel("Pin: ");
+        pin_label = new JLabel("PIN: ");
         pin = new JPasswordField();
         register = new JButton("Register");
 
@@ -80,8 +80,8 @@ public class RegisterClientWindow {
                     client.setPin(Integer.parseInt(pin.getText()));
                 } catch(NumberFormatException nfe) {
                     inputSuccess = false;
-                    System.out.println("[ERROR] Invalid pin input.");
-                    JOptionPane.showMessageDialog(null, "Invalid pin input.", "Error", JOptionPane.ERROR_MESSAGE);
+                    System.out.println("[ERROR] Invalid PIN input.");
+                    JOptionPane.showMessageDialog(null, "Invalid PIN input.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 if(inputSuccess) {
                     clientManagement.registerClient(client);

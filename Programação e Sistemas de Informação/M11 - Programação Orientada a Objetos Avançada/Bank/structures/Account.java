@@ -7,23 +7,48 @@
 
 package structures;
 
+import java.util.ArrayList;
+
+import structures.AccountMovement;
+
 public class Account {
     // Attributes
+    private String client_id;
     private String id;
     private double balance;
+    private ArrayList<AccountMovement> accountMovements;
 
     // Constructors
     public Account() {
+        this.client_id = "ClientID";
         this.id = "AccountID";
         this.balance = 0.00;
+        this.accountMovements = new ArrayList<AccountMovement>();
     }
 
-    public Account(String id, double balance) {
+    public Account(String client_id, String id, double balance) {
+        this.client_id = client_id;
         this.id = id;
         this.balance = balance;
+        this.accountMovements = new ArrayList<AccountMovement>();
+    }
+
+    public Account(String client_id, String id, double balance, ArrayList<AccountMovement> accountMovements) {
+        this.client_id = client_id;
+        this.id = id;
+        this.balance = balance;
+        this.accountMovements = accountMovements;
     }
 
     // Getters and setters
+    public String getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
+    }
+
     public String getId() {
         return id;
     }
@@ -36,8 +61,12 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public ArrayList<AccountMovement> getAccountMovements() {
+        return accountMovements;
+    }
+
+    public void setAccountMovements(ArrayList<AccountMovement> accountMovements) {
+        this.accountMovements = accountMovements;
     }
 
     // Methods

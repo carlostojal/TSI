@@ -2,7 +2,7 @@
 //
 // Copyright (c) Carlos Tojal 2020
 // Bank
-// ListClientsWindow.java
+// ListClientAccountsWindow.java
 //
 
 package ui;
@@ -25,8 +25,9 @@ import java.lang.Exception;
 import structures.Client;
 import management.ClientManagement;
 
-public class ListClientsWindow {
+public class ListClientAccountsWindow {
     // Attributes
+    private Client client;
     private ArrayList<Client> clients;
     private ArrayList<String> options;
     private ClientManagement clientManagement;
@@ -35,27 +36,33 @@ public class ListClientsWindow {
     private JList<String> list;
 
     // Constructor
-    public ListClientsWindow() {
-        frame = new JFrame("List Clients - Bank");
+    public ListClientAccountsWindow(Client client, byte action) {
+        frame = new JFrame("List Client Accounts - Bank");
         panel = new JPanel(new GridLayout(1, 1));
 
+        this.client = client;
         clientManagement = new ClientManagement();
         clients = clientManagement.loadClients();
         options = new ArrayList<String>();
 
-        for(int i = 0; i < clients.size(); i++)
-            options.add(clients.get(i).getId() + " (" + clients.get(i).getUsername() + ")");
+        for(int i = 0; i < client.getAccounts().size(); i++)
+            options.add(client.getAccounts().get(i).getId() + " - " + client.getAccounts().get(i).getBalance());
 
         list = new JList<String>((String[])options.toArray(new String[0]));
         JScrollPane scrollPane = new JScrollPane(list);
 
+        // 1 - list movements; 2 - deposit; 3 - withdraw
         list.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
                 JList list = (JList) evt.getSource();
                 if(evt.getClickCount() == 2) {
                     int index = list.locationToIndex(evt.getPoint());
-                    //JOptionPane.showMessageDialog(null, options.get(index), "Message", JOptionPane.ERROR_MESSAGE);
-                    new ClientOptionsWindow(clients.get(index));
+                    if(action == 1)
+                        new ListAccountMovementsWindow(client.getAccounts().get(index));
+                    else if(action == 2)
+                        new DepositWindow(client.getAccounts().get(index));
+                    else
+                        new WithdrawWindow(client.getAccounts().get(index));
                 }
             }
         });

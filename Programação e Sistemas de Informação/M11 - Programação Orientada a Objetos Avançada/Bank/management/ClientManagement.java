@@ -14,6 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.Exception;
@@ -44,6 +45,24 @@ public class ClientManagement {
         return generatedString;
     }
 
+    public void updateClients(ArrayList<Client> clients) {
+        AccountManagement accountManagement = new AccountManagement();
+        try {
+            File file = new File("clients.csv");
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+            for (int i = 0; i < clients.size(); i++)
+                registerClient(clients.get(i));
+        } catch(IOException e) {
+            System.out.println("[ERROR] Couldn't load file \"clients.csv\".");
+            // e.printStackTrace();
+        } catch(Exception e) {
+            System.out.println("[ERROR] An error has occurred.");
+            // e.printStackTrace();
+        }
+    }
+
     public ArrayList<Client> loadClients() {
         AccountManagement accountManagement = new AccountManagement();
         ArrayList<Client> clients = new ArrayList<Client>();
@@ -59,6 +78,7 @@ public class ClientManagement {
             fr = new FileReader(f);
             br = new BufferedReader(fr);
             while ((raw = br.readLine()) != null) {
+                client = new Client();
                 client.setId(raw.split(";")[0]);
                 client.setName(raw.split(";")[1]);
                 client.setUsername(raw.split(";")[2]);

@@ -1,0 +1,2 @@
+echo Launching
+java Main

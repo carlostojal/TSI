@@ -55,6 +55,9 @@ public class LoginWindow {
             System.out.println("[ERROR] Couldn't access system look and feel.");
         }
 
+        clientManagement = new ClientManagement();
+        clients = clientManagement.loadClients();
+
         frame = new JFrame("Login - Bank");
         panel = new JPanel(new GridLayout(5, 1));
         username_label = new JLabel("Username: ");
@@ -80,8 +83,6 @@ public class LoginWindow {
             public void actionPerformed(ActionEvent e) {
                 boolean inputSuccess = true;
                 client = new Client();
-                clientManagement = new ClientManagement();
-                clients = clientManagement.loadClients();
                 client.setUsername(username.getText());
                 try {
                     client.setPin(Integer.parseInt(pin.getText()));

@@ -1,3 +1,2 @@
 ./build.sh
-echo Launching
-java Main
+./run.sh

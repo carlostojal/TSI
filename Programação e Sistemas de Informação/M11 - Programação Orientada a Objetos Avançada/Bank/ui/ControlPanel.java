@@ -10,6 +10,8 @@ package ui;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -87,6 +89,24 @@ public class ControlPanel {
                 data += "Access level: " + client.getAccess_level() + "\n";
                 data += "Number of accounts: " + client.getAccounts().size();
                 JOptionPane.showMessageDialog(null, data, "Client data", JOptionPane.PLAIN_MESSAGE);
+            }
+        });
+
+        deposit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ListClientAccountsWindow(client, (byte) 2);
+            }
+        });
+
+        withdraw.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ListClientAccountsWindow(client, (byte) 3);
+            }
+        });
+
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                clientManagement.updateClients(clients);
             }
         });
     }
