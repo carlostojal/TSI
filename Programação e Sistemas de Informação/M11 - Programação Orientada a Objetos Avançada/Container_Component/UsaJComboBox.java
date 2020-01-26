@@ -21,7 +21,7 @@ public class UsaJComboBox {
 
         janela.setLayout(new FlowLayout());
         JLabel rotulo = new JLabel("Escreva o seu nome: ");
-        JComboBox caixaCombinacao = new JComboBox();
+        JComboBox<String> caixaCombinacao = new JComboBox<String>();
         janela.add(rotulo);
         caixaCombinacao.addItem("Branco");
         caixaCombinacao.addItem("Preto");
