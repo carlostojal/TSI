@@ -2,7 +2,7 @@
 //
 // Copyright (c) Carlos Tojal 2020
 // Bank
-// ListClientAccountsWindow.java
+// ClientOptionsWindow.java
 //
 
 package ui;
