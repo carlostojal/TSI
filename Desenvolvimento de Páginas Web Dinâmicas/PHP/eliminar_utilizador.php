@@ -27,17 +27,18 @@
         <meta charset="utf-8">
         <title> Eliminar Utilizador </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap.min.css">
     </head>
     <body>
         <h1> Eliminar Utilizador </h1>
+        <?php include("menu1.php") ?>
         <form action="eliminar_utilizador.php">
             <input type="text" name="q" placeholder="Pesquisa">
             <input type="submit" value="Pesquisar" class="btn btn-primary">
             <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
         </form>
         <?php if(isset($_GET['msg'])) echo $_GET['msg'] ?>
-        <table border="2">
+        <table class="table">
             <tr>
                 <th> ID de Utilizador </th>
                 <th> Nome de Utilizador </th>
@@ -68,6 +69,5 @@
                 }
             ?>
         </table>
-        <a href="menu.php" class="btn btn-primary"> Voltar </a>
     </body>
 </html>

@@ -29,12 +29,13 @@
     </head>
     <body>
         <h1> Ver Utilizador </h1>
+        <?php include("menu1.php") ?>
         <form action="ver_utilizador.php">
             <input type="text" name="q" placeholder="Pesquisa">
             <input type="submit" value="Pesquisar" class="btn btn-primary">
             <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
         </form>
-        <table border="2">
+        <table class="table">
             <tr>
                 <th> ID de Utilizador </th>
                 <th> Nome de Utilizador </th>
@@ -60,6 +61,5 @@
                 }
             ?>
         </table>
-        <a href="menu.php" class="btn btn-primary"> Voltar </a>
     </body>
 </html>
