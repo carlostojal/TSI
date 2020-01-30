@@ -22,7 +22,5 @@ javac ui/ListClientAccountsWindow.java
 echo Compiled ui.ListClientAccountsWindow
 javac ui/ControlPanel.java
 echo Compiled ui.ControlPanel
-javac ui/MainWindow.java
-echo Compiled ui.MainWindow
 javac Main.java
 echo Compiled Main

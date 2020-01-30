@@ -63,7 +63,7 @@ public class ListClientAccountsWindow {
                         new DepositWindow(client.getAccounts().get(index));
                     else
                         new WithdrawWindow(client.getAccounts().get(index));
-                    frame.setVisible(false);
+                    frame.dispose();
                 }
             }
         });
@@ -74,6 +74,7 @@ public class ListClientAccountsWindow {
         frame.setSize(400, 500);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 }

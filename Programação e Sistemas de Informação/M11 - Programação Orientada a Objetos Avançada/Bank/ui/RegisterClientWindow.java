@@ -64,6 +64,7 @@ public class RegisterClientWindow {
         frame.setSize(400, 500);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
         register.addActionListener(new ActionListener() {
@@ -86,7 +87,7 @@ public class RegisterClientWindow {
                 if(inputSuccess) {
                     clientManagement.registerClient(client);
                     JOptionPane.showMessageDialog(null, "Client registered successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    frame.setVisible(false);
+                    frame.dispose();
                 }
             }
         });

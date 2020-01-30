@@ -69,6 +69,7 @@ public class ListAccountMovementsWindow {
         frame.setSize(400, 500);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 }

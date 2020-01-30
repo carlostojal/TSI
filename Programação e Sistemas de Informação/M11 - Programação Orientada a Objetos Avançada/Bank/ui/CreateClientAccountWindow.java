@@ -71,13 +71,14 @@ public class CreateClientAccountWindow {
         frame.setSize(400, 500);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
         confirm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 accountManagement.registerAccount(account);
                 JOptionPane.showMessageDialog(null, "Account created successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
     }
