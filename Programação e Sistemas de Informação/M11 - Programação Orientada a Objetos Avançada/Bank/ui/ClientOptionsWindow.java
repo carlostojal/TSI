@@ -45,12 +45,13 @@ public class ClientOptionsWindow {
         frame.setSize(400, 200);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
         list_accounts.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new ListClientAccountsWindow(client, (byte) 1);
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
 
