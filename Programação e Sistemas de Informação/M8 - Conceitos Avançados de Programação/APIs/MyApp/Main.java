@@ -1,7 +1,7 @@
 
 //
 // Copyright (c) Carlos Tojal (carlostojal)
-// Main.java
+// MainWindow.java
 // MyApp
 // APIs
 // github.com/carlostojal/TSI

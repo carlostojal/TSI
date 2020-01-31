@@ -2,7 +2,7 @@
 //
 // Copyright (c) Carlos Tojal (24-10-2019)
 // Ex5
-// Main.java
+// MainWindow.java
 //
 
 import java.util.Scanner;

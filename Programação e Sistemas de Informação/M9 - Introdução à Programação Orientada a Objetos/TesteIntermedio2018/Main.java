@@ -2,7 +2,7 @@
 /*
 * Copyright (c) Carlos Tojal 2019
 * TesteIntermedio2018
-* Main.java
+* MainWindow.java
 */
 
 import java.util.Scanner;
