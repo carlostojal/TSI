@@ -1,0 +1,92 @@
+
+Módulo 12
+
+Objetivos:
+- Iniciar o desenvolvimento da vertente de sistemas de informação da disciplina. Esta vertente é fundamental, dada a premenente necessidade de sistemas de informação em qualquer solução de software.
+- Analisar as principais soluções para implementação e armazenamento de repositórios de dados.
+
+Sistema informático: 
+- Um sistema informático é constituido por hardware e software.
+
+Atividade do sistema informático:
+- Os dados são introduzidos, enviados para a unidade de processamento, e enviados para os dispositivos de saída.
+Estão também envolvidos os dispositivos de armazenamento.
+
+Conceitos:
+- Sistema: aplica-se a um conjunto de elementos em interação, organizados em função de um objetivo.
+Podemos confirmar a existência de sistemas dentro de sistemas cujos objetivos individuais contribuem para o resultado do sistema na globalidade.
+- Sistema de informação: conjunto de recursos utilizados para recolher e tratar os dados e a informação que são importantes para a atividade de uma organização.
+
+Sistema de informação:
+- É um conjunto de componentes, automatizados ou manuais, que pode envolver computadores, pessoas, processos, etc, e permite organizar, produzir, recolher, armazenar e distribuir dados para quem usa o sistema envolvido.
+- Esses dados são fundamentais para quem gere a empresa, pois neles está contida toda a informação que é essencial para a grande maioria das tomadas de decisão por parte dos decisores.
+
+Objetivos do sistema de informação:
+- Satisfazer as necessidades de informação de uma organização, recolhendo dados e informação, processando e armazenando, distribuindo e disponibilizando a informação a quem dela necessita.
+- Hoje em dia os sistemas de informação são baseados em computadores, dados as suas qualidades de processamento e armazenamento de dados e informação. Há alguns anos os sistemas de informação eram constituídos por dossiers, armários, folhas de papel e agrafos.
+- Os sistemas de informação devem ser concebidos tendo em conta os níveis típicos de uma organização.
+
+Características de um sistema de informação:
+- Objetivo: razão fundamental da existência do sistema.
+- Componentes: partes do sistema que funcionam juntas para alcançar o objetivo.
+- Estrutura: Relação existente entre os componentes, definindo a fronteira entre o sistema e o seu meio ambiente.
+- Comportamento: Maneira do sistema reagir ao seu ambiente.
+- Ciclo de vida: Inclui evolução, desgaste, envelhecimento, substituição e morte.
+
+Tipos de informação:
+- Informação operacional: a qual é usada diariamente e permite que a organização leve a cabo eficientemente as suas atividades de rotina.
+- Informação de gestão: a que suporta o processo de tomada de decisão dos níveis de gestão; é uma informação menos rotineira que a operacional.
+
+Valor da informação:
+- qualquer tipo de informação deve estar disponível na organização de uma forma facilmente utilizável e compreensível, estar disponível a tempo e ser obtida a custo razoável.
+
+Sistema de informação:
+- Meio que providencia os meios de armazenamento, gestão e distribuição de informação com o objetivo de suportar as funções de operação e gestão de uma organização.
+
+Os SI como um sistema:
+- Objetivo: orientar a tomada de decisão
+- Componentes: dados, sistema de processamento de dados, canal de comunicação
+- Estrutura: maneira como os diferentes processamentos de dados estão ligados entre si
+- Comportamento: conjunto de procedimentos que se seguem para obter os dados, os processar e os enviar
+- Ciclo de vida: - se a organização muda, muda o SI. - se a organização não precisa mais do SI - o SI morre.
+
+Exemplos de SI:
+- Sistemas de informação de contabilidade
+- Sistemas de controlo de existência (stocks)
+- Sistemas de apoio à navegação
+- Sistemas de apoio a vendas
+- Sistemas de apoio a profissões liberais
+
+Desenvolvimento de sistemas de informação:
+- modelar o sistema
+- providenciar regras para modelar
+- providenciar ferramentas para modelar
+- transformar gradualmente os modelos de uma forma "humana" para "máquina".
+
+Evolução no processo de desenvolvimento de sistemas de informação:
+- Antigamente
+    - Sistemas pequenos
+    - Uma pessoa
+    - Qualidade era estar preocupado em escrever o código
+- Hoje
+    - Sistemas complexos
+    - Grupos de pessoas
+    - Qualidades é estar preocupado em perceber o que a organização, e em mais particular, o que sistema requerido necessita.
+
+Necessidades de um desenvolvimento estruturado
+- Sistemas grandes e complexos
+- Necessidade de compreender o que a organização necessita
+- Várias pessoas a desenvolver um SI
+- Cada pessoa faz uma dada tarefa específica
+- Necessidade de coordenar as várias pessoas e tarefas
+- Sistemas desenvolvidos por processos antigos tinham muitos erros
+
+Características do desenvolvimento de um SI estruturado:
+- Desenvolvimento sistemático
+- Entender o problema
+- Descrever o problema
+- Desenhar a solução baseada na compreensão do problema
+- Construir modelos que assentem em regras bem definidas
+- Modelos revistos e comentados pelos utilzadores
+- Documentar todo o processo de desenvolvimento
+- Usar de preferência notações gráficas para representar o modelo do sistema
