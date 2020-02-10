@@ -1,0 +1,135 @@
+
+Freelancer'Spot
+Plano de negócios
+
+- Qual a atividade económica da organização?
+	- Comércio
+	- Reparações
+	- Aluguer
+
+- Ideia
+	- Loja de informática
+	- Reparações, comércio de novos e usados e aluguer
+	- Sala de trabalho para programadores e designers freelancers, com secretárias para portáteis e torres alugadas.
+	- Os freelancers podem enviar os currículos para a loja, para permitir a obtenção de clientes mais facilmente, assim como colaboração
+	entre os vários clientes do espaço, permitindo a criação de novas ideias.
+
+- Entidades
+	- Computador
+		- ID
+		- Marca
+		- Modelo
+		- Preço de compra
+		- Preço de venda
+		- Preço de aluguer
+	- Fornecedor
+		- ID
+		- Nome
+		- Morada
+		- Telefone
+		- Telemóvel
+		- Fax
+		- Email
+		- Site
+	- Cliente
+		- ID
+		- Nome
+		- Telefone
+		- Telemóvel
+		- Email
+		- NIF
+	- Carrinho de compras
+		- ID
+	- Produto de carrinho
+		- ID
+		- Quantidade
+		- ID do carrinho
+	- Compra
+		- ID
+		- ID do fornecedor
+		- ID do carrinho
+		- Preço
+		- Data
+		- ID do utilizador
+	- Venda
+		- ID
+		- ID do cliente
+		- ID do carrinho
+		- Preço
+		- Data
+		- ID do utilizador
+	- Aluguer
+		- ID
+		- ID do computador
+		- ID do cliente
+		- Duração
+		- Preço
+	- Encomenda
+		- ID
+		- ID do fornecedor
+		- ID do produto
+	- Reparação
+		- ID
+		- ID do cliente
+		- Descrição do produto
+		- Estado
+	- Danos
+		- ID do aluguer
+		- Data e hora de registo
+		- Descrição do dano
+	- Currículo
+		- ID do cliente
+		- Link (caminho no servidor no caso de ter sido carregado, ou link para outra plataforma)
+	- Stock
+		- ID do produto
+		- Quantidade
+	- Utilizador (funcionário)
+		- ID
+		- Nome
+		- Telefone
+		- Telemóvel
+		- Fax
+		- Email
+		
+- Functionalidades do sistema
+	- Clientes
+		- Listar cliente
+			- SQL: "SELECT * FROM Cliente"
+		- Registar cliente
+		- SQL: "INSERT INTO Cliente (ID, Nome, Telefone, Telemóvel, Fax, Email, Site) VALUES ('','','','','','','')
+	- Stock
+		- Listar stock
+			- SQL: "SELECT * FROM Stock INNER JOIN Computador ON Stock.ID do produto = Computador.ID"
+		- Registar produto (template)
+			- SQL: "INSERT INTO Computador (ID, Marca, Modelo, Preço de compra, Preço de venda, Preço de aluguer) VALUES ('','','','','','')
+		- Listar produtos
+			- SQL: "SELECT * FROM Computador"
+		- Registar compras
+			- Seleção de fornecedor
+			- Registar carrinho de compras
+				- Seleção de produto
+				- Quantidade de produto
+				- SQL: "INSERT INTO Produto de carrinho (ID, Quantidade, ID do carrinho) VALUES ('','','')"
+			- SQL: "INSERT INTO Compra (ID, ID do fornecedor, ID do carrinho, Preço, Data, ID do utilizador) VALUES ('','','','','','')"
+		- Listar compras
+			- SQL: "SELECT * FROM Compra INNER JOIN Fornecedor ON Compra.ID do fornecedor = Fornecedor.ID INNER JOIN Carrinho ON Compra.ID do carrinho = Carrinho.ID INNER JOIN Produto do carrinho ON Carrinho.ID = Produto do carrinho.ID do carrinho = Carrinho de compras.ID
+		- Registar venda
+			- Seleção de cliente
+			- Registar carrinho de compras
+				- Seleção de produto
+				- Quantidade de produto
+				- SQL: "INSERT INTO Produto de carrinho (ID, Quantidade, ID do carrinho) VALUES ('','','')"
+			- SQL: "INSERT INTO Venda (ID, ID do cliente, ID do carrinho, Preço, Data, ID do utilizador) VALUES ('','','','','','')"
+		- Registar encomenda
+			- Seleção de fornecedor
+			- Registar carrinho de compras
+				- Seleção de produto
+				- Quantidade de produto
+				- SQL: "INSERT INTO Produto de carrinho (ID, Quantidade, ID do carrinho) VALUES ('','','')"
+			- SQL: "INSERT INTO Encomenda (ID, ID do fornecedor, ID do carrinho, Preço, Data, ID do utilizador) VALUES ('','','','','','')"
+		- Registar aluguer
+			- Seleção de cliente
+			- Registo de danos na entrega
+			- Registo de danos no retorno
+			- Registo da duração
+			- Registo do custo	

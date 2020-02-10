@@ -35,7 +35,7 @@
         <form action="alterar_utilizador.php">
             <input type="text" name="q" placeholder="Pesquisa">
             <input type="submit" value="Pesquisar" class="btn btn-primary">
-            <a href="ver_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
+            <a href="alterar_utilizador.php" class="btn btn-outline-primary"> Remover filtro </a>
         </form>
         <?php 
             if(isset($_GET['msg'])) echo $_GET['msg'];

@@ -18,7 +18,7 @@
         <div class="container">
             <form action="processar_login.php" method="POST">
                 <div class="form-group">
-                    <label for="username"> Nome de Utilizador: </label>
+                    <label for="username"> Nome de Utilizador ou email: </label>
                     <input type="text" class="form-control" name="username" placeholder="Introduzir nome de utilizador">
                 </div>
                 <div class="form-group">
