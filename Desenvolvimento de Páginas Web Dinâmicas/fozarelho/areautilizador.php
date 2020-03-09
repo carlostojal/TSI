@@ -24,8 +24,7 @@
         $sql = "SELECT utilizador.nome, utilizador.apelido, comentario.texto, comentario.data FROM comentario INNER JOIN utilizador ON comentario.username = utilizador.username WHERE comentario.username = '$user_name' ORDER BY comentario.data DESC";
         $res = mysqli_query($con, $sql);
         if(mysqli_num_rows($res) > 0) {
-            $data = mysqli_fetch_assoc($res);
-            while($data) {
+            while($data = mysqli_fetch_assoc($res)) {
     ?>
         <div>
             <h3> <?php echo $data['nome']." ".$data['apelido']; ?> </h3>

@@ -18,7 +18,7 @@
 ?>
 <html>
     <head>
-        <!-- Scripts Google Analytics-->
+        <!--
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150584043-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -28,6 +28,7 @@
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        -->
         <title> Foz do Arelho </title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
         <link rel="stylesheet" href="styles.css">
@@ -87,8 +88,7 @@
                     $sql = "SELECT utilizador.nome, utilizador.apelido, comentario.texto, comentario.data FROM comentario INNER JOIN utilizador ON comentario.username = utilizador.username ORDER BY comentario.data DESC";
                     $res = mysqli_query($con, $sql);
                     if(mysqli_num_rows($res) > 0) {
-                        $data = mysqli_fetch_assoc($res);
-                        while($data) {
+                        while($data = mysqli_fetch_assoc($res)) {
                 ?>
                 <div>
                     <h3> <?php echo $data['nome']." ".$data['apelido']; ?> </h3>

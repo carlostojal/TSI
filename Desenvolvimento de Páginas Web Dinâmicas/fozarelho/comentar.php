@@ -7,11 +7,21 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <?php
+            if(session_status() != PHP_SESSION_ACTIVE)
+            session_start();
+            if(!isset($_SESSION['username'])) {
+                header("location: acessonegado.php");
+            } else {
+        ?>
         <h1 class="title"> Comentar </h1>
         <form class="form" action="processar-comentario.php" method="POST">
             <p> Comentario: </p>
             <input type="text" name="comment" placeholder="Comentário"><br>
             <input type="submit" value="Comentar">
         </form>
+        <?php
+            }
+        ?>
     </body>
 </html>
