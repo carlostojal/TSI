@@ -1,0 +1,997 @@
+
+/*
+*   Copyright (c) Carlos Tojal (carlostojal)
+*   Foz do Arelho
+*   styles.css
+*   github.com/carlostojal/TSI
+*/
+
+body {
+    margin: 0;
+}
+
+.title_header {
+    padding: 25px;
+}
+
+.title {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 40px;
+    color: #565656;
+    display: inline;
+}
+
+.menu {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.menu_items {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 12px;
+    color: #979797;
+    text-decoration: none;
+    margin-right: 30px;
+    transition: all 0.5s;
+    animation: menu_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes menu_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.menu_items:hover {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.weather_area {
+    background-color: #F8F8F8;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    clear: both;
+}
+
+.weather_label {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 18px;
+    color: #808080;
+    padding-left: 25px;
+    animation: weather_label_animation;
+    animation-duration: 0.75s;
+}
+
+#weather {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 16px;
+    color: #979797;
+    padding-left: 25px;
+    animation: weather_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes weather_label_animation {
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
+}
+
+@keyframes weather_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.home_image {
+    width: 100%;
+    height: 10%;
+    animation: home_img_animation;
+    animation-duration: 0.75s;
+    transition: all 0.3s;
+    -webkit-box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
+    -moz-box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
+    box-shadow: -1px 10px 36px -2px rgba(133,133,133,0.75);
+}
+
+.home_image:hover {
+    transform: scale(1.01);
+}
+
+@keyframes home_img_animation {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.home_text {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    animation: home_text_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes home_text_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.home_text a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.where_is {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 18px;
+    color: #808080;
+    background-color: #F8F8F8;
+    margin-top: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    animation: where_is_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes where_is_animation {
+    from {padding-top: 40px;}
+    to {padding-top: 25px;}
+}
+
+.where_is_text {
+    font-size: 17px;
+    padding-bottom: 20px;
+    animation: where_is_text_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes where_is_text_animation {
+    from {opacity: 0;}
+}
+
+.map {
+    position: relative;
+    width: 540px;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hotel {
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: hotel_animation;
+    animation-duration: 0.75s;
+}
+
+.hotel:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+@keyframes hotel_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
+}
+
+.hotel_name {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    text-decoration: none;
+    display: block;
+    color: #565656;
+    animation-name: hotel_name_animation;
+    animation-duration: 0.75s;
+    transition: all 0.3s;
+}
+
+.hotel_name:hover {
+    text-decoration: none;
+    color: #222222;
+}
+
+@keyframes hotel_name_animation {
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
+}
+
+.hotel_details {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: home_details_animation;
+    animation-duration: 0.75s;
+    margin-bottom: 25px;
+}
+
+@keyframes home_details_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hotel_video {
+    position: relative;
+    width: 100%;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hotel_image_overview img {
+    width: 100%;
+    animation: hotel_image_animation;
+    animation-duration: 0.75s;
+}
+
+.hotel_image img {
+    width: 100%;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+    animation: hotel_image_animation;
+    animation-duration: 0.75s;
+}
+
+.hotel_image img:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    transform: scale(1.01);
+}
+
+@keyframes hotel_image_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.hotel_video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hotel_subtitle {
+    margin-bottom: 25px;
+    animation: hotel_subtitle_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes hotel_subtitle_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.hotel_intro {
+    padding: 25px;
+    padding-top: 0px;
+}
+
+.hotel_video_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.where_is_hotel_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.book_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.book_hotel {
+    position: relative;
+    width: 540px;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.book_hotel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.visit_page {
+    font-family: 'Raleway';
+    font-weight: 100;
+    text-decoration: none;
+    color: #bdbdbd;
+    font-size: 17px;
+    transition: all 0.3s;
+}
+
+.visit_page:hover {
+    text-decoration: none;
+    color: #808080;
+}
+
+.activity {
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: activity_animation;
+    animation-duration: 0.75s;
+}
+
+.activity:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+@keyframes activity_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
+}
+
+.activity_name {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    text-decoration: none;
+    display: block;
+    color: #565656;
+    animation-name: activity_name_animation;
+    animation-duration: 0.75s;
+    transition: all 0.3s;
+}
+
+.activity_name:hover {
+    text-decoration: none;
+    color: #222222;
+}
+
+@keyframes activity_name_animation {
+    from {padding-top: 40px;}
+    to {padding-top: 0px;}
+}
+
+.activity_details {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: activity_details_animation;
+    animation-duration: 0.75s;
+    margin-bottom: 25px;
+}
+
+@keyframes activity_details_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.activity_image_overview img {
+    width: 100%;
+    animation: activity_image_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes activity_image_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.activity_intro {
+    padding: 25px;
+    padding-top: 0px;
+}
+
+.activity_details {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: home_details_animation;
+    animation-duration: 0.75s;
+    margin-bottom: 25px;
+}
+
+.activity_image img {
+    width: 100%;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+    animation: activity_image_animation;
+    animation-duration: 0.75s;
+}
+
+.activity_image img:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.5);
+    transform: scale(1.01);
+}
+
+@keyframes activity_image_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.activity_video_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.activity_subtitle {
+    margin-bottom: 25px;
+    animation: activity_subtitle_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes activity_subtitle_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.activity_video {
+    position: relative;
+    width: 100%;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.activity_video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.where_is_activity_box {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #808080;
+    padding: 25px;
+    background-color: #F8F8F8;
+}
+
+.activity_subtitle {
+    margin-bottom: 25px;
+    animation: activity_subtitle_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes activity_subtitle_animation {
+    from {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.book_activity {
+    position: relative;
+    width: 540px;
+    height: 315px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.book_activity iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.forecast_day {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    font-size: 18px;
+    padding: 25px;
+    margin: 25px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: forecast_day_animation;
+    animation-duration: 0.75s;
+    clear: both;
+}
+
+@keyframes forecast_day_animation {
+    from {margin-top: 40px;}
+    to {margin-top: 25px;}
+}
+
+.forecast_day:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+.weather_day_label {
+    color: #565656;
+    animation: weather_day_label_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes weather_day_label_animation {
+    from {margin-top: 25px;}
+    to {margin-top: 0px;}
+}
+
+.weather_day_overview {
+    animation: weather_day_overview_animation;
+    animation-duration: 1.5s;
+}
+
+@keyframes weather_day_overview_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.weather_day_overview_title {
+    display: inline;
+    color: #474747;
+}
+
+button {
+    color: #808080;
+    background-color: #F8F8F8;
+    border: none;
+}
+
+.weather_day_details {
+    animation: weather_day_details_animation;
+    animation-duration: 1.75s;
+}
+
+@keyframes weather_day_details_animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.contacts_box {
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    font-size: 18px;
+    padding: 25px;
+    margin: 25px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+    animation: contacts_box_animation;
+    animation-duration: 1.5s;
+    clear: both;
+}
+
+@keyframes contacts_box_animation {
+    from {margin-top: 50px;}
+    to {margin-top: 25px;}
+}
+
+.contacts_box:hover {
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+}
+
+.contacts_title {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 25px;
+    color: #565656;
+    margin-bottom: 20px;
+}
+
+.contacts_box div {
+    animation: contacts_animation;
+    animation-duration: 1s;
+}
+
+@keyframes contacts_animation {
+    from {
+        padding-top: 5px;
+        opacity: 0;
+    }
+    to {
+        padding-top: 0px;
+        opacity: 1;
+    }
+}
+
+.phone_label {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+.phone {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 19px;
+    color: #b0b0b0
+}
+
+.fax_label {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+.fax {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 19px;
+    color: #b0b0b0
+}
+
+.view_all {
+    font-family: 'Raleway';
+    font-weight: 100;
+    text-decoration: none;
+    color: #909090;
+    transition: all 0.5s;
+}
+
+.view_all:hover {
+    text-decoration: none;
+    color: #606060;
+}
+
+.form_fail {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    background-color: #ff5959;
+    color: #ffc4c4;
+    animation: form_fail_animation;
+    animation-duration: 1.2s;
+    transition: all 0.5s;
+}
+
+@keyframes form_fail_animation {
+    from {
+        background-color: red;
+        color: #ffffff;
+        padding-top: 55px;
+    }
+    to {
+        background-color: #ff5959;
+        color: #ffc4c4;
+        padding-top: 25px;
+    }
+}
+
+.form_fail:hover {
+    color: #ffffff;
+}
+
+.form {
+    padding: 25px;
+    margin-bottom: -20px;
+    background-color: #F8F8F8;
+    font-family: 'Raleway';
+    color: #808080;
+}
+
+.form input {
+    background-color: white;
+    color: grey;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a6a6a6;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    animation: form_fields_animation;
+    animation-duration: 0.75s;
+    transition: all 0.5s;
+}
+
+.form input:hover {
+    color: black;
+}
+
+.form select {
+    background-color: white;
+    color: grey;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a6a6a6;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    animation: form_fields_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes form_fields_animation {
+    from {
+        margin-top: 5px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.form .opinion {
+    background-color: white;
+    color: grey;
+    font-family: 'Raleway';
+    font-weight: 100;
+    width: 250px;
+    padding: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a6a6a6;
+    animation: form_fields_animation;
+    animation-duration: 0.75s;
+}
+
+.form .respond {
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 20px;
+    background-color: #3b3b3b;
+    color: #bababa;
+    animation: respond_animation;
+    animation-duration: 0.75s;
+    transition: all 0.5s;
+}
+
+@keyframes respond_animation {
+    from {
+        background-color: #bababa;
+        color: #3b3b3b;
+    }
+    to {
+        background-color: #3b3b3b;
+        color: #bababa;
+    }
+}
+
+.form .respond:hover {
+    background-color: black;
+    color: white;
+}
+
+.form .checkbox {
+    width: 20px;
+}
+
+.stats_introduction {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+    animation: stats_introduction_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes stats_introduction_animation {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.top_opinions {
+    padding: 25px;
+    background-color: #F8F8F8;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #707070;
+    animation: top_opinions_animation;
+    animation-duration: 0.75s;
+}
+
+@keyframes top_opinions_animation {
+    from {
+        opacity: 0.5;
+        padding-top: 60px;
+    }
+    to {
+        opacity: 1;
+        padding-top: 25px;
+    }
+}
+
+.top_opinions p {
+    color: #909090;
+}
+
+.age_stats {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+}
+
+.age_stats h3, th {
+    color: #606060;
+}
+
+.age_stats h3 {
+    animation: stats_title_animation;
+    animation-duration: 0.75s;
+}
+
+.age_stats th, td {
+    padding: 5px;
+}
+
+.provenence_stats {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+}
+
+.provenence_stats h3, th {
+    color: #606060;
+}
+
+.provenence_stats h3 {
+    animation: stats_title_animation;
+    animation-duration: 0.75s;
+}
+
+.provenence_stats th, td {
+    padding: 5px;
+}
+
+@keyframes stats_title_animation {
+    from {
+        margin-top: 40px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.stats_legend {
+    padding: 25px;
+    font-family: 'Raleway';
+    font-weight: 100;
+    color: #808080;
+}
+
+footer {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 15px;
+    color: #d4d4d4;
+    padding: 25px;
+    background-color: #636363;
+}
+
+footer .contacts {
+    color: #b8b8b8;
+}
+
+footer .contacts a {
+    text-decoration: none;
+    color: #a6a6a6;
+    transition: all 0.5s;
+}
+
+footer .contacts a:hover {
+    text-decoration: none;
+    color: #d4d4d4;
+}
+
+footer .copyright {
+    color: #b3b3b3;
+}
