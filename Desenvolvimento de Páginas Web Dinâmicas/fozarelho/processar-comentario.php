@@ -11,8 +11,12 @@
 
     require("connection.php");
 
-    $sql = "INSERT INTO comentario (username, texto, data) VALUES ('$user_name', '$comment', '$date')";
-    mysqli_query($con, $sql);
-
-    header("location: areautilizador.php");
+    if($comment != "") {
+        $sql = "INSERT INTO comentario (username, texto, data) VALUES ('$user_name', '$comment', '$date')";
+        mysqli_query($con, $sql);
+        
+        header("location: areautilizador.php");
+    } else {
+        header("location: comentar.php?error=empty");
+    }
 ?>

@@ -12,7 +12,7 @@
     echo $pass_word;
 
     if($user_name != "" && $pass_word != "" && $email != "" && $name != "" && $surname != "" && $date != 0) {
-        $sql = "INSERT INTO utilizador (username, password, email, nome, apelido, data_de_nascimento) VALUES ('$user_name', '".md5($password)."', '$email', '$name', '$surname', '$date')";
+        $sql = "INSERT INTO utilizador (username, password, email, nome, apelido, data_de_nascimento) VALUES ('$user_name', '".md5($pass_word)."', '$email', '$name', '$surname', '$date')";
         $res = mysqli_query($con, $sql);
 
         if($res) {

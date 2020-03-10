@@ -1,3 +1,9 @@
+<?php
+    if(isset($_GET['error'])) {
+        if($_GET['error'] == "empty")
+            echo "<script>alert('O campo de comentário está vazio!')</script>";
+    }
+?>
 <html>
     <head>
         <meta charset="UTF-8">

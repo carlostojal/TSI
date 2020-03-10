@@ -3,6 +3,7 @@
         session_start();
 ?>
 <nav class="menu">
+<a class="menu_items" href="index.php"> INÍCIO </a>
 <?php
     if(!isset($_SESSION['username'])) {
 ?>

@@ -2,6 +2,8 @@
     if(isset($_GET['error'])) {
         if($_GET['error'] == "empty")
             echo "<script>alert('Tem campos vazios!')</script>";
+        else if($_GET['error'] == "credentials")
+            echo "<script>alert('As suas credenciais estão erradas!')</script>";
     }
 ?>
 <html>
