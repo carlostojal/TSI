@@ -6,5 +6,5 @@
         Email: <a href="mailto:carlos.tojal@hotmail.com" target="blank">carlos.tojal@hotmail.com</a>
     </div>
     <br>
-    <div class="copyright">Copyright © Carlos Tojal (2020)</div>
+    <div class="copyright">Copyright © Carlos Tojal (<?php echo date("Y") ?>)</div>
 </footer>

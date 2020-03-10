@@ -97,6 +97,7 @@
                         <?php echo $data['texto']; ?>
                     </div>
                 </div>
+                <br><br>
                 <?php
                         }
                     } else {
@@ -106,7 +107,7 @@
                     }
                     if(!isset($_SESSION['username'])) {
                 ?>
-                <div> Inicie sessão para fazer um comentário. </div>
+                <br><div> Inicie sessão para fazer um comentário. </div>
                 <?php
                     } else {
                 ?>

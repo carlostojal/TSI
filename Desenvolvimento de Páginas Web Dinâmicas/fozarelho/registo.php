@@ -8,6 +8,9 @@
     </head>
     <body>
         <h1 class="title"> Registo </h1>
+        <?php
+            require("header.php");
+        ?>
         <form class="form" action="processar-registo.php" method="POST">
             <p> Username: </p>
             <input type="text" name="username" placeholder="Username">
@@ -23,5 +26,8 @@
             <input type="date" name="date" placeholder="Data de nascimento"><br><br>
             <input type="submit" value="Registo">
         </form>
+        <?php
+            require("footer.php");
+        ?>  
     </body>
 </html>

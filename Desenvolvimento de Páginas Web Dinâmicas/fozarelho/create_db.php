@@ -24,7 +24,7 @@
     mysqli_query($con, $sql);
 
     $sql = "CREATE TABLE comentario (
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(20) NOT NULL,
     texto TEXT NOT NULL,
     data DATETIME NOT NULL,

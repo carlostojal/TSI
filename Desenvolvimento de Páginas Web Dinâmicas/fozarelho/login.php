@@ -8,6 +8,9 @@
     </head>
     <body>
         <h1 class="title"> Login </h1>
+        <?php
+            require("header.php");
+        ?>
         <form class="form" action="processar-login.php" method="POST">
             <p> Username ou email: </p>
             <input type="text" name="username_email" placeholder="Username ou email">
@@ -15,5 +18,8 @@
             <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" value="Login">
         </form>
+        <?php
+            require("footer.php");
+        ?>
     </body>
 </html>
