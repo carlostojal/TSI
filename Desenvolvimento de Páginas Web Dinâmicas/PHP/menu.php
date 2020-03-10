@@ -23,5 +23,6 @@
         <h1> Menu </h1>
         <p> Olá, <b><?php echo $_SESSION['username']."</b> (".$_SESSION['role'].")" ?> </p>
         <?php include("menu1.php") ?>
+		Utilizador registado com SUCESSO!
     </body>
 </html>
