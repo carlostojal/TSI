@@ -4,7 +4,7 @@
 
     Copyright (c) Carlos Tojal (carlostojal)
     Foz do Arelho
-    index.html
+    index.php
     github.com/carlostojal/TSI
 
 -->
