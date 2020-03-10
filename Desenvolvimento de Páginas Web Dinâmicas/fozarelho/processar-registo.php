@@ -1,6 +1,6 @@
 <?php
     $user_name = $_POST['username'];
-    $password = $_POST['password'];
+    $pass_word = $_POST['password'];
     $email = $_POST['email'];
     $name = $_POST['name'];
     $surname = $_POST['surname'];
@@ -8,7 +8,10 @@
 
     require("connection.php");
 
-    if($user_name != "" && $password != "" && $email != "" && $name != "") {
+    echo $user_name;
+    echo $pass_word;
+
+    if($user_name != "" && $pass_word != "" && $email != "" && $name != "" && $surname != "" && $date != 0) {
         $sql = "INSERT INTO utilizador (username, password, email, nome, apelido, data_de_nascimento) VALUES ('$user_name', '".md5($password)."', '$email', '$name', '$surname', '$date')";
         $res = mysqli_query($con, $sql);
 
@@ -18,7 +21,6 @@
             header("location: registo.php");
         }
     } else {
-        echo "<script>alert('Tem campos vazios!')</script>";
-        header("location: registo.php");
+        header("location: registo.php?error=empty");
     }
 ?>

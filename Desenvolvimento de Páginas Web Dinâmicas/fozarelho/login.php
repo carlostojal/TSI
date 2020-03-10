@@ -1,3 +1,9 @@
+<?php
+    if(isset($_GET['error'])) {
+        if($_GET['error'] == "empty")
+            echo "<script>alert('Tem campos vazios!')</script>";
+    }
+?>
 <html>
     <head>
         <meta charset="UTF-8">

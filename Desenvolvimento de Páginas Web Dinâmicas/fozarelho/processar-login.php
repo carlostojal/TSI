@@ -7,6 +7,7 @@
     $sql = "SELECT * FROM utilizador WHERE (username = '$username_email' OR email = '$username_email') AND password = '".md5($password)."'";
     $res = mysqli_query($con, $sql);
 
+    if($username_email == "" || $password == "") {
     if(mysqli_num_rows($res) == 1) {
         if(session_status() != PHP_SESSION_ACTIVE)
             session_start();
